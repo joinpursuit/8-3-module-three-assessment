@@ -3,6 +3,7 @@ import React from "react";
 import Nav from "./Components/Nav";
 import HomePage from "./Components/HomePage";
 import Movies from "./Components/Movies";
+import People from "./Components/Pepople";
 import { Routes, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -32,6 +33,7 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<Movies movies={movies} />} />
+          <Route path="/people" element={<People />} />
         </Routes>
       </div>
     );

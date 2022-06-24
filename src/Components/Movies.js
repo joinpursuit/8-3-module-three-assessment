@@ -16,19 +16,23 @@ class Movies extends React.Component {
   render() {
     const { selectedMovie } = this.state;
     const { movies } = this.props;
-    const movieList = movies.map((movie) => {
-      return <option value={movie.title}>{movie.title}</option>;
+    const movieList = movies.map((movie, index) => {
+      return (
+        <option value={movie.title} key={index}>
+          {movie.title}
+        </option>
+      );
     });
-    movieList.unshift(<option value=""></option>);
+    movieList.unshift(<option key={-1} value=""></option>);
 
     return (
-      <section className="movies">
+      <div className="movies">
         <h2>Select a Movie</h2>
         <select onChange={this.onSelectHandler}>{movieList}</select>
         {selectedMovie !== "" ? (
           <MovieDetail selectedMovie={selectedMovie} movies={movies} />
         ) : null}
-      </section>
+      </div>
     );
   }
 }
