@@ -1,17 +1,41 @@
 import "./App.css";
-import HomePage from "./Components/HomePage";
+import React from "react";
 import Nav from "./Components/Nav";
+import HomePage from "./Components/HomePage";
+import Movies from "./Components/Movies";
 import { Routes, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <Nav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: [],
+    };
+  }
+
+  componentDidMount() {
+    const URL = "https://ghibliapi.herokuapp.com/films";
+
+    fetch(URL)
+      .then((result) => result.json())
+      .then((data) => {
+        this.setState({ movies: data });
+      })
+      .catch((error) => console.log(error));
+  }
+
+  render() {
+    const { movies } = this.state;
+    return (
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<Movies movies={movies} />} />
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
