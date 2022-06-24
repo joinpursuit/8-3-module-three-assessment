@@ -10,6 +10,17 @@ import { Routes, Route } from "react-router-dom";
 class App extends React.Component {
   constructor() {
     super();
+    this.state = { movieArray: []
+  }
+
+  componentDidMount() {
+    fetch("https://ghibliapi.herokuapp.com/films")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ movieArray: data });
+      });
+  }
+
   }
   render() {
     return (
@@ -18,7 +29,10 @@ class App extends React.Component {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/people" element={<People />} />
-          <Route path="/movies" element={<Movies />} />
+          <Route
+            path="/movies"
+            element={<Movies movieArray={this.state.movieArray} />}
+          />
           <Route path="/locations" element={<Locations />} />
         </Routes>
       </div>
