@@ -26,7 +26,7 @@ class Movies extends Component {
     );
 
     return (
-      <div>
+      <div className='movies'>
         <h1>Select a Movie</h1>
         <select onChange={this.getMovieId} className="titles">
           <option value=""></option>
