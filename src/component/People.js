@@ -1,8 +1,9 @@
 import React from 'react';
+import "./people.css"
 
 class People extends React.Component {
   render() {
-    return <>This is people</>;
+    return <div className='people'>This is people</div>;
   }
 }
 

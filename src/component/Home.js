@@ -1,8 +1,13 @@
 import React from 'react';
+import "./home.css"
 
 class Home extends React.Component {
   render() {
-    return <>this is Home</>;
+    return (
+        <div className='home'>
+        <h1>Welcome to GhibliApp</h1>
+        </div>
+    )
   }
 }
 
