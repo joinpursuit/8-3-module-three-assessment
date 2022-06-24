@@ -1,28 +1,32 @@
+import React from 'react';
+import NavBar from './Components/NavBar.js';
+import Home from './Components/Home.js';
+import Movies from './Components/Movies.js';
+import People from './Components/People.js';
+import Locations from './Components/Locations.js';
+import Page404 from './Components/Page404.js';
+import { Routes, Route } from 'react-router-dom';
 
-import logo from './logo.svg';
-import './App.css';
+class App extends React.Component {
+  render() {
+    return (
+      <div className='App'>
+        <title> Welcome to GhibliApp</title>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <header className='App-header'>
+          <NavBar />
 
-    </div>
-  );
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/movies' element={<Movies />} />
+            <Route path='people' element={<People />} />
+            <Route path='/locations' element={<Locations />} /> 
+            <Route path='*' element={<Page404 />} />
+          </Routes>
+        </header>
+      </div>
+    );
+  }
 }
-
 
 export default App;
