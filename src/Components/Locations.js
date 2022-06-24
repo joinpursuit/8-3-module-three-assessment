@@ -35,7 +35,7 @@ class Locations extends Component {
             return (
                 <div key={each.id}>
                     <ul className="listy">
-                        <li key={each.name}>Name:{each.name}</li>
+                        <li key={each.name}><h2>Name:{each.name}</h2></li>
                             <p>Climate:{each.climate}</p>
                             <p>Terrain:{each.terrain}</p>
                     </ul>

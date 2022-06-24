@@ -13,7 +13,7 @@
 }
 
 .listy {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     padding-left: 10px;
     padding-right: 10px;
