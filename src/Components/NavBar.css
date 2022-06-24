@@ -1,0 +1,12 @@
+nav {
+	height: 100px;
+	background-color: black;
+	justify-content: center;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 50px repeat(3, 1fr);
+}
+img {
+	height: 50px;
+	width: 50px;
+}
