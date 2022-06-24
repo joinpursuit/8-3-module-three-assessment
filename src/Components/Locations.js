@@ -5,33 +5,25 @@ class Locations extends Component {
     constructor(){
         super();
         this.state = {
-            fetchdata: [],
+            allLocations: [],
             toggle: false,
         }
     }
 
     searchy = (evt) => {
-        this.setState({searchyValue: e.target.value,});
+        this.setState({searchyValue: evt.target.value,});
     };
+
+    fetchLocation = () => {
+        fetch("https://ghibliapi.herokuapp.com/locations")
+        .then((res) => res.json())
+        .then((data)=> {
+            this.setState({allLocations: data,})
+        })
+    }
     
     componentDidMount() {
-		fetch("https://ghibliapi.herokuapp.com/locations")
-			.then((res) =>  res.json())
-			.then((data) => {
-				data.forEach((location) => {
-					this.setState({
-						fetchdata: [
-						...this.state.fetchdata,
-						<li key={location.name}>
-							<p>Name: {location.name}</p>
-							<p>Climate: {location.climate}</p>
-							<p>Terrain: {location.terrain}</p>
-						</li>,
-						],
-					});
-				})
-				
-			});
+		this.fetchLocation();
 	};
 
 	hide = () => {
@@ -39,6 +31,17 @@ class Locations extends Component {
 	}
 
     render(){
+        let allLoco = this.state.allLocations.map((each) => {
+            return (
+                <div key={each.id}>
+                    <ul className="listy">
+                        <li key={each.name}>Name:{each.name}</li>
+                            <p>Climate:{each.climate}</p>
+                            <p>Terrain:{each.terrain}</p>
+                    </ul>
+                </div>
+            )
+        })
         return (
             <div className="bg">
                 <div className="center">
@@ -46,7 +49,7 @@ class Locations extends Component {
                     <button onClick={this.hide} className="loc-btn" id="loc-btn">
                     {this.state.toggle ? "Hide Locations" : "Show Locations"}
                     </button>
-                    {this.state.toggle ? <ul>{this.state.fetchdata}</ul>: ""}
+                    <ul>{this.state.toggle ? allLoco : null}</ul>
                 </div>
             </div>
         )

@@ -1,0 +1,23 @@
+.list {
+    padding-top: 100px;
+    text-align: center;
+    font-size: 70px;
+}
+.bg {
+    background-color: #f1f9b7;
+    min-height: 100vh;
+}
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.listy {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: whitesmoke;
+}
