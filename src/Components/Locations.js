@@ -16,15 +16,29 @@ class Locations extends React.Component {
     });
     this.setState({ locations: sorted });
   };
+  sortedByClimate = () => {
+    const sorted = this.state.locations.sort(function (a, b) {
+      return a.climate.localeCompare(b.climate);
+    });
+    this.setState({ locations: sorted });
+  };
+  sortedByTerrain = () => {
+    const sorted = this.state.locations.sort(function (a, b) {
+      return a.terrain.localeCompare(b.terrain);
+    });
+    this.setState({ locations: sorted });
+  };
 
   populateLocations = (array) => {
     return array.map((location, idx) => {
       return (
-        <ul key={idx}>
-          <li>name: {location.name}</li>
-          <li>climate: {location.climate}</li>
-          <li>terrain: {location.terrain}</li>
-        </ul>
+        <li>
+          <ul key={idx}>
+            <li>name: {location.name}</li>
+            <li>climate: {location.climate}</li>
+            <li>terrain: {location.terrain}</li>
+          </ul>
+        </li>
       );
     });
   };
@@ -42,14 +56,36 @@ class Locations extends React.Component {
         >
           {show ? "Hide Locations" : "Show Locations"}
         </button>
-        <button
-          onClick={() => {
-            this.sortedByName();
-          }}
-          type="button"
-        >
-          Sort By Name
-        </button>
+        {show && (
+          <button
+            onClick={() => {
+              this.sortedByName();
+            }}
+            type="button"
+          >
+            Sort by Name
+          </button>
+        )}
+        {show && (
+          <button
+            onClick={() => {
+              this.sortedByClimate();
+            }}
+            type="button"
+          >
+            Sort by Climate
+          </button>
+        )}
+        {show && (
+          <button
+            onClick={() => {
+              this.sortedByTerrain();
+            }}
+            type="button"
+          >
+            Sort by Terrain
+          </button>
+        )}
 
         <ul>{show ? this.populateLocations(locations) : null}</ul>
       </div>
