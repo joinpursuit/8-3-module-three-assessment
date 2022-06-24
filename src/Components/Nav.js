@@ -5,17 +5,14 @@ function Nav() {
   return (
     <nav>
       <Link to='/'>
-        <img src={logo} alt={'logo pic'} />
+        <img className='logo' src={logo} alt={'logo pic'} />
       </Link>
-
       <p>
         <Link to='/movies'>Movies</Link>
       </p>
-
       <p>
         <Link to='/people'>People</Link>
       </p>
-
       <p>
         <Link to='/locations'>Locations</Link>
       </p>
