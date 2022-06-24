@@ -1,28 +1,45 @@
-
-import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import Nav from './Components/Nav';
+import Home from './Components/Home';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: [],
+    };
+  }
 
-    </div>
-  );
+  componentDidMount() {
+    fetch('https://ghibliapi.herokuapp.com/films')
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+      })
+      .then((movies) => {
+        this.setState({
+          movies: [...movies]
+        });
+      });
+  }
+
+  render() {
+    console.log(this.state);
+    return (
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" />
+          <Route path="/people" />
+          <Route path="/locations" />
+        </Routes>
+      </div>
+    );
+  }
 }
-
 
 export default App;

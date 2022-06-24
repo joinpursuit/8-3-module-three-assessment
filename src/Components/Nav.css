@@ -1,0 +1,19 @@
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #055a8c;
+}
+
+.navbar h3 a,
+.navbar img {
+    display: block;
+    color: white;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+.navbar h3 a:hover {
+    color: #5ba4cf;
+  }
