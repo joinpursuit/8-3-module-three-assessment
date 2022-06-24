@@ -15,10 +15,10 @@ class App extends Component {
       <div>
         <Nav />
         <Routes>
-        <Route exact path="/" component={Home} />
-        <Route path="/Movies" component={Movies} />
-        <Route path="/People" component={People} />
-        <Route path="/Locations" component={Locations} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/Movies" element={<Movies />} />
+        <Route path="/People" element={<People />} />
+        <Route path="/Locations" element={<Locations />} />
         </Routes>
       </div>
       </BrowserRouter>
