@@ -40,7 +40,7 @@ class People extends React.Component {
     this.setState({
       searchedPerson: searched,
     });
-    // event.target.reset();
+    event.target.reset();
   };
 
   render() {
@@ -59,7 +59,7 @@ class People extends React.Component {
         </form>
         <div>
           {searchedPerson ? (
-            <div className="personInfo">
+            <div>
               <p>
                 <strong>Name:</strong> {searchedPerson.name}
               </p>
@@ -80,13 +80,3 @@ class People extends React.Component {
 }
 
 export default People;
-
-// {searchedPerson && (
-//     <div className="personInfo">
-//       <p><strong>Name:</strong></p>
-//       <p><strong>Age: </strong></p>
-//       <p><strong>Gender:</strong></p>
-//     </div>
-//   )}
-
-//   {!searchedPerson && <h3>Not Found!</h3>}
