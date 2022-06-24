@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Nav.css";
 
-const Nav = (props) => {
+const Nav = () => {
   return (
     <nav>
       <Link to="/">
         <img
-          className="icon"
           src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/movies.png"
-          width={50}
-          height={50}
           alt=""
         />
       </Link>

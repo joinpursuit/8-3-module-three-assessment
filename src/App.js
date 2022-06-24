@@ -32,18 +32,23 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.locationsArray);
     return (
       <div>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/people" element={<People />} />
+          <Route
+            path="/people"
+            element={<People peopleArray={this.state.peopleArray} />}
+          />
           <Route
             path="/movies"
             element={<Movies movieArray={this.state.movieArray} />}
           />
-          <Route path="/locations" element={<Locations />} />
+          <Route
+            path="/locations"
+            element={<Locations locationsArray={this.state.locationsArray} />}
+          />
         </Routes>
       </div>
     );
