@@ -3,11 +3,13 @@ import "./Nav.css";
 
 const Nav = (props) => {
   return (
-    <div className="nav">
+    <nav>
       <Link to="/">
         <img
           className="icon"
           src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/movies.png"
+          width={50}
+          height={50}
           alt=""
         />
       </Link>
@@ -20,7 +22,7 @@ const Nav = (props) => {
       <Link to="/locations">
         <div>Locations</div>
       </Link>
-    </div>
+    </nav>
   );
 };
 
