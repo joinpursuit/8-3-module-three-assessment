@@ -31,15 +31,13 @@ class Movies extends React.Component {
   };
 
   render() {
-    let { movies } = this.state;
+    let { movies, chosenMovie } = this.state;
 
     let movieChoices = movies.map((movie) => {
       return <option key={movie.id}>{movie.title}</option>;
     });
 
-    let selected = movies.find(
-      (movie) => movie.title === this.state.chosenMovie
-    );
+    let selected = movies.find((movie) => movie.title === chosenMovie);
 
     return (
       <div className="movies">
