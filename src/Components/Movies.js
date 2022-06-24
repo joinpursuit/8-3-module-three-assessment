@@ -32,7 +32,6 @@ class Movies extends React.Component {
   render() {
     const { data } = this.props
     const { movieTitle } = this.state
-    console.log(movieTitle)
     return (
       <div className='movies'>
         <h2>Select a movie</h2>
