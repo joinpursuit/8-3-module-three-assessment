@@ -1,0 +1,16 @@
+.nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-height: 2fr;
+    background-color: red;
+}
+.nav .link {
+    padding: 50px;
+    color: white;
+    text-decoration: none;
+}
+.nav img {
+    padding: 5px;
+    max-height: 50;
+    max-width: 50px;
+}
