@@ -1,12 +1,23 @@
 import "./LocationCard.css";
 
 const LocationCard = ({ location }) => {
+  const { name, climate, terrain } = location;
   return (
-    <div className="card">
-      <p>Name: {location.name}</p>
-      <p>Climate: {location.climate}</p>
-      <p>Terrain: {location.terrain}</p>
-    </div>
+    <ul className="card">
+      <span>
+        <li>
+          Name: <span>{name}</span>
+        </li>
+        <li>
+          <span>
+            Climate: <span>{climate}</span>
+          </span>
+        </li>
+        <li>
+          Terrain:<span>{terrain}</span>
+        </li>
+      </span>
+    </ul>
   );
 };
 
