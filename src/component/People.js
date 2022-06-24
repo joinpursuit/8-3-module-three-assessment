@@ -59,7 +59,7 @@ class People extends React.Component {
         </form>
         <div>
           {searchedPerson ? (
-            <div>
+            <div className='personFacts'>
               <p>
                 <strong>Name:</strong> {searchedPerson.name}
               </p>
