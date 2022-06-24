@@ -10,19 +10,29 @@ import { Routes, Route } from "react-router-dom";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { movieArray: []
+    this.state = { movieArray: [], peopleArray: [], locationsArray: [] };
   }
 
   componentDidMount() {
-    fetch("https://ghibliapi.herokuapp.com/films")
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ movieArray: data });
+    Promise.all([
+      fetch("https://ghibliapi.herokuapp.com/films"),
+      fetch("https://ghibliapi.herokuapp.com/people"),
+      fetch("https://ghibliapi.herokuapp.com/locations"),
+    ])
+      .then(([res1, res2, res3]) => {
+        return Promise.all([res1.json(), res2.json(), res3.json()]);
+      })
+      .then(([data1, data2, data3]) => {
+        this.setState({
+          movieArray: data1,
+          peopleArray: data2,
+          locationsArray: data3,
+        });
       });
   }
 
-  }
   render() {
+    console.log(this.state.locationsArray);
     return (
       <div>
         <Nav />
