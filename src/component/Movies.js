@@ -51,6 +51,7 @@ class Movies extends React.Component {
           {selected ? (
             <div>
               <h2>{selected.title}</h2>
+              <img className="moviePic" src={selected.image} alt="moviePic" />
               <p>
                 <strong>Release Date:</strong> {selected.release_date}
               </p>

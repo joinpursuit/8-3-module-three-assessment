@@ -3,7 +3,7 @@
 }
 
 .locationCard{
-    background-color: white;
+    background-color: lightblue;
     border: 2px solid black;
     text-align: left;
     margin: 5%;
@@ -21,4 +21,11 @@ li{
     list-style: none;
     margin: 2%
    
+}
+
+
+
+button{
+    background-color: aliceblue;
+    font-weight: bolder;
 }

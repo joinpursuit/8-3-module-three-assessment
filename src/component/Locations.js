@@ -22,6 +22,7 @@ class Locations extends React.Component {
 
   componentDidMount = () => {
     this.getLocations();
+    // this.sortName(this.state.locations)
   };
 
   showLocationHandler = () => {
@@ -30,28 +31,52 @@ class Locations extends React.Component {
     });
   };
 
+  // data= this.state.locations
+  // sortName = (data) => {
+  //   let sortedNames = new Set(data.map((element) => element.terrain));
+  //   this.setState({
+  //     locations: sortedNames,
+  //   });
+  // };
+
   render() {
-    let { locations } = this.state;
+    let { locations, display } = this.state;
 
     let showLocations = locations.map((location, idx) => {
       return (
         <li key={idx} className="locationCard">
           <ul>
-            <li>Name: {location.name}</li>
-            <li>Climate: {location.climate}</li>
-            <li>Terrain: {location.terrain}</li>
+            <li>
+              <span>
+                <strong>Name:</strong> {location.name}
+              </span>
+            </li>
+            <li>
+              <span>
+                <strong>Climate:</strong> {location.climate}
+              </span>
+            </li>
+            <li>
+              <span>
+                <strong>Terrain:</strong> {location.terrain}
+              </span>
+            </li>
           </ul>
         </li>
       );
     });
 
-    let { display } = this.state;
     return (
       <div className="locations">
         <section className="location-header">
           <h1>List of Locations</h1>
           {display ? (
-            <button onClick={this.showLocationHandler}>Hide Locations</button>
+            <div>
+              <button onClick={this.showLocationHandler}>Hide Locations</button>
+              <button onClick={this.sortName}>Sort by Name</button>
+              <button>Sort by Climate</button>
+              <button>Sort by Terrain</button>
+            </div>
           ) : (
             <button onClick={this.showLocationHandler}>Show Locations</button>
           )}
