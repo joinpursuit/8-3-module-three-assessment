@@ -4,6 +4,8 @@ import Home from "./Components/Home";
 import Nav from "./Components/Nav";
 import Movies from "./Components/Movies";
 import People from "./Components/People";
+import DisplayPersonInfo from "./Components/DisplayPersonInfo";
+import Locations from "./Components/Locations";
 import "./App.css";
 
 class App extends React.Component {
@@ -39,7 +41,6 @@ class App extends React.Component {
           <nav>
             <Nav />
           </nav>
-
           <Routes>
             {/* COMPONENTS */}
             <Route path="/" element={<Home />} />
@@ -54,9 +55,10 @@ class App extends React.Component {
               }
             />
             <Route path="/people" element={<People />} />
-            <Route path="/locations" element={<People />} />
+            <Route path="/locations" element={<Locations />} />
           </Routes>
         </Router>
+        {console.log(this.state.foundPerson)}
       </div>
     );
   }

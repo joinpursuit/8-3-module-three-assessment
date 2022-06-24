@@ -1,5 +1,6 @@
 import React from "react";
 import GetMovieInfo from "./GetMovieInfo";
+import "./Movies.css";
 
 const Movies = ({ movies, movieTitle, getMovie }) => {
   return (
