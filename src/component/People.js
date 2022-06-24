@@ -1,6 +1,8 @@
 import React from 'react';
 import './people.css';
 
+
+
 class People extends React.Component {
   constructor() {
     super();
@@ -59,15 +61,21 @@ class People extends React.Component {
         </form>
         <div>
           {searchedPerson ? (
-            <div className='personFacts'>
+            <div className="personFacts">
               <p>
                 <strong>Name:</strong> {searchedPerson.name}
               </p>
               <p>
-                <strong>Age:</strong> {searchedPerson.age}
+              <strong>Age:</strong> {searchedPerson.age}
               </p>
               <p>
                 <strong>Gender:</strong> {searchedPerson.gender}
+              </p>
+              <p>
+                <strong>Eye Color:</strong> {searchedPerson.eye_color}
+              </p>
+              <p>
+                <strong>Hair Color:</strong> {searchedPerson.hair_color}
               </p>
             </div>
           ) : (

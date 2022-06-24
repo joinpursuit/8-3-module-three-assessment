@@ -6,7 +6,7 @@ class Home extends React.Component {
     return (
         <div className='home'>
         <h1>Welcome to GhibliApp</h1>
-        <img src='https://images.gr-assets.com/hostedimages/1489104577ra/22185966.gif' alt='ghibly gif'/>
+        <img src='https://media0.giphy.com/media/l3ZrVw8NkxIly/200.webp?cid=ecf05e47x8mq8qldg7n3omlzpf2xdk7c0lp4k7dq93egeoll&rid=200.webp&ct=g' alt='ghibly gif'/>
         </div>
     )
   }

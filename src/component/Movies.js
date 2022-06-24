@@ -41,7 +41,7 @@ class Movies extends React.Component {
 
     return (
       <div className="movies">
-        <h2>Select a movie</h2>
+        <h1>Select a movie</h1>
 
         <select onChange={this.selectHandler}>
           <option></option>
