@@ -39,7 +39,7 @@ export default class Locations extends Component {
 			locations: [...temp],
 		});
 	};
-	sortByLocation = () => {
+	sortByTerrain = () => {
 		let temp = this.state.locations.sort((a, b) => {
 			return a.location.toLowerCase() - b.location.toLowerCase();
 		});
@@ -52,7 +52,7 @@ export default class Locations extends Component {
 			<div>
 				<button onClick={this.sortByName}>Sort by Name</button>
 				<button onClick={this.sortByClimate}>Sort by Climate</button>
-				<button onClick={this.sortByLocation}>Sort by Location</button>
+				<button onClick={this.sortByTerrain}>Sort by Terrain</button>
 			</div>
 		);
 		return (

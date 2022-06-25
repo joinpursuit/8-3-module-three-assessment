@@ -4,14 +4,26 @@ nav {
 	justify-content: center;
 	text-align: center;
 	display: grid;
-	grid-template-columns: 50px repeat(3, 1fr);
+	grid-template-columns: 100px repeat(3, 1fr);
 }
 img {
 	height: 50px;
 	width: 50px;
 	background: transparent;
 }
-nav div {
+nav a {
 	padding: 10px;
 	margin: 15px;
+	justify-content: center;
+}
+a {
+	text-decoration: none;
+	justify-content: center;
+}
+a:hover {
+	background-color: aliceblue;
+	cursor: pointer;
+}
+a.selected {
+	background-color: rgba(135, 177, 214, 0.321);
 }
