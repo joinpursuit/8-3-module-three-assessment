@@ -1,0 +1,22 @@
+.locations {
+	text-align: center;
+}
+ul {
+	list-style-type: none;
+}
+ul.top {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+li {
+	padding: 10px;
+	margin: 10px;
+}
+button {
+	border: none;
+	padding: 20px;
+}
+button:hover {
+	background-color: aliceblue;
+	cursor: pointer;
+}
