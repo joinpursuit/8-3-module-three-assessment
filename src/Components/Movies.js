@@ -6,6 +6,7 @@ class Movies extends React.Component {
     super();
     this.state = {
       selectedMovie: "",
+      movies: [],
     };
   }
 
@@ -13,9 +14,19 @@ class Movies extends React.Component {
     this.setState({ selectedMovie: event.target.value });
   };
 
+  componentDidMount() {
+    const URL = "https://ghibliapi.herokuapp.com/films";
+
+    fetch(URL)
+      .then((result) => result.json())
+      .then((data) => {
+        this.setState({ movies: data });
+      })
+      .catch((error) => console.log(error));
+  }
+
   render() {
-    const { selectedMovie } = this.state;
-    const { movies } = this.props;
+    const { selectedMovie, movies } = this.state;
     const movieList = movies.map((movie, index) => {
       return (
         <option value={movie.title} key={index}>
