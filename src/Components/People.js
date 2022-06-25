@@ -19,6 +19,9 @@ export default class People extends Component {
 	}
 	handleSubmit = (event) => {
 		event.preventDefault();
+		if (!this.state.search) {
+			return;
+		}
 		this.setState({
 			found: this.state.listOfPeople.find((person) => {
 				return person.name.toLowerCase() === this.state.search.toLowerCase();
@@ -44,6 +47,7 @@ export default class People extends Component {
 						value={this.state.search}
 						onChange={this.handleChange}
 					/>
+
 					<button>Search</button>
 				</form>
 				<div>

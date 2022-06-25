@@ -20,16 +20,24 @@ export default class Locations extends Component {
 			});
 	}
 	sortByName = () => {
-		let temp = this.state.locations.sort();
+		let temp = this.state.locations.sort((a, b) => {
+			if (a.name < b.name) {
+				return -1;
+			} else if (a.name > b.name) {
+				return 1;
+			} else {
+				return 0;
+			}
+		});
 		this.setState({
 			locations: [...temp],
 		});
 	};
 	sortByClimate = () => {
 		let temp = this.state.locations.sort((a, b) => {
-			if (a.climate.toLowerCase() < b.climate.toLowerCase()) {
+			if (a.climate < b.climate) {
 				return -1;
-			} else if (a.climate.toLowerCase() > b.climate.toLowerCase()) {
+			} else if (a.climate > b.climate) {
 				return 1;
 			} else {
 				return 0;
@@ -41,7 +49,13 @@ export default class Locations extends Component {
 	};
 	sortByTerrain = () => {
 		let temp = this.state.locations.sort((a, b) => {
-			return a.location.toLowerCase() - b.location.toLowerCase();
+			if (a.terrain < b.terrain) {
+				return -1;
+			} else if (a.terrain > b.terrain) {
+				return 1;
+			} else {
+				return 0;
+			}
 		});
 		this.setState({
 			locations: [...temp],
@@ -57,7 +71,7 @@ export default class Locations extends Component {
 		);
 		return (
 			<div className="locations">
-				<h1>List of Locations</h1>
+				<h2>List of Locations</h2>
 				<button onClick={this.showLocations}>
 					{this.state.show ? `Hide Locations` : `Show Locations`}
 				</button>
