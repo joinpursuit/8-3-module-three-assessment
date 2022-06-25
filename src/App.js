@@ -1,28 +1,37 @@
+import { Component } from "react";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./Components/NavBar/NavBar";
+import Homepage from "./Components/Home/Homepage";
+import Movies from "./Components/Movies/Movies";
+import People from "./Components/People/People";
+import Locations from "./Components/Locations/Locations";
 
-import logo from './logo.svg';
-import './App.css';
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      //
+    };
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  render() {
+    return (
+      <section className="main">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
 
-    </div>
-  );
+          <Route path="/Movies" element={<Movies />} />
+
+          <Route path="/People" element={<People />} />
+
+          <Route path="/Locations" element={<Locations />} />
+        </Routes>
+      </section>
+    );
+  }
 }
 
-
 export default App;
+
+// the api is https://ghibliapi.herokuapp.com
