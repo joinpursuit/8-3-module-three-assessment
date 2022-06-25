@@ -4,9 +4,17 @@ function LocationDisplay(props) {
     return (
       <li key={index}>
         <ul>
-          <li>Name: {location.name}</li>
-          <li>Climate: {location.climate}</li>
-          <li>Terrain: {location.terrain}</li>
+          <li>
+            <span>Name:</span> <span>{location.name}</span>
+          </li>
+          <li>
+            <span>Climate:</span>
+            <span>{location.climate}</span>
+          </li>
+
+          <li>
+            <span>Terrain:</span> <span>{location.terrain}</span>
+          </li>
         </ul>
       </li>
     );

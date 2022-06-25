@@ -14,6 +14,29 @@ class Locations extends React.Component {
     this.setState({ locationVisible: !this.state.locationVisible });
   };
 
+  sortByHandler = (target) => {
+    const URL = "https://ghibliapi.herokuapp.com/locations";
+
+    fetch(URL)
+      .then((result) => result.json())
+      .then((data) => {
+        data.pop();
+        const copyOfLocations = data;
+        copyOfLocations.sort((locationA, locationB) => {
+          if (locationA[target] > locationB[target]) {
+            return 1;
+          }
+          if (locationA[target] < locationB[target]) {
+            return -1;
+          }
+
+          return 0;
+        });
+        this.setState({ locations: copyOfLocations });
+      })
+      .catch((error) => console.log(error));
+  };
+
   componentDidMount() {
     const URL = "https://ghibliapi.herokuapp.com/locations";
 
@@ -34,6 +57,19 @@ class Locations extends React.Component {
         <button onClick={this.locationVisibleHandler}>
           {locationVisible ? "Hide Locations" : "Show Locations"}
         </button>
+        {locationVisible ? (
+          <>
+            <button onClick={() => this.sortByHandler("name")}>
+              Sort by Name
+            </button>
+            <button onClick={() => this.sortByHandler("climate")}>
+              Sort by Climate
+            </button>
+            <button onClick={() => this.sortByHandler("terrain")}>
+              Sort by Terrain
+            </button>
+          </>
+        ) : null}
         {locationVisible ? <LocationDisplay locations={locations} /> : null}
       </div>
     );
