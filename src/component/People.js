@@ -1,8 +1,6 @@
 import React from 'react';
 import './people.css';
 
-
-
 class People extends React.Component {
   constructor() {
     super();
@@ -66,7 +64,7 @@ class People extends React.Component {
                 <strong>Name:</strong> {searchedPerson.name}
               </p>
               <p>
-              <strong>Age:</strong> {searchedPerson.age}
+                <strong>Age:</strong> {searchedPerson.age}
               </p>
               <p>
                 <strong>Gender:</strong> {searchedPerson.gender}

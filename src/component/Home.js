@@ -1,14 +1,50 @@
 import React from 'react';
-import "./home.css"
+import './home.css';
 
+/**
+ * functions/state for retrieving movie images only
+ */
 class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      movieTitles: [],
+    };
+  }
+
+  FetchMovies = () => {
+    fetch('https://ghibliapi.herokuapp.com/films')
+      .then((result) => result.json())
+      .then((data) => {
+        this.setState({
+          movieTitles: data,
+        });
+      });
+  };
+
+  componentDidMount = () => {
+    this.FetchMovies();
+  };
+
   render() {
+    let { movieTitles } = this.state;
+    let moviePics = movieTitles.map((movie) => {
+      return (
+        <li className="movie-card">
+          <div>
+            <img src={movie.image} alt="thumbnail" />
+            <img src={movie.movie_banner} alt="banner" />
+          </div>
+        </li>
+      );
+    });
+
     return (
-        <div className='home'>
+      <div className="home">
         <h1>Welcome to GhibliApp</h1>
-        <img src='https://media3.giphy.com/media/liUhPmZdArpYc/giphy.gif' alt='ghibly gif'/>
-        </div>
-    )
+        <ul className="moviePics">{moviePics}</ul>
+      </div>
+    );
   }
 }
 
