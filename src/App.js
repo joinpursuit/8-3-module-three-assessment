@@ -4,6 +4,7 @@ import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Movies from './Components/Movies';
 import People from './Components/People';
+import Locations from './Components/Locations';
 import { Route, Routes } from 'react-router-dom';
 
 class App extends Component {
@@ -45,8 +46,14 @@ class App extends Component {
             path="/movies"
             element={<Movies allMovies={this.state.movies} />}
           />
-          <Route path="/people" element={<People allPeople={this.state.people}/>} />
-          <Route path="/locations" />
+          <Route
+            path="/people"
+            element={<People allPeople={this.state.people} />}
+          />
+          <Route
+            path="/locations"
+            element={<Locations allLocations={this.state.locations} />}
+          />
         </Routes>
       </div>
     );

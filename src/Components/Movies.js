@@ -18,7 +18,7 @@ class Movies extends Component {
 
   render() {
     const movieList = this.props.allMovies.map((movie) => {
-      return <option value={movie.id}>{movie.title}</option>;
+      return <option key={movie.id} value={movie.id}>{movie.title}</option>;
     });
 
     const movieData = this.props.allMovies.find(
