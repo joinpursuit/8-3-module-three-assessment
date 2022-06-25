@@ -30,13 +30,7 @@ class Locations extends React.Component {
     });
   };
 
-  // data= this.state.locations
-  // sortName = (data) => {
-  //   let sortedNames = new Set(data.map((element) => element.terrain));
-  //   this.setState({
-  //     locations: sortedNames,
-  //   });
-  // };
+  // TODO maybe find a way to get these 3 functions into 1 and make it dynamic
 
   sortName = (data) => {
     let sortedArr = data.sort((a, b) => {
@@ -99,9 +93,15 @@ class Locations extends React.Component {
           {display ? (
             <div>
               <button onClick={this.showLocationHandler}>Hide Locations</button>
-              <button onClick={() => this.sortName(locations)}>Sort by Name</button>
-              <button onClick={() => this.sortClimate(locations)}>Sort by Climate</button>
-              <button onClick={() => this.sortTerrain(locations)}>Sort by Terrain</button>
+              <button onClick={() => this.sortName(locations)}>
+                Sort by Name
+              </button>
+              <button onClick={() => this.sortClimate(locations)}>
+                Sort by Climate
+              </button>
+              <button onClick={() => this.sortTerrain(locations)}>
+                Sort by Terrain
+              </button>
             </div>
           ) : (
             <button onClick={this.showLocationHandler}>Show Locations</button>
