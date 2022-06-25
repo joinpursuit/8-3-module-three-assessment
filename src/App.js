@@ -46,14 +46,8 @@ class App extends Component {
             path="/movies"
             element={<Movies allMovies={this.state.movies} />}
           />
-          <Route
-            path="/people"
-            element={<People allPeople={this.state.people} />}
-          />
-          <Route
-            path="/locations"
-            element={<Locations allLocations={this.state.locations} />}
-          />
+          <Route path="/people" element={<People allPeople={this.state.people}/>} />
+          <Route path="/locations" element={<Locations />}/>
         </Routes>
       </div>
     );

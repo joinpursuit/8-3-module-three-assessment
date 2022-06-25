@@ -2,13 +2,25 @@ import { Component } from 'react';
 import './Locations.css';
 
 class Locations extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       show: false,
       sort: '',
-      locations: [...this.props.allLocations],
+      locations: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('https://ghibliapi.herokuapp.com/locations')
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        this.setState({
+          locations: [...response],
+        });
+      });
   }
 
   toggleShow = () => {
@@ -23,54 +35,6 @@ class Locations extends Component {
       sort: event.target.value,
     });
   };
-
-  //   sortByClimate = (event) => {
-  //     event.preventDefault()
-  //     const [ ...byClimate ] = this.props.allLocations
-
-  //     const array2 = byClimate.sort(function(a, b) {
-  //         const climateA = a.climate.toUpperCase(); // ignore upper and lowercase
-  //         const climateB = b.climate.toUpperCase(); // ignore upper and lowercase
-  //         if (climateA < climateB) {
-  //           return -1;
-  //         }
-  //         if (climateA > climateB) {
-  //           return 1;
-  //         }
-
-  //         // names must be equal
-  //         return 0;
-  //       });
-
-  //       this.setState({
-  //           sort: event.target.value,
-  //           locations: [...array2]
-  //       })
-  //   }
-
-  //   sortByTerrain = (event) => {
-  //     event.preventDefault()
-  //     const [ ...byTerrain ] = this.props.allLocations
-
-  //     const array3 = byTerrain.sort(function(a, b) {
-  //         const terrainA = a.terrain.toUpperCase(); // ignore upper and lowercase
-  //         const terrainB = b.terrain.toUpperCase(); // ignore upper and lowercase
-  //         if (terrainA < terrainB) {
-  //           return -1;
-  //         }
-  //         if (terrainA > terrainB) {
-  //           return 1;
-  //         }
-
-  //         // names must be equal
-  //         return 0;
-  //       });
-
-  //       this.setState({
-  //           sort: event.target.value,
-  //           locations: [...array3]
-  //       })
-  //   }
 
   render() {
     const getSort = (arr, sort) => {
@@ -96,9 +60,18 @@ class Locations extends Component {
         return (
           <li key={location.id}>
             <ul>
-              <li>{location.name}</li>
-              <li>{location.climate}</li>
-              <li>{location.terrain}</li>
+              <li>
+                <span>Name:</span>
+                <span>{location.name}</span>
+              </li>
+              <li>
+                <span>Climate:</span>
+                <span>{location.climate}</span>
+              </li>
+              <li>
+                <span>Terrain:</span>
+                <span>{location.terrain}</span>
+              </li>
             </ul>
           </li>
         );
@@ -109,23 +82,23 @@ class Locations extends Component {
       <div className="locations">
         <h1>List of Locations</h1>
         <button onClick={this.toggleShow}>
-          {this.state.show ? 'HIDE' : 'SHOW'} LOCATIONS
+          {this.state.show ? 'Hide' : 'Show'} Locations
         </button>
         {this.state.show ? (
           <>
             <button onClick={this.sortBy} value="name">
-              SORT BY NAME
+              Sort by Name
             </button>
             <button onClick={this.sortBy} value="climate">
-              SORT BY CLIMATE
+              Sort by Climate
             </button>
             <button onClick={this.sortBy} value="terrain">
-              SORT BY TERRAIN
+              Sort by Terrain
             </button>
           </>
         ) : null}
         {this.state.show ? (
-          <ul className="location-grid">{desiredLocations}</ul>
+          <ul className="location">{desiredLocations}</ul>
         ) : null}
       </div>
     );

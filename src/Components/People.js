@@ -50,8 +50,7 @@ class People extends Component {
           <div>
             <h3>Name: {this.state.match.name}</h3>
             <p>Age: {this.state.match.age}</p>
-            <p>Eye Color: {this.state.match.eye_color}</p>
-            <p>Hair Color: {this.state.match.hair_color}</p>
+            <p>Gender: {this.state.match.gender}</p>
           </div>
         ) : (
           <p>{this.state.match}</p>
