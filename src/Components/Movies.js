@@ -5,6 +5,8 @@ export default class Movies extends Component {
     super();
     this.state = {
       listOfMovies: [],
+      selectedMovie: "",
+      description: "",
     };
   }
 
@@ -25,17 +27,38 @@ export default class Movies extends Component {
     this.fetchMovies();
   }
 
+  handleSelectedMovie = (event) => {
+    this.setState({
+      selectedMovie: event.target.value,
+    });
+  };
+
   render() {
-    let { listOfMovies } = this.state;
+    let { listOfMovies, selectedMovie } = this.state;
 
     let movieTitles = listOfMovies.map((movie) => {
       return <option key={movie.id}>{movie.title}</option>;
     });
 
+    let moviePicked = () => {
+      return <p>{selectedMovie}</p>;
+    };
+
+    let movieDescription = listOfMovies.map((movie) => {
+      if (movie.title === selectedMovie) {
+        return <p key={movie.id}>{movie.description}</p>;
+      }
+    });
+
     return (
       <div className="movies">
         <h1>Select a movie</h1>
-        <select>{movieTitles}</select>
+        <select onChange={this.handleSelectedMovie}>
+          <option></option>
+          {movieTitles}
+        </select>
+        <h2>{moviePicked()}</h2>
+        <>{movieDescription}</>
       </div>
     );
   }
