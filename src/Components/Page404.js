@@ -7,8 +7,10 @@ class Page404 extends Component {
       <section>
         <h1 style={{ textAlign: 'center', padding: '2rem 0' }}>
           Page Not Found
-          <Link to='/home'>Home</Link>
         </h1>
+        <div style={{ margin: '0 auto', textAlign: 'center' }}>
+          <Link to='/'>Home</Link>
+        </div>
       </section>
     );
   }
