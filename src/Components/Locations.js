@@ -20,7 +20,6 @@ class Locations extends React.Component {
     fetch(URL)
       .then((result) => result.json())
       .then((data) => {
-        data.pop();
         const copyOfLocations = data;
         copyOfLocations.sort((locationA, locationB) => {
           if (locationA[target] > locationB[target]) {
