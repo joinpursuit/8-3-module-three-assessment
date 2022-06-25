@@ -6,6 +6,7 @@ export default class Locations extends Component {
 		this.state = {
 			show: false,
 			locations: [],
+			currentSort: "",
 		};
 	}
 	showLocations = () => {
@@ -31,6 +32,7 @@ export default class Locations extends Component {
 		});
 		this.setState({
 			locations: [...temp],
+			currentSort: "name",
 		});
 	};
 	sortByClimate = () => {
@@ -45,6 +47,7 @@ export default class Locations extends Component {
 		});
 		this.setState({
 			locations: [...temp],
+			currentSort: "climate",
 		});
 	};
 	sortByTerrain = () => {
@@ -59,14 +62,30 @@ export default class Locations extends Component {
 		});
 		this.setState({
 			locations: [...temp],
+			currentSort: "terrain",
 		});
 	};
 	render() {
 		let sortButtons = (
 			<div>
-				<button onClick={this.sortByName}>Sort by Name</button>
-				<button onClick={this.sortByClimate}>Sort by Climate</button>
-				<button onClick={this.sortByTerrain}>Sort by Terrain</button>
+				<button
+					className={this.state.currentSort === "name" ? `selected` : null}
+					onClick={this.sortByName}
+				>
+					Sort by Name
+				</button>
+				<button
+					className={this.state.currentSort === "climate" ? `selected` : null}
+					onClick={this.sortByClimate}
+				>
+					Sort by Climate
+				</button>
+				<button
+					className={this.state.currentSort === "terrain" ? `selected` : null}
+					onClick={this.sortByTerrain}
+				>
+					Sort by Terrain
+				</button>
 			</div>
 		);
 		return (
@@ -81,7 +100,7 @@ export default class Locations extends Component {
 						{this.state.show &&
 							this.state.locations.map((location) => {
 								return (
-									<li key={location.id}>
+									<li key={location.id} className="location-card">
 										<ul>
 											<li>Name: {location.name}</li>
 											<li>Climate: {location.climate}</li>
