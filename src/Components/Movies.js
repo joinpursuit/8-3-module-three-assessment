@@ -12,7 +12,6 @@ export default class Movies extends Component {
 	handleChange = (event) => {
 		const { value } = event.target;
 		this.setState({ movie: value });
-		//empty value ="", make it have blank render
 	};
 	componentDidMount() {
 		this.getMovies();
