@@ -23,12 +23,14 @@ a {
 	font-size: 36px;
 }
 a:hover {
-	background-color: aliceblue;
+	background-color: rgba(240, 240, 255, 0.743);
 	cursor: pointer;
+	transition: background-color 1s cubic-bezier(0.05, 0, 0, 1);
 }
 a.selected {
 	background-color: rgba(135, 177, 214, 0.321);
 }
 a.selected:hover {
 	background-color: rgba(135, 177, 214, 0.842);
+	transition: background-color 1s cubic-bezier(0.05, 0, 0, 1);
 }

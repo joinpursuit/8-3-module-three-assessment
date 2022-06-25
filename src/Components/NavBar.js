@@ -19,7 +19,7 @@ export default class NavBar extends Component {
 			<nav>
 				<Link to="/" onClick={() => this.changePage("home")}>
 					<img
-						src="https://i.pinimg.com/736x/03/51/71/0351711fe834c3a96656f65b4c54b2b2--studio-ghilbi-ghibli-movies.jpg"
+						src="https://upload.wikimedia.org/wikipedia/sco/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
 						alt="logo"
 					/>
 				</Link>
