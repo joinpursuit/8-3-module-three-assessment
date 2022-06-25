@@ -1,4 +1,21 @@
-img {
-    height: 50px;
-    width: 50px;
+
+.nav {
+  background-color: #117481;
+  display: flex;
+  justify-content:space-evenly;
+  column-gap: 100px;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav a{
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+}
+
+.nav div:hover {
+  color:#080342;
 }

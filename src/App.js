@@ -33,7 +33,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="background">
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

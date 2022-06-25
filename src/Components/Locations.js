@@ -1,4 +1,6 @@
 import React from "react";
+import "./Location.css";
+
 class Locations extends React.Component {
   constructor(props) {
     super(props);
@@ -10,21 +12,9 @@ class Locations extends React.Component {
       locations: this.props.locationsArray,
     });
   };
-  sortedByName = () => {
+  sortedByCriteria = (criteria) => {
     const sorted = this.state.locations.sort(function (a, b) {
-      return a.name.localeCompare(b.name);
-    });
-    this.setState({ locations: sorted });
-  };
-  sortedByClimate = () => {
-    const sorted = this.state.locations.sort(function (a, b) {
-      return a.climate.localeCompare(b.climate);
-    });
-    this.setState({ locations: sorted });
-  };
-  sortedByTerrain = () => {
-    const sorted = this.state.locations.sort(function (a, b) {
-      return a.terrain.localeCompare(b.terrain);
+      return a[criteria].localeCompare(b[criteria]);
     });
     this.setState({ locations: sorted });
   };
@@ -32,11 +22,19 @@ class Locations extends React.Component {
   populateLocations = (array) => {
     return array.map((location, idx) => {
       return (
-        <li>
+        <li className="single-location">
           <ul key={idx}>
-            <li>name: {location.name}</li>
-            <li>climate: {location.climate}</li>
-            <li>terrain: {location.terrain}</li>
+            <span>
+              <li className="text">
+                Name: <span className="value">{location.name}</span>
+              </li>
+              <li>
+                Climate: <span>{location.climate}</span>
+              </li>
+              <li>
+                Terrain: <span>{location.terrain}</span>
+              </li>
+            </span>
           </ul>
         </li>
       );
@@ -47,47 +45,50 @@ class Locations extends React.Component {
     const { show, locations } = this.state;
     return (
       <div className="locations">
-        <h1>List of Locations</h1>
-        <button
-          onClick={() => {
-            this.unorderedLocations();
-          }}
-          type="button"
-        >
-          {show ? "Hide Locations" : "Show Locations"}
-        </button>
-        {show && (
+        <div className="menu">
+          <h1 className="title">List of Locations</h1>
           <button
             onClick={() => {
-              this.sortedByName();
+              this.unorderedLocations();
             }}
             type="button"
           >
-            Sort by Name
+            {show ? "Hide Locations" : "Show Locations"}
           </button>
-        )}
-        {show && (
-          <button
-            onClick={() => {
-              this.sortedByClimate();
-            }}
-            type="button"
-          >
-            Sort by Climate
-          </button>
-        )}
-        {show && (
-          <button
-            onClick={() => {
-              this.sortedByTerrain();
-            }}
-            type="button"
-          >
-            Sort by Terrain
-          </button>
-        )}
-
-        <ul>{show ? this.populateLocations(locations) : null}</ul>
+          {show && (
+            <button
+              onClick={() => {
+                this.sortedByCriteria("name");
+              }}
+              type="button"
+            >
+              Sort by Name
+            </button>
+          )}
+          {show && (
+            <button
+              onClick={() => {
+                this.sortedByCriteria("climate");
+              }}
+              type="button"
+            >
+              Sort by Climate
+            </button>
+          )}
+          {show && (
+            <button
+              onClick={() => {
+                this.sortedByCriteria("terrain");
+              }}
+              type="button"
+            >
+              Sort by Terrain
+            </button>
+          )}
+        </div>
+        <ul className="location-gallery">
+          {show && this.populateLocations(locations)}
+        </ul>
       </div>
     );
   }

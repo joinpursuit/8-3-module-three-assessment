@@ -15,8 +15,8 @@ class People extends React.Component {
   };
   render() {
     return (
-      <div className="people">
-        <h2>Search for a Person</h2>
+      <div className="people menu">
+        <h2 className="title">Search for a Person</h2>
         <input
           name="name"
           type="text"

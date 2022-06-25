@@ -1,4 +1,5 @@
 import React from "react";
+import "./Movies.css";
 
 class Movies extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Movies extends React.Component {
       });
       return (
         <div>
-          <h2>Title: {foundMovie.title}</h2>
+          <p>Title: {foundMovie.title}</p>
           <p>Release Date: {foundMovie.release_date}</p>
           <p>Description: {foundMovie.description}</p>
         </div>
@@ -27,10 +28,10 @@ class Movies extends React.Component {
     };
 
     return (
-      <div className="movies">
+      <div className="movies menu dropdown">
         <form>
           <label>
-            <h2>Select a Movie</h2>
+            <div className="title">Select a Movie</div>
             <select value={this.state.value} onChange={this.handleChange}>
               <option value={null}></option>
               {this.props.movieArray.map((movie, idx) => {
@@ -44,9 +45,7 @@ class Movies extends React.Component {
           </label>
         </form>
 
-        <div>
-          {this.state.value ? printMovieInfo() : "Please select a movie"}
-        </div>
+        <div>{this.state.value ? printMovieInfo() : null}</div>
       </div>
     );
   }

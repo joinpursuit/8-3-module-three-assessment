@@ -3,12 +3,9 @@ import "./Nav.css";
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="nav">
       <Link to="/">
-        <img
-          src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/movies.png"
-          alt=""
-        />
+        <img src={process.env.PUBLIC_URL + "/movie-icon.png"} alt="" />
       </Link>
       <Link to="/movies">
         <div>Movies</div>
