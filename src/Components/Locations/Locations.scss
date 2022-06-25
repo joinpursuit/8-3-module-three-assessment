@@ -6,6 +6,7 @@
   height: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 
   .locationDetails {
     display: grid;
@@ -24,7 +25,8 @@
       padding: 0.5rem;
       border-radius: 1rem;
       background-color: rgb(252, 255, 192);
-      height: 10rem;
+      height: 100%;
+      box-shadow: 0rem 0rem 1.5rem rgb(0, 255, 0);
 
       .listItem {
         background-color: whitesmoke;
@@ -32,15 +34,9 @@
         grid-template-columns: repeat(2, 1fr);
         list-style: none;
         width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 3%;
       }
     }
   }
-
-  //       .listDot {
-  //         display: flex;
-  //         justify-content: center;
-  //         margin: 0 auto;
-  //       }
-  //     }
-  //   }
 }

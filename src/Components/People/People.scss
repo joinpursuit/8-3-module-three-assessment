@@ -6,6 +6,7 @@
   height: 100vh;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 
   #searchForm {
     display: grid;
@@ -21,6 +22,7 @@
     padding: 1rem;
     border-radius: 0.5rem;
     margin-top: 3%;
+    box-shadow: 0rem 0rem 1.5rem rgb(255, 0, 0);
 
     ul {
       list-style: none;
