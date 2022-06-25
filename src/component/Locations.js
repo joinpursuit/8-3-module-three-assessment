@@ -22,7 +22,6 @@ class Locations extends React.Component {
 
   componentDidMount = () => {
     this.getLocations();
-    // this.sortName(this.state.locations)
   };
 
   showLocationHandler = () => {
@@ -38,6 +37,33 @@ class Locations extends React.Component {
   //     locations: sortedNames,
   //   });
   // };
+
+  sortName = (data) => {
+    let sortedArr = data.sort((a, b) => {
+      if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+      if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+      return 0;
+    });
+    this.setState({ locations: sortedArr });
+  };
+
+  sortClimate = (data) => {
+    let sortedArr = data.sort((a, b) => {
+      if (a.climate.toLowerCase() > b.climate.toLowerCase()) return 1;
+      if (a.climate.toLowerCase() < b.climate.toLowerCase()) return -1;
+      return 0;
+    });
+    this.setState({ locations: sortedArr });
+  };
+
+  sortTerrain = (data) => {
+    let sortedArr = data.sort((a, b) => {
+      if (a.terrain.toLowerCase() > b.terrain.toLowerCase()) return 1;
+      if (a.terrain.toLowerCase() < b.terrain.toLowerCase()) return -1;
+      return 0;
+    });
+    this.setState({ locations: sortedArr });
+  };
 
   render() {
     let { locations, display } = this.state;
@@ -73,9 +99,9 @@ class Locations extends React.Component {
           {display ? (
             <div>
               <button onClick={this.showLocationHandler}>Hide Locations</button>
-              <button onClick={this.sortName}>Sort by Name</button>
-              <button>Sort by Climate</button>
-              <button>Sort by Terrain</button>
+              <button onClick={() => this.sortName(locations)}>Sort by Name</button>
+              <button onClick={() => this.sortClimate(locations)}>Sort by Climate</button>
+              <button onClick={() => this.sortTerrain(locations)}>Sort by Terrain</button>
             </div>
           ) : (
             <button onClick={this.showLocationHandler}>Show Locations</button>
