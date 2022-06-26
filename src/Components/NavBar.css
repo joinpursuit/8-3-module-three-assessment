@@ -1,0 +1,18 @@
+.navbar {
+  background: rgb(23, 23, 23);
+  padding: 20px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+a {
+  color: rgb(120, 120, 120);
+}
+
+a:hover {
+  color: white;
+}
+
+.logo:hover {
+  filter: invert(1);
+}
