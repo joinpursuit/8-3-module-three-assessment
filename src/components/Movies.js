@@ -33,6 +33,9 @@ class Movies extends React.Component {
     if(value !== '') {
       this.setState({movieSelected: value});
       this.setState({isSelected: true});
+    } else {
+      this.setState({movieSelected: ''});
+      this.setState({isSelected: false});  
     }
   };
 
@@ -101,7 +104,7 @@ class Movies extends React.Component {
           autoComplete="off"
         >
         <FormControl fullWidth>
-          <label id="demo-simple-select-label">Select a title</label>
+          <label id="demo-simple-select-label">Select a Movie</label>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -109,9 +112,11 @@ class Movies extends React.Component {
             name="movie-select"
             onChange={this.handleChange}
           >
-            <MenuItem key='0' value=''></MenuItem>
+            <MenuItem key='0' value='' ></MenuItem>
             {this.state.movieList.map(movie =>  {
-              return <MenuItem key={movie.id} value={movie.id}>{movie.title}</MenuItem>  
+              return  <MenuItem key={movie.id} 
+                                value={movie.id}>{movie.title}
+                      </MenuItem>  
             })}
           </Select>
         </FormControl>

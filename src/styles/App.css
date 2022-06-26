@@ -29,6 +29,9 @@ nav a.menu__item {
 .movies form label {
   font-size: 1rem;line-height: 2rem; font-weight: bold;color: #517e94;
 }
+.MuiList-root li {
+  min-height: 2rem;
+}
 
 .movies .movie__info {
   padding: 1rem;margin: 1rem auto;background-color: #E7EBF0;
