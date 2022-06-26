@@ -2,6 +2,8 @@ import "./LocationDisplay.css";
 
 function LocationDisplay(props) {
   const { locations } = props;
+
+  //display the locations
   const locationsList = locations.map((location, index) => {
     return (
       <li key={index}>

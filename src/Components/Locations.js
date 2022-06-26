@@ -6,15 +6,21 @@ class Locations extends React.Component {
   constructor() {
     super();
     this.state = {
-      locationVisible: false,
-      locations: [],
+      locationVisible: false, //hide or display location
+      locations: [], //array of ghibli movie's locations
     };
   }
 
+  //toggles the visibility of the locations
   locationVisibleHandler = () => {
     this.setState({ locationVisible: !this.state.locationVisible });
   };
 
+  /**
+   * Set the state with sorted locations according to the target, target
+   * could be name, climate or terrain
+   * @param {String} target - name, climate or terrain
+   */
   sortByHandler = (target) => {
     const URL = "https://ghibliapi.herokuapp.com/locations";
 
@@ -37,6 +43,7 @@ class Locations extends React.Component {
       .catch((error) => console.log(error));
   };
 
+  //Load the movies data after page was load
   componentDidMount() {
     const URL = "https://ghibliapi.herokuapp.com/locations";
 

@@ -6,12 +6,13 @@ class People extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedPeople: "",
-      peopleList: [],
-      submitedSearchInput: false,
+      selectedPeople: "", //user input ghibli character name
+      peopleList: [], //array of ghibli characters
+      submitedSearchInput: false, //keep track user click on the submit button
     };
   }
 
+  //update the submitedSearchInput to true when user clicked submit button
   submitHandler = (event) => {
     event.preventDefault();
 
@@ -20,6 +21,8 @@ class People extends React.Component {
     });
   };
 
+  //update the selectedPeople whe user type in the input bar, and set submitedSearchInput
+  //to false
   inputHandler = (event) => {
     this.setState({
       selectedPeople: event.target.value,
@@ -27,6 +30,7 @@ class People extends React.Component {
     });
   };
 
+  //load the characters data after page was load
   componentDidMount() {
     const URL = "https://ghibliapi.herokuapp.com/people";
 
@@ -40,6 +44,7 @@ class People extends React.Component {
 
   render() {
     const { peopleList, selectedPeople, submitedSearchInput } = this.state;
+
     return (
       <div className="people">
         <h3>Search for a Person</h3>
@@ -53,6 +58,8 @@ class People extends React.Component {
             SUBMIT
           </button>
         </form>
+
+        {/* Render particular charcter if user clicked the submit button */}
         {submitedSearchInput ? (
           <PeopleDetail
             peopleList={peopleList}

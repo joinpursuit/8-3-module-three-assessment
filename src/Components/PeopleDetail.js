@@ -6,10 +6,13 @@ function PeopleDetail(props) {
     return people.name.toLowerCase() === selectedPeople.toLowerCase();
   });
 
+  //By default assume the user input person can not found
   let displayPeople = <p className="notFound">Not Found</p>;
 
+  //if the character does exist, then display it
   if (selectedPeopleInfo) {
     const { name, age, eye_color, hair_color, gender } = selectedPeopleInfo;
+
     displayPeople = (
       <div className="peopleInfo">
         <h3>

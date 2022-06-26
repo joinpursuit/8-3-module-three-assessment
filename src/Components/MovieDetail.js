@@ -2,10 +2,13 @@ import "./MovieDetail.css";
 
 function MovieDetail(props) {
   const { movies, selectedMovie } = props;
+
+  //find the user selected movie
   const displayMovieDetail = movies.find((movie) => {
     return movie.title === selectedMovie;
   });
 
+  //display the movie details
   return (
     <div className="movieDetail">
       <h3>
