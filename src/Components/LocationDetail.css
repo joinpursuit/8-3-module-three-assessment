@@ -1,0 +1,7 @@
+.location-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+li{
+    border: 2px solid black;
+}

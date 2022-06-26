@@ -4,7 +4,7 @@ import Nav from './Components/Nav'
 import Home from './Components/Home'
 import Movies from './Components/Movies'
 import People from './Components/People'
-import Location from './Components/Location'
+import Locations from './Components/Locations'
 import React from 'react'
 
 class App extends React.Component {
@@ -36,7 +36,7 @@ class App extends React.Component {
           <Route path='/' element={<Home />} />
           <Route path='/movies' element={<Movies data={data} />} />
           <Route path='/people' element={<People />} />
-          <Route path='/location' element={<Location />} />
+          <Route path='/locations' element={<Locations />} />
         </Routes>
       </div>
     )

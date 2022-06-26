@@ -32,10 +32,12 @@ class Movies extends React.Component {
   render() {
     const { data } = this.props
     const { movieTitle } = this.state
+    
     return (
       <div className='movies'>
         <h2>Select a movie</h2>
         <select name='title' id='title' onChange={this.handleChange}>
+          <option value=''></option>
           {data.map((movie, index) => (
             <option value={movie.title} key={index}>
               {movie.title}
