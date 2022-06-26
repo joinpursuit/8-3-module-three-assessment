@@ -2,6 +2,27 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-li{
-    border: 2px solid black;
+li {
+  border: 1px solid #93c0d7;
+  padding: 2%;
+  background-color: #e0d7cd;
+}
+ul {
+  list-style-type: none;
+}
+
+.sort-name {
+  font-size: 90%;
+}
+
+.sort-climate {
+  font-size: 90%;
+}
+
+.sort-terrain {
+  font-size: 90%;
+}
+
+.show-location {
+  font-size: 90%;
 }

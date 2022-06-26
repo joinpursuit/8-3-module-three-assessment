@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Movie.css'
 class Movies extends React.Component {
   constructor() {
     super()
@@ -32,10 +32,10 @@ class Movies extends React.Component {
   render() {
     const { data } = this.props
     const { movieTitle } = this.state
-    
+
     return (
       <div className='movies'>
-        <h2>Select a movie</h2>
+        <h1>Select a movie</h1>
         <select name='title' id='title' onChange={this.handleChange}>
           <option value=''></option>
           {data.map((movie, index) => (
@@ -45,8 +45,13 @@ class Movies extends React.Component {
           ))}
         </select>
         <h2>Title: {movieTitle}</h2>
-        <p>Released Date: {this.getDate(data, movieTitle)}</p>
-        <p>Description: {this.getDetail(data, movieTitle)} </p>
+        <p>
+          <strong>Released Date: </strong> {this.getDate(data, movieTitle)}
+        </p>
+        <p>
+          <strong>Description: </strong>
+          {this.getDetail(data, movieTitle)}
+        </p>
       </div>
     )
   }

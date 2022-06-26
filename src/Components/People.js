@@ -45,13 +45,18 @@ class People extends React.Component {
     console.log(findName)
     return (
       <div className='people'>
-        <h2>Search for a Person</h2>
+        <h1>Search for a Person</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' onChange={this.handleChange} />
-          <button>Submit</button>
+          <input
+            type='text'
+            placeholder='Enter first letter in Cap'
+            onChange={this.handleChange}
+            required
+          />
+          <button className='submit'>Submit</button>
         </form>
         {findName ? (
-          <section key={findName}>
+          <section key={findName.id}>
             <h2>Name: {findName.name}</h2>
             <p>EyeColor: {findName.eye_color}</p>
             <p>Hair Color: {findName.hair_color}</p>

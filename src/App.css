@@ -1,11 +1,6 @@
-img {
-  width: 10;
-  height: 10;
-}
-
 body {
   background-color: #90bfe8;
-  color: #3A458A
+  color: #3a458a;
 }
 
 button {
@@ -13,7 +8,6 @@ button {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   background: transparent;
-  /* outline: none !important; */
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;

@@ -2,7 +2,7 @@ import './Home.css'
 function Home() {
   return (
     <div>
-      <h2>Welcome to GhibliApp</h2>
+      <h1>Welcome to GhibliApp</h1>
     </div>
   )
 }

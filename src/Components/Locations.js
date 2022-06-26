@@ -72,16 +72,16 @@ class Locations extends React.Component {
   render() {
     return (
       <div className='locations'>
-        <button onClick={() => this.toggle()}>
+        <button onClick={() => this.toggle()} className='show-location'>
           {this.state.show ? 'Show Locations' : 'Hide Locations'}
         </button>
         {this.state.show && (
-          <section>
-            <button onClick={this.handleSortName}>Sort By Name</button>
-            <button onClick={this.handleSortClimate}>Sort By Climate</button>
-            <button onClick={this.handleSortTerrain}>Sort By Terrain</button>
+          <>
+            <button onClick={this.handleSortName} className='sort-name'>Sort By Name</button>
+            <button onClick={this.handleSortClimate} className='sort-climate'>Sort By Climate</button>
+            <button onClick={this.handleSortTerrain} className='sort-terrain'>Sort By Terrain</button>
             <LocationDetail locationData={this.state.locations} />
-          </section>
+          </>
         )}
       </div>
     )
