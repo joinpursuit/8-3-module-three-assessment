@@ -1,5 +1,7 @@
+import "./HomePage.css";
+
 function HomePage() {
-  return <section>Welcome to GhibliApp</section>;
+  return <div className="home">Welcome to GhibliApp</div>;
 }
 
 export default HomePage;

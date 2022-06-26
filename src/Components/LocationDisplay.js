@@ -1,9 +1,11 @@
+import "./LocationDisplay.css";
+
 function LocationDisplay(props) {
   const { locations } = props;
   const locationsList = locations.map((location, index) => {
     return (
       <li key={index}>
-        <ul>
+        <ul className="currentLocation">
           <li>
             <span>Name:</span> <span>{location.name}</span>
           </li>
@@ -11,7 +13,6 @@ function LocationDisplay(props) {
             <span>Climate:</span>
             <span>{location.climate}</span>
           </li>
-
           <li>
             <span>Terrain:</span> <span>{location.terrain}</span>
           </li>
@@ -20,7 +21,7 @@ function LocationDisplay(props) {
     );
   });
 
-  return <ul>{locationsList}</ul>;
+  return <ul className="locationsDisplay">{locationsList}</ul>;
 }
 
 export default LocationDisplay;

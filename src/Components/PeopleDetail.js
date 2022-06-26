@@ -1,20 +1,32 @@
+import "./PeopleDetail.css";
+
 function PeopleDetail(props) {
   const { selectedPeople, peopleList } = props;
   const selectedPeopleInfo = peopleList.find((people) => {
     return people.name.toLowerCase() === selectedPeople.toLowerCase();
   });
 
-  let displayPeople = <p>Not Found</p>;
+  let displayPeople = <p className="notFound">Not Found</p>;
 
   if (selectedPeopleInfo) {
     const { name, age, eye_color, hair_color, gender } = selectedPeopleInfo;
     displayPeople = (
-      <div>
-        <h3>Name: {name}</h3>
-        <p>Age: {age}</p>
-        <p>Gender: {gender}</p>
-        <p>Eye Color: {eye_color}</p>
-        <p>Hair Color: {hair_color}</p>
+      <div className="peopleInfo">
+        <h3>
+          <span className="bold">Name:</span> {name}
+        </h3>
+        <p>
+          <span className="bold">Age:</span> {age}
+        </p>
+        <p>
+          <span className="bold">Gender:</span> {gender}
+        </p>
+        <p>
+          <span className="bold">Eye Color:</span> {eye_color}
+        </p>
+        <p>
+          <span className="bold">Hair Color:</span> {hair_color}
+        </p>
       </div>
     );
   }

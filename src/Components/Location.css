@@ -1,0 +1,22 @@
+.locations{
+    width: 85%;
+    background-color: rgb(228, 204, 211);
+    margin: auto;
+    text-align: center;
+}
+
+h3{
+    padding-top: 30px;
+    font-size: 32px;
+ }
+
+ .button{
+     background-color: rgb(228, 204, 211);
+     margin-left: 20px;
+     height: 40px;
+     width: 90px;
+ }
+
+ .button:hover{
+     background-color: rgb(171, 82, 107);
+ }

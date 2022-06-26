@@ -1,5 +1,6 @@
 import React from "react";
 import PeopleDetail from "./PeopleDetail";
+import "./People.css";
 
 class People extends React.Component {
   constructor() {
@@ -48,7 +49,9 @@ class People extends React.Component {
             value={this.state.selectedPeople}
             onChange={this.inputHandler}
           />
-          <button type="submit">SUBMIT</button>
+          <button type="submit" className="submit">
+            SUBMIT
+          </button>
         </form>
         {submitedSearchInput ? (
           <PeopleDetail

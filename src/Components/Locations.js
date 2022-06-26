@@ -1,5 +1,6 @@
 import React from "react";
 import LocationDisplay from "./LocationDisplay";
+import "./Location.css";
 
 class Locations extends React.Component {
   constructor() {
@@ -53,18 +54,27 @@ class Locations extends React.Component {
     return (
       <div className="locations">
         <h3>List of Locations</h3>
-        <button onClick={this.locationVisibleHandler}>
+        <button className="button" onClick={this.locationVisibleHandler}>
           {locationVisible ? "Hide Locations" : "Show Locations"}
         </button>
         {locationVisible ? (
           <>
-            <button onClick={() => this.sortByHandler("name")}>
+            <button
+              className="button"
+              onClick={() => this.sortByHandler("name")}
+            >
               Sort by Name
             </button>
-            <button onClick={() => this.sortByHandler("climate")}>
+            <button
+              className="button"
+              onClick={() => this.sortByHandler("climate")}
+            >
               Sort by Climate
             </button>
-            <button onClick={() => this.sortByHandler("terrain")}>
+            <button
+              className="button"
+              onClick={() => this.sortByHandler("terrain")}
+            >
               Sort by Terrain
             </button>
           </>

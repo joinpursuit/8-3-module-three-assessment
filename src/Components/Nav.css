@@ -1,9 +1,31 @@
 nav {
-    height: 300px;
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr;
+    height: 100px;
     background-color: aquamarine;
 }
 
 .logo2{
     height: 50px;
-    width: 50px;
+    width: 50px; 
+    margin-left:50px;
+    margin-top: 25px;
 }
+
+.navigation{
+    height: 50px;
+    width: 150px;
+    background-color: hotpink;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.navigation:hover{
+    background-color: pink;
+}
+
+a{
+    text-decoration: none;
+}
+

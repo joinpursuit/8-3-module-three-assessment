@@ -9,13 +9,13 @@ function Nav() {
         <img className="logo2" src={require("./images/logo2.png")} alt="logo" />
       </Link>
       <Link to="movies">
-        <div>Movies</div>
+        <div className="navigation">Movies</div>
       </Link>
       <Link to="people">
-        <div>People</div>
+        <div className="navigation">People</div>
       </Link>
       <Link to="locations">
-        <div>Locations</div>
+        <div className="navigation">Locations</div>
       </Link>
     </nav>
   );
