@@ -1,3 +1,5 @@
+import './People.css'
+
 import React from 'react'
 
 class People extends React.Component {

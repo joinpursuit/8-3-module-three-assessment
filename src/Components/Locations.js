@@ -5,7 +5,7 @@ class Locations extends React.Component {
   constructor() {
     super()
     this.state = {
-      showButton: false,
+      showButton: true,
       locations: [],
     }
   }
@@ -22,52 +22,66 @@ class Locations extends React.Component {
       .catch((error) => console.log(error))
   }
 
-  handleShow = () => {
-    this.setState({ showButton: true })
-  }
+  toggle = () => this.setState({ show: !this.state.show })
 
-  handleHide = () => {
-    this.setState({ showButton: false })
-  }
-  handleSort = () => {
-    // console.log("ldhjfkld")
-
-    let locationName = this.state.locations.map((location) => location.name)
-
-    locationName.sort((a, b) => {
-      // let nameA = a.toUpperCase()
-      // let nameB = b.toUpperCase()
-
-      if (a > b) {
+  handleSortName = () => {
+    let sorted = this.state.locations.sort((a, b) => {
+      if (a.name > b.name) {
         return 1
       }
-      if (a < b) {
+      if (a.name < b.name) {
         return -1
       }
       return 0
     })
-    console.log(locationName)
+    this.setState({
+      sorted,
+    })
+  }
+
+  handleSortClimate = () => {
+    let sorted = this.state.locations.sort((a, b) => {
+      if (a.climate > b.climate) {
+        return 1
+      }
+      if (a.climate < b.climate) {
+        return -1
+      }
+      return 0
+    })
+    this.setState({
+      sorted,
+    })
+  }
+
+  handleSortTerrain = () => {
+    let sorted = this.state.locations.sort((a, b) => {
+      if (a.terrain > b.terrain) {
+        return 1
+      }
+      if (a.terrain < b.terrain) {
+        return -1
+      }
+      return 0
+    })
+    this.setState({
+      sorted,
+    })
   }
 
   render() {
     return (
       <div className='locations'>
-        <h2>List of Locations</h2>
-        {this.state.showButton ? (
-          <div>
-            <button onClick={this.handleHide}>Hide Locations</button>
-            <button onClick={this.handleSort}>Sort By Name</button>
-            <button>Sort By Climate</button>
-            <button>Sort By Terrain</button>
-            <LocationDetail
-              locations={this.state.locations}
-              sortName={this.handleSort}
-            />
-          </div>
-        ) : (
-          <div>
-            <button onClick={() => this.handleShow()}>Show Locations</button>
-          </div>
+        <button onClick={() => this.toggle()}>
+          {this.state.show ? 'Show Locations' : 'Hide Locations'}
+        </button>
+        {this.state.show && (
+          <section>
+            <button onClick={this.handleSortName}>Sort By Name</button>
+            <button onClick={this.handleSortClimate}>Sort By Climate</button>
+            <button onClick={this.handleSortTerrain}>Sort By Terrain</button>
+            <LocationDetail locationData={this.state.locations} />
+          </section>
         )}
       </div>
     )
