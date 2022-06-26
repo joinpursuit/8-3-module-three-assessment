@@ -46,6 +46,7 @@ export default class People extends Component {
 						name="search"
 						value={this.state.search}
 						onChange={this.handleChange}
+						placeholder="Search"
 					/>
 
 					<button>Search</button>
