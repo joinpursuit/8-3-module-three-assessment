@@ -42,7 +42,6 @@ class App extends React.Component {
             <Nav />
           </nav>
           <Routes>
-            {/* COMPONENTS */}
             <Route path="/" element={<Home />} />
             <Route
               path="/movies"

@@ -4,7 +4,7 @@ const LocationCard = ({ location }) => {
   const { name, climate, terrain } = location;
   return (
     <ul className="card">
-      <span>
+      <span className="mini-card">
         <li>
           Name: <span>{name}</span>
         </li>

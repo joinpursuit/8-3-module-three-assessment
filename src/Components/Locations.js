@@ -8,6 +8,10 @@ class Locations extends React.Component {
     this.state = {
       locations: [],
       clicked: false,
+      showClickedOn: false,
+      nameClickedOn: false,
+      climateClickedOn: false,
+      terrainClickedOn: false,
     };
   }
 
@@ -27,6 +31,7 @@ class Locations extends React.Component {
   updateClick = () => {
     this.setState({
       clicked: !this.state.clicked,
+      showClickedOn: !this.state.showClickedOn,
     });
   };
 
@@ -41,6 +46,9 @@ class Locations extends React.Component {
           return 0;
         }
       }),
+      nameClickedOn: !this.state.nameClickedOn,
+      climateClickedOn: false,
+      terrainClickedOn: false,
     });
   };
   sortByClimate = (arrayOfLocations) => {
@@ -54,6 +62,9 @@ class Locations extends React.Component {
           return 0;
         }
       }),
+      nameClickedOn: false,
+      climateClickedOn: !this.state.climateClickedOn,
+      terrainClickedOn: false,
     });
   };
   sortByTerrain = (arrayOfLocations) => {
@@ -67,36 +78,59 @@ class Locations extends React.Component {
           return 0;
         }
       }),
+      nameClickedOn: false,
+      climateClickedOn: false,
+      terrainClickedOn: !this.state.terrainClickedOn,
     });
   };
 
   render() {
     return (
-      <div>
+      <div className="locations">
         <h1>List of Locations</h1>
-        <button onClick={() => this.updateClick()}>
+        <button
+          className={this.state.showClickedOn ? "clicked-on" : "not-clicked"}
+          onClick={() => this.updateClick()}
+        >
           {this.state.clicked ? "Hide Locations" : "Show Locations"}
         </button>
-        <div className="locations">
+        <div>
           {this.state.clicked ? (
             <section>
               <button
+                className={
+                  this.state.nameClickedOn ? "name-clicked-on" : "not-clicked"
+                }
                 onClick={() => {
                   this.sortByName(this.state.locations);
                 }}
               >
                 Sort by Name
               </button>
-              <button onClick={() => this.sortByClimate(this.state.locations)}>
+              <button
+                className={
+                  this.state.climateClickedOn
+                    ? "climate-clicked-on"
+                    : "not-clicked"
+                }
+                onClick={() => this.sortByClimate(this.state.locations)}
+              >
                 Sort by Climate
               </button>
-              <button onClick={() => this.sortByTerrain(this.state.locations)}>
+              <button
+                className={
+                  this.state.terrainClickedOn
+                    ? "terrain-clicked-on"
+                    : "not-clicked"
+                }
+                onClick={() => this.sortByTerrain(this.state.locations)}
+              >
                 Sort by Terrain
               </button>{" "}
             </section>
           ) : null}
-          <div className={this.state.clicked ? "container" : "hidden"}>
-            <ul>
+          <div className={this.state.clicked ? "show" : "hidden"}>
+            <ul className="container">
               {this.state.locations.map((location) => {
                 return <LocationCard location={location} />;
               })}

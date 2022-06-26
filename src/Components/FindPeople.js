@@ -17,6 +17,9 @@ class FindPeople extends React.Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
+    this.setState({
+      searchedPerson: "",
+    });
   };
 
   render() {
@@ -28,6 +31,7 @@ class FindPeople extends React.Component {
             id="find-person"
             type="text"
             onChange={(event) => this.updatePersonInput(event)}
+            required
           />
           <button
             type="submit"
@@ -36,9 +40,6 @@ class FindPeople extends React.Component {
             Submit
           </button>
         </form>
-        {/* {foundPerson !== null && (
-          <DisplayPersonInfo foundPerson={foundPerson} />
-        )} */}
       </div>
     );
   }

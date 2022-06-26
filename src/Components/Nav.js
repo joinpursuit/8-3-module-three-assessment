@@ -7,7 +7,7 @@ const Nav = () => {
       <Link to="/">
         {" "}
         <img
-          src="https://bcassetcdn.com/public/blog/wp-content/uploads/2021/10/21172945/Ghostbusters.png"
+          src="https://cdn-icons-png.flaticon.com/512/3939/3939867.png"
           alt="GhostBusters"
         />
       </Link>

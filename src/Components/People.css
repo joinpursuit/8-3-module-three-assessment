@@ -1,3 +1,11 @@
 .people {
     text-align: center;
 }
+
+.display {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

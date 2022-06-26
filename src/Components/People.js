@@ -9,6 +9,7 @@ export default class People extends Component {
     this.state = {
       people: [],
       foundPerson: {},
+      searchMade: false,
     };
   }
 
@@ -29,7 +30,7 @@ export default class People extends Component {
     const found = this.state.people.find((person) => {
       return person.name.toLowerCase() === searchedPerson.toLowerCase();
     });
-    this.setState({ foundPerson: found });
+    this.setState({ foundPerson: found, searchMade: true });
   };
 
   render() {
@@ -40,7 +41,9 @@ export default class People extends Component {
           getSearchedPerson={this.getSearchedPerson}
           foundPerson={this.state.foundPerson}
         />
-        <DisplayPersonInfo foundPerson={this.state.foundPerson} />
+        {this.state.searchMade && (
+          <DisplayPersonInfo foundPerson={this.state.foundPerson} />
+        )}
       </div>
     );
   }
