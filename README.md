@@ -31,7 +31,7 @@ If you have gotten all the tests passing, you are strongly encouraged to work on
 To run the tests, you can run the following command from the command line. You will need to be in the root directory of your local directory.
 
 ```
-npm run cypress
+npm run test
 ```
 
 This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
@@ -54,7 +54,7 @@ You will need to complete features for four different pages and create a navigat
 
 #### Home page (`/`) : 1 point
 
-- [ ] Your home page should be accessible via the `/` route and include the following text:
+- [ok] Your home page should be accessible via the `/` route and include the following text:
 
   ```
   Welcome to GhibliApp
@@ -64,13 +64,14 @@ You will need to complete features for four different pages and create a navigat
 
 #### Navigation bar : 1 point
 
-- [ ] The navigation bar should be created using the `nav` element.
+- [ok] The navigation bar should be created using the `nav` element.
 
-- [ ] The navigation bar should include a logo of your choosing which is 50px wide and 50px high. It should be displayed in the upper-left corner of the page.
+- [ok] The navigation bar should include a logo of your choosing which is 50px wide and 50px high.
+  It should be displayed in the upper-left corner of the page.
 
-- [ ] Clicking on the logo should return the user to the home page.
+- [ok] Clicking on the logo should return the user to the home page.
 
-- [ ] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
+- [ok] The navigation bar should includes links for "Movies", "People", and "Locations". Each link should go to the related route.
 
 #### Movies page (`/movies`) select dropdown : 1 point
 
