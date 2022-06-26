@@ -18,6 +18,7 @@ function App() {
         <Route path="/movies" element={<Movies />} />
         <Route path="/people" element={<People />} />
         <Route path="/locations" element={<Locations />} />
+        <Route path="/*" element={<></>} />
       </Routes>
     </div>
   );
