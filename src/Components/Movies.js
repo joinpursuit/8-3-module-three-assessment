@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Components/Movies.css";
 
 export default class Movies extends Component {
   constructor() {
@@ -35,6 +36,7 @@ export default class Movies extends Component {
 
   render() {
     let { listOfMovies, selectedMovie } = this.state;
+    let idCounter = 0;
 
     let movieTitles = listOfMovies.map((movie) => {
       return <option key={movie.id}>{movie.title}</option>;
@@ -46,7 +48,16 @@ export default class Movies extends Component {
 
     let movieDescription = listOfMovies.map((movie) => {
       if (movie.title === selectedMovie) {
-        return <p key={movie.id}>{movie.description}</p>;
+        return (
+          <div key={idCounter++}>
+            <p>
+              <strong>Release Date:</strong> {movie.release_date}
+            </p>
+            <p key={movie.id}>
+              <strong>Description:</strong> {movie.description}
+            </p>
+          </div>
+        );
       }
     });
 
@@ -57,8 +68,10 @@ export default class Movies extends Component {
           <option></option>
           {movieTitles}
         </select>
-        <h2>{moviePicked()}</h2>
-        <>{movieDescription}</>
+        <div className="description">
+          <h2>{moviePicked()}</h2>
+          <div>{movieDescription}</div>
+        </div>
       </div>
     );
   }

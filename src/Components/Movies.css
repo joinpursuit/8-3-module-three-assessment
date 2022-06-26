@@ -1,0 +1,13 @@
+.movies {
+    text-align: center;
+    background-color: #add8e6;
+    height: 700px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+div.description {
+    margin-right: 75px;
+    margin-left: 75px;
+    background-color: #e0ffff;
+}

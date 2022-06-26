@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Components/People.css";
 
 export default class People extends Component {
   constructor() {
@@ -56,10 +57,10 @@ export default class People extends Component {
           ></input>
           <button type="submit">Submit</button>
         </form>
-        <div>
+        <div className="people-description">
           {searchedCharacter ? (
             <div>
-              <h2>Name:</h2> {searchedCharacter.name}
+              <h2>Name: {searchedCharacter.name}</h2>
               <p>Age:{searchedCharacter.age}</p>
               <p>Gender: {searchedCharacter.gender}</p>
               <p>Eye Color: {searchedCharacter.eye_color}</p>

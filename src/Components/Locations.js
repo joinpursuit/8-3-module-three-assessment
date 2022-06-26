@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Components/Locations.css";
 
 export default class Locations extends Component {
   constructor() {
@@ -32,6 +33,26 @@ export default class Locations extends Component {
     });
   };
 
+  addButtons = () => {
+    return (
+      <span>
+        <button onClick={this.sortByName}>Sort by Name</button>
+        <button>Sort by Climate</button>
+        <button>Sort by Terrain</button>
+      </span>
+    );
+  };
+
+  sortByName = () => {
+    let arrayOfLocationNames = [];
+    this.state.listOfLocations.map((location) => {
+      arrayOfLocationNames.push(location.name);
+      arrayOfLocationNames.sort().map((location) => {
+        return <li>{location}</li>;
+      });
+    });
+  };
+
   render() {
     let listItemId = 0;
     let { listOfLocations, button } = this.state;
@@ -39,21 +60,23 @@ export default class Locations extends Component {
     let location = listOfLocations.map((location) => {
       if (!button) {
         return (
-          <li key={listItemId++}>
-            <ul key={location.id}>
-              <li key={location.id}>
-                <p>
-                  <strong>Location: </strong>
-                  {location.name}
-                </p>
-                <p>
-                  <strong>Climate: </strong> {location.climate}
-                </p>
-                <p>
-                  <strong>Terrain: </strong>: {location.terrain}
-                </p>
-              </li>
-            </ul>
+          <li key={listItemId++} className="locations">
+            <section>
+              <ul key={location.id}>
+                <li key={location.id}>
+                  <p>
+                    <strong>Name: </strong>
+                    {location.name}
+                  </p>
+                  <p>
+                    <strong>Climate: </strong> {location.climate}
+                  </p>
+                  <p>
+                    <strong>Terrain: </strong> {location.terrain}
+                  </p>
+                </li>
+              </ul>
+            </section>
           </li>
         );
       }
@@ -65,7 +88,10 @@ export default class Locations extends Component {
         <button onClick={this.handleClick}>
           {this.state.button ? "Show Locations" : "Hide Locations"}
         </button>
-        <ul key={location.id}>{location}</ul>
+        {this.state.button ? "" : <>{this.addButtons()}</>}
+        <ul key={location.id} className="background">
+          {location}
+        </ul>
       </div>
     );
   }

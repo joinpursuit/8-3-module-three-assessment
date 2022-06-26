@@ -1,22 +1,22 @@
 import React from "react";
-import logo from "../logo.svg";
+import download from "../download.png";
 import "../Components/Navbar.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div>
-      <nav>
+    <div className="navbar">
+      <nav className="nav">
         <Link to="/">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={download} className="App-logo" alt="logo" />
         </Link>
-        <Link to="/movies" id="movies">
+        <Link to="/movies" id="movies" className="movie-nav">
           Movies
         </Link>
-        <Link to="/people" id="people">
+        <Link to="/people" id="people" className="people-nav">
           People
         </Link>
-        <Link to="/locations" id="locations">
+        <Link to="/locations" id="locations" className="locations-nav">
           Locations
         </Link>
       </nav>

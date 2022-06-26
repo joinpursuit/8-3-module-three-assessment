@@ -1,4 +1,30 @@
 img.App-logo {
     height: 50px;
     width: 50px;
+    margin-left: 50px;
+    margin-top: 25px;
   }
+
+.navbar {
+background-color: #4682b4;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%
+}
+
+.movie-nav {
+  margin-top: 30px;
+  color: white;
+}
+
+.people-nav {
+  margin-top: 30px;
+  color: white;
+}
+
+.locations-nav {
+  margin-top: 30px;
+  color: white;
+}
