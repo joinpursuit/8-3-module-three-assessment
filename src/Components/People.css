@@ -1,9 +1,15 @@
 .people {
 	text-align: center;
 }
+form {
+	justify-content: center;
+	display: grid;
+	grid-template-columns: 100px 200px 100px;
+}
 input {
 	padding: 10px;
 	border-radius: 5px;
 	box-shadow: none;
 	border: 0.5px solid black;
+	font-size: 30px;
 }

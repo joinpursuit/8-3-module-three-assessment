@@ -39,8 +39,8 @@ export default class People extends Component {
 	render() {
 		return (
 			<div className="people">
-				<h2>Search for a Person</h2>
 				<form onSubmit={this.handleSubmit}>
+					<h2>Search for a Person</h2>
 					<input
 						type="text"
 						name="search"

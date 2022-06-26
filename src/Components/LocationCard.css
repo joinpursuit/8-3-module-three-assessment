@@ -1,0 +1,4 @@
+ul.location-card:hover {
+	z-index: 101%;
+	transition: z-index 1s ease-in-out;
+}

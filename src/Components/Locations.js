@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LocationCard from "./LocationCard";
 import "./Locations.css";
 export default class Locations extends Component {
 	constructor() {
@@ -99,15 +100,7 @@ export default class Locations extends Component {
 					<ul className="top">
 						{this.state.show &&
 							this.state.locations.map((location) => {
-								return (
-									<li key={location.id} className="location-card">
-										<ul>
-											<li>Name: {location.name}</li>
-											<li>Climate: {location.climate}</li>
-											<li>Terrain: {location.terrain}</li>
-										</ul>
-									</li>
-								);
+								return <LocationCard key={location.id} location={location} />;
 							})}
 					</ul>
 				</div>
