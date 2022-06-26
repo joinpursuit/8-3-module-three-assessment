@@ -30,7 +30,7 @@ class People extends React.Component {
         (person) => this.state.userInput === person.name
       ),
     })
-    
+
     event.target.reset()
   }
 
@@ -57,7 +57,6 @@ class People extends React.Component {
             <p>Age: {findName.age}</p>
           </section>
         ) : (
-          // })
           <p>Not Found</p>
         )}
       </div>
