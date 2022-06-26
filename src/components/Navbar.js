@@ -10,13 +10,13 @@ function Navbar () {
         <Link className="logo" to="/">
           <img src={logo} />
         </Link>
-        <Link className="" to="/movies">
+        <Link className="menu__item" to="/movies">
           Movies 
         </Link>
-        <Link className="" to="/people">
+        <Link className="menu__item" to="/people">
           People 
         </Link>
-        <Link className="" to="/locations">
+        <Link className="menu__item" to="/locations">
           Locations 
         </Link>
       </nav>

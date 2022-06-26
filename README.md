@@ -75,7 +75,7 @@ You will need to complete features for four different pages and create a navigat
 
 #### Movies page (`/movies`) select dropdown : 1 point
 
-- [ ] All content should be inside some element with the class `.movies`.
+- [ok] All content should be inside some element with the class `.movies`.
 
 - [ ] Has the text "Select a Movie" on the page.
 
