@@ -1,0 +1,16 @@
+nav img {
+  height: 50px;
+  width: 50px;
+  margin-left: 50px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: lightskyblue;
+}
+
+a {
+  color: aliceblue;
+  text-decoration: none;
+}

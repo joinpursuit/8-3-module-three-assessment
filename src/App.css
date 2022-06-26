@@ -1,6 +1,86 @@
-
-
 .app {
   text-align: center;
 }
 
+h1,
+h2,
+h3,
+.people {
+  text-align: center;
+}
+
+.movies {
+  background-color: lightblue;
+  margin: 50px;
+  margin-top: 30px;
+  padding: 50px;
+  padding-top: 5px;
+}
+
+.moviesBox {
+  background-color: lightcyan;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.people {
+  background-color: lightgoldenrodyellow;
+  margin: 50px;
+  margin-top: 30px;
+  padding: 50px;
+  padding-top: 5px;
+}
+
+.peopleBox {
+  background-color: aliceblue;
+  margin-top: 10px;
+  padding: 1px;
+}
+
+.showButton {
+  position: relative;
+  left: 45%;
+}
+
+center {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 50%;
+  margin: 10px;
+  position: relative;
+  left: 20%;
+}
+
+#titles {
+  width: 30%;
+  position: relative;
+  left: 35%;
+}
+
+.locations {
+  background-color: aliceblue;
+  margin: 0px 50px;
+  margin-top: 30px;
+  padding-top: 1px;
+  padding-bottom: 200px;
+}
+
+.locations button {
+  padding: 10px;
+}
+
+.places {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: lightyellow;
+  text-align: center;
+  margin: 30px;
+}
+
+ul {
+  background-color: lightcyan;
+  border: 1px solid black;
+  width: 80%;
+  margin: 20px;
+  line-height: 2;
+}
