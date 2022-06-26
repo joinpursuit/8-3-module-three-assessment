@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import DisplayPersonInfo from "./DisplayPersonInfo";
 
 class FindPeople extends React.Component {
   constructor() {

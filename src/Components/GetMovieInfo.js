@@ -7,7 +7,6 @@ export default function GetMovieInfo({ movies, movieTitle }) {
         if (movieTitle !== "" && movie.title.includes(movieTitle)) {
           return (
             <div key={movie.id}>
-              {" "}
               <h4>
                 Summary: <span>{movie.description}</span>
               </h4>

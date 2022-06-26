@@ -4,7 +4,6 @@ import Home from "./Components/Home";
 import Nav from "./Components/Nav";
 import Movies from "./Components/Movies";
 import People from "./Components/People";
-import DisplayPersonInfo from "./Components/DisplayPersonInfo";
 import Locations from "./Components/Locations";
 import "./App.css";
 
