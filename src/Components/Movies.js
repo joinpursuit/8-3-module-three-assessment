@@ -35,7 +35,7 @@ class Movies extends Component {
     const selected = movies.find((movie) => movie.title === selectedOption);
 
     return (
-      <div className='container'>
+      <div className='movies'>
         <h1>Select a Movie</h1>
         <select value={selectedOption} onChange={this.handleChange}>
           <option value=''> </option>
@@ -49,18 +49,18 @@ class Movies extends Component {
         </select>
         <div>
           {selected ? (
-            <div className='movies'>
+            <div className='container'>
               <h2> {selected.title}</h2>
               <img
                 className='movieImg'
                 src={selected.image}
                 alt={selected.title}
               />
-            
+
               <p>
                 <strong>Director: </strong> <span>{selected.director}</span>
-             </p>
-           
+              </p>
+
               <p>
                 <strong>Producer: </strong>
                 <span> {selected.producer}</span>
@@ -74,8 +74,9 @@ class Movies extends Component {
                 <span>{selected.rt_score}</span>
               </p>
               <p>
-                <strong>Description: </strong></p><p>{selected.description}</p>
-              
+                <strong>Description: </strong>
+              </p>
+              <p>{selected.description}</p>
             </div>
           ) : null}
         </div>

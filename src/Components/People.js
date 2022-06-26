@@ -39,6 +39,7 @@ class People extends Component {
 
   //prevent refresh
   handleChange = (event) => {
+    event.preventDefault();
     this.setState({
       searchInput: event.target.value,
     });
@@ -50,7 +51,6 @@ class People extends Component {
       <div className='people'>
         <h2>Name: <span>{found.name}
         </span></h2>
-        <p><strong>ID:</strong> {found.id}</p>
         <p><strong>Age: </strong>{found.age}</p>
         <p><strong>Gender: </strong>{found.gender}</p>
         <p><strong>Hair Color:</strong> {found.hair_color}</p>
@@ -76,7 +76,7 @@ class People extends Component {
                 onChange={this.handleChange}
               />
               <button
-                className='button'
+                className='people-button'
                 onClick={this.fetchPeople}
                 type='submit'
               >
