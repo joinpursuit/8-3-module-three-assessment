@@ -94,7 +94,7 @@ class Home extends Component {
           <button onClick={this.handleClick}>Show Locations</button>
         )}
 
-        {isToggleOn ?<ul>{ locationsInfo }</ul>: ''}
+        {isToggleOn ?<ul className='results'>{ locationsInfo }</ul>: ''}
       </div>
     );
   }

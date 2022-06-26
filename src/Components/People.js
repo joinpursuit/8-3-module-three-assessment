@@ -48,16 +48,28 @@ class People extends Component {
   render() {
     const { found } = this.state;
     const results = found ? (
-      <div className='people'>
-        <h2>Name: <span>{found.name}
-        </span></h2>
-        <p><strong>Age: </strong>{found.age}</p>
-        <p><strong>Gender: </strong>{found.gender}</p>
-        <p><strong>Hair Color:</strong> {found.hair_color}</p>
-        <p><strong>Eye Color: </strong>{found.eye_color}</p>
+      <div className='peopleInfo'>
+        <h2>
+          Name: <span>{found.name}</span>
+        </h2>
+        <p>
+          <strong>Age: </strong>
+          {found.age}
+        </p>
+        <p>
+          <strong>Gender: </strong>
+          {found.gender }
+        </p>
+        <p>
+          <strong>Hair Color:</strong> {found.hair_color}
+        </p>
+        <p>
+          <strong>Eye Color: </strong>
+          {found.eye_color}
+        </p>
       </div>
     ) : (
-      <div style={{textAlign:'center',padding:'2rem 0'}}>Not Found</div>
+      <div style={{ textAlign: 'center', padding: '2rem 0' }}>Not Found</div>
     );
 
     return (
