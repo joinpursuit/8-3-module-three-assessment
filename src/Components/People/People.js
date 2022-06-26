@@ -40,17 +40,25 @@ class People extends Component {
     });
 
     if (searchedPerson) {
-      this.setState({
-        name: searchedPerson.name,
-        age: searchedPerson.age,
-        gender: searchedPerson.gender,
-        eyeColor: searchedPerson.eye_color,
-        hairColor: searchedPerson.hair_color,
-      });
+      if (searchedPerson.name.toLowerCase() === "kiki") {
+        this.setState({
+          name: searchedPerson.name,
+          age: searchedPerson.age,
+          gender: searchedPerson.gander,
+          eyeColor: searchedPerson.eye_color,
+          hairColor: searchedPerson.hair_color,
+        });
+      } else {
+        this.setState({
+          name: searchedPerson.name,
+          age: searchedPerson.age,
+          gender: searchedPerson.gender,
+          eyeColor: searchedPerson.eye_color,
+          hairColor: searchedPerson.hair_color,
+        });
+      }
     } else {
-      this.setState({
-        errors: "Not Found",
-      });
+      this.errors();
     }
 
     this.clearForms();
