@@ -20,7 +20,9 @@ class People extends React.Component {
         });
       });
   };
-
+  /**
+   * fetches data when the page loads. peoplelist state is already populated.
+   */
   componentDidMount = () => {
     this.peopleSearch();
   };
@@ -44,7 +46,14 @@ class People extends React.Component {
   };
 
   render() {
-    let { searchedPerson } = this.state;
+    let { searchedPerson, peopleList } = this.state;
+    let allpeople = peopleList.map((person) => {
+      return (
+        <li className="person-card" key={person.id}>
+          <strong>{person.name}</strong>
+        </li>
+      );
+    });
 
     return (
       <div className="people">
@@ -80,6 +89,11 @@ class People extends React.Component {
             <h3>Not Found!</h3>
           )}
         </div>
+        <hr></hr>
+        <section>
+          <h2 className="roster">Ghibli Roster:</h2>
+          <ul className="people-container">{allpeople}</ul>
+        </section>
       </div>
     );
   }

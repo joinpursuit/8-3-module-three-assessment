@@ -1,6 +1,9 @@
 import React from 'react';
 import './movies.css';
 
+/**
+ *
+ */
 class Movies extends React.Component {
   constructor() {
     super();
@@ -42,7 +45,6 @@ class Movies extends React.Component {
     return (
       <div className="movies">
         <h1>Select a movie</h1>
-
         <select onChange={this.selectHandler}>
           <option></option>
           {movieChoices}

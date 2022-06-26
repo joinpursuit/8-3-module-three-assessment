@@ -2,7 +2,7 @@ import React from 'react';
 import './home.css';
 
 /**
- * functions/state for retrieving movie images only
+ * populate the home page with movie images and banners from the API
  */
 class Home extends React.Component {
   constructor() {
@@ -12,7 +12,7 @@ class Home extends React.Component {
     };
   }
 
-  FetchMovies = () => {
+  componentDidMount = () => {
     fetch('https://ghibliapi.herokuapp.com/films')
       .then((result) => result.json())
       .then((data) => {
@@ -20,10 +20,6 @@ class Home extends React.Component {
           movieTitles: data,
         });
       });
-  };
-
-  componentDidMount = () => {
-    this.FetchMovies();
   };
 
   render() {
