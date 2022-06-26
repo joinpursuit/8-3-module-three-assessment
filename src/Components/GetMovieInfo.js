@@ -15,6 +15,7 @@ export default function GetMovieInfo({ movies, movieTitle }) {
             </div>
           );
         }
+        return null;
       })}
     </div>
   );
