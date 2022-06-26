@@ -7,7 +7,7 @@ import People from './components/People';
 import Locations from './components/Locations';
 
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Movies" element={<Movies />} />
-        <Route path="/People" element={<People />} />
-        <Route path="/Locations" element={<Locations />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/locations" element={<Locations />} />
       </Routes>
     </div>
   );
