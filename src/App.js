@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom"
-import Home from "./components.Home";
-import Locations from "./components.Locations";
-import Movies from "./components.Movies";
-import NavBar from "./components.NavBar";
-import People from "./components.People";
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Locations from "./components/Locations";
+import Movies from "./components/Movies";
+import NavBar from "./components/NavBar";
+import People from "./components/People";
+import "./App.css";
 
 function App() {
   return (
