@@ -1,0 +1,10 @@
+.ghibliwordmark {
+  font-size: 30px;
+  background: -webkit-linear-gradient(0deg, rgb(0, 0, 0), rgb(101, 101, 101));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-size: 15px;
+}
