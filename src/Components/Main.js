@@ -3,14 +3,11 @@ import Home from "./Home";
 import Movies from "./Movies";
 import People from "./People";
 import Locations from "./Locations";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 export default class Main extends Component {
   constructor() {
     super();
-    this.state = {
-      search: "",
-    };
   }
   render() {
     return (
