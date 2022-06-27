@@ -32,7 +32,7 @@ class Locations extends React.Component {
     const {value} = event.target;
     
     if(value !== '') {
-      this.setState({person: value})  
+      
     } else {
       
     }
