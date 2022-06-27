@@ -1,0 +1,26 @@
+.people{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.person-card{
+    background-color: lightblue;
+    border: 2px solid black;
+    text-align: center;
+    margin: 1%;
+    width: auto;
+   
+}
+
+.people-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    list-style: none;
+    font-family: fantasy;
+    
+}
+
+.roster{
+font-family: fantasy;
+}
