@@ -7,7 +7,7 @@ import { TextField, Button } from "@mui/material";
 import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import PersonInfo from "./PersonInfo";
+//import PersonInfo from "./PersonInfo";
 
 import axios from "axios";
 
@@ -15,18 +15,17 @@ class Locations extends React.Component {
   constructor () {
     super ();
     this.state = {
-      peopleList: [],
-      personSearch: [],
-      person: '',
+      locationsList: [],
+      location: '',
       isValid: false,
     }
   }
 
   componentDidMount() {
-    axios.get('https://ghibliapi.herokuapp.com/people').then((result) => {
-      this.setState({ peopleList: result.data });
-      //console.log(this.state.peopleList)
-    });
+    // axios.get('https://ghibliapi.herokuapp.com/people').then((result) => {
+    //   this.setState({ locationsList: result.data });
+    //   //console.log(this.state.peopleList)
+    // });
   }
   
   handleChange = (event) => {
@@ -44,18 +43,18 @@ class Locations extends React.Component {
     
     
     
-    const filtered = (this.state.peopleList).filter(person => {
-      return ((person.name).toLowerCase()).includes((this.state.person).toLowerCase());
-    });
+    // const filtered = (this.state.peopleList).filter(person => {
+    //   return ((person.name).toLowerCase()).includes((this.state.person).toLowerCase());
+    // });
 
-    if(filtered.length > 0) {
-      this.setState({ personSearch: filtered })
-      this.setState({ isValid: true })
-    } else { 
-      this.setState({ personSearch: ['Not found'] }) 
-      this.setState({ isValid: false })
-    }
-    this.setState({person: ''})
+    // if(filtered.length > 0) {
+    //   this.setState({ personSearch: filtered })
+    //   this.setState({ isValid: true })
+    // } else { 
+    //   this.setState({ personSearch: ['Not found'] }) 
+    //   this.setState({ isValid: false })
+    // }
+    // this.setState({person: ''})
   }
 
   render () {
@@ -82,10 +81,10 @@ class Locations extends React.Component {
       </Box>
       {(this.state.isValid) ? 
         <Stack spacing={2} className="person__info">
-          <PersonInfo 
+          {/* <PersonInfo 
             personSearch={this.state.personSearch} 
             // personSearch={this.state.person}
-          />
+          /> */}
         </Stack>
         : <p>{this.state.personSearch[0]}</p>
       }
