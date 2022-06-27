@@ -1,37 +1,28 @@
-import React from 'react'
-
+import React from "react";
+import './Locations.css'
 
 class Locations extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            locations: [],
-            display: false
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      locations: [],
+      display: false,
+    };
+  }
 
-componentDidMount(){
+  componentDidMount() {
     let baseURL = "https://ghibliapi.herokuapp.com/locations";
     fetch(baseURL)
       .then((response) => response.json())
       .then((data) => this.setState({ locations: data }));
-}
+  }
 
-//need name, climate, and terrain
+  //need name, climate, and terrain
 
-handleLocationToggle = () => {
+  handleLocationToggle = () => {
     this.setState({
       display: !this.state.display,
     });
-  };
-
-  sortedTerrain = (data) => {
-    let sortedTerrain = data.sort((a, b) => {
-      if (a.terrain.toLowerCase() > b.terrain.toLowerCase()) return 1;
-      if (a.terrain.toLowerCase() < b.terrain.toLowerCase()) return -1;
-      return 0;
-    });
-    this.setState({ locations: sortedTerrain });
   };
 
   sortedName = (data) => {
@@ -52,42 +43,51 @@ handleLocationToggle = () => {
     this.setState({ locations: sortedClimate });
   };
 
-    render() {
+  sortedTerrain = (data) => {
+    let sortedTerrain = data.sort((a, b) => {
+      if (a.terrain.toLowerCase() > b.terrain.toLowerCase()) return 1;
+      if (a.terrain.toLowerCase() < b.terrain.toLowerCase()) return -1;
+      return 0;
+    });
+    this.setState({ locations: sortedTerrain });
+  };
 
-        let { locations, display } = this.state
+  render() {
+    let { locations, display } = this.state;
 
-        let viewLocations = locations.map((location, idx) => {
-            return (
-              <li key={idx} className="locationCard">
-                <ul>
-                  <li>
-                    <span>
-                      <h4>Name:</h4> {location.name}
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <h4>Climate:</h4> {location.climate}
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <h4>Terrain:</h4> {location.terrain}
-                    </span>
-                  </li>
-                </ul>
-              </li>
-            );
-          });
-      
+    let viewLocations = locations.map((location, idx) => {
+      return (
+        <li key={idx} className="locationCard">
+          <ul>
+            <li>
+              <span>
+                <h4>Name:</h4> {location.name}
+              </span>
+            </li>
+            <li>
+              <span>
+                <h4>Climate:</h4> {location.climate}
+              </span>
+            </li>
+            <li>
+              <span>
+                <h4>Terrain:</h4> {location.terrain}
+              </span>
+            </li>
+          </ul>
+        </li>
+      );
+    });
 
-        return (
-            <div className="locations">
+    return (
+      <div className="locations">
         <section className="location-header">
           <h1>List of Locations</h1>
           {display ? (
             <div>
-              <button onClick={this.handleLocationToggle}>Hide Locations</button>
+              <button onClick={this.handleLocationToggle}>
+                Hide Locations
+              </button>
               <button onClick={() => this.sortedTerrain(locations)}>
                 Sort by Terrain
               </button>
@@ -106,8 +106,8 @@ handleLocationToggle = () => {
           {this.state.display ? viewLocations : null}
         </ul>
       </div>
-        )
-    }
+    );
+  }
 }
 
-export default Locations
+export default Locations;

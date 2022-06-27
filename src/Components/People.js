@@ -1,4 +1,5 @@
 import React from "react";
+import './People.css'
 
 class People extends React.Component {
   constructor() {
@@ -59,7 +60,7 @@ class People extends React.Component {
               </p>
             </div>
           ) : (
-            <h3>Not Found!</h3>
+            <h3>Person Not Found!</h3>
           )}
         </div>
       </div>

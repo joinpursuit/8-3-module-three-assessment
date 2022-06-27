@@ -1,0 +1,19 @@
+.locationCard {
+        font-family:fantasy;
+        padding:1.2em 30px 1.2em 75px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        background-color: rgb(215, 208, 208);
+        width:40%;
+        font-size: x-large;
+        margin:25px auto;
+}
+
+
+.locationsList {
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: 700px 700px;
+    margin-top: -1150px;
+}
