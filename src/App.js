@@ -1,10 +1,10 @@
 import { Router, Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import Home from './Component/Home';
-import Movies from './Component/Movies';
-import Navbar from "./Component/Navbar";
+import Movie from './Component/Movie';
+import Navbar from './Component/Navbar';
 import People from "./Component/People";
-import Locations from "./Component/Locations";
+import Location from "./Component/Location";
 
 
 function App() {
@@ -14,17 +14,17 @@ function App() {
         
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/movies">Movies</Link></li>
+            <li><Link to="/movie">Movie</Link></li>
             <li><Link to="/people">People</Link></li>
-            <li><Link to="/locations">Locations</Link></li>
+            <li><Link to="/location">Location</Link></li>
           </ul>
 
    
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route path='/movies' component={Movies}/>
+        <Route path='/movie' component={Movie}/>
         <Route path='/people' component={People}/>
-        <Route path='/locations' component={Locations}/>
+        <Route path='/location' component={Location}/>
       </Switch>
       </Router>
     </div>
