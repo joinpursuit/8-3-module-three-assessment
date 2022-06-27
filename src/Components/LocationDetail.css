@@ -6,10 +6,12 @@
 li {
   border: 1px solid #93c0d7;
   padding: 2%;
-  background-color: #C1D9F0;
+  background-color: #c1d9f0;
 }
+
 ul {
   list-style-type: none;
+  margin: 7%;
 }
 
 .sort-name {
