@@ -1,0 +1,36 @@
+.locations {
+	text-align: center;
+	--dark-hover-color: rgba(40, 45, 137, 0.368);
+	--light-hover-color: rgba(135, 177, 214, 0.842);
+	--selected-color: rgba(135, 177, 214, 0.321);
+}
+ul {
+	list-style-type: none;
+}
+ul.top {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+li {
+	padding: 10px;
+	margin: 10px;
+}
+button {
+	border: none;
+	padding: 20px;
+	margin: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+button:hover {
+	background-color: var(--light-hover-color);
+	cursor: pointer;
+	transition: background-color 1s cubic-bezier(0.05, 0, 0, 1);
+}
+button.selected {
+	background-color: var(--selected-color);
+}
+button.selected:hover {
+	background-color: var(--dark-hover-color);
+	transition: background-color 3s cubic-bezier(0.05, 0, 0, 1);
+}
+
