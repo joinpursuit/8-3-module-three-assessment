@@ -6,12 +6,11 @@ import Movies from './components/Movies';
 import People from './components/People';
 import Locations from './components/Locations';
 
-import logo from './logo.svg';
 import './styles/App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

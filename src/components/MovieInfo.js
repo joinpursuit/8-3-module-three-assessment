@@ -17,7 +17,7 @@ const MovieInfo = (props) => {
               <h1>Title: {movie.title}</h1>
             </li>
             <li>
-              Release date: {movie.release_date}
+              Release date: <span>{movie.release_date}</span>
             </li>
             <li>
               {movie.description}  

@@ -1,34 +1,28 @@
 import React, { useState } from "react";
 const PersonInfo = (props) => {
   //
-  const [isValid, setIsValid] = useState(false);
-  
   const { personSearch } = props;
+
+  const listItems = personSearch.map((person, index) => {
+    return  <>
+              <li key={person.uniqueId}>
+                <h2>Name: {person.name}</h2>
+              </li>
+              <li key={person.uniqueId}>
+                Age: <span>{person.age}</span>  
+              </li>
+              <li key={person.uniqueId}>
+                Gender: <span>{person.gender}</span>  
+              </li>
+              <li key={person.uniqueId}>
+                Hair color: <span>{person.hair_color}</span>  
+              </li>
+            </>
+  })
 
   return (
     <>
-      <div>
-        {personSearch.map((person, index) => {
-          return (
-            <div>
-              <ul>
-                <li>
-                  <h2>Name: {person.name}</h2>
-                </li>
-                <li>
-                  Age: {person.age}  
-                </li>
-                <li>
-                  Gender: {person.gender}  
-                </li>
-                <li>
-                  Hair color: {person.hair_color}  
-                </li>
-              </ul>
-            </div>
-          );
-        })}
-      </div>
+      <ul>{listItems}</ul>
     </>
   )
 }

@@ -6,15 +6,17 @@ import React, { useState } from "react";
 
   const listItems = locations.map((location) => {
     return  <li key={location.id} >
-              <p>Name: <span>{location.name}</span> </p>
-              <p>Climate: <span>{location.climate}</span> </p>
-              <p>Terrain: <span>{location.terrain}</span> </p>
+              <ul className="item">
+                <li>Name: <span>{location.name}</span> </li>
+                <li>Climate: <span>{location.climate}</span> </li>
+                <li>Terrain: <span>{location.terrain}</span> </li>
+              </ul>
             </li>
             
   })
 
   return (
-    <ul className="grid__list">
+    <ul className="grid__main">
       {listItems}
     </ul>
   )

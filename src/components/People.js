@@ -11,13 +11,13 @@ class People extends React.Component {
       personSearch: [],
       person: '',
       isValid: false,
+      isVisible: false,
     }
   }
 
   componentDidMount() {
     axios.get('https://ghibliapi.herokuapp.com/people').then((result) => {
       this.setState({ peopleList: result.data });
-      //console.log(this.state.peopleList)
     });
   }
   
@@ -26,7 +26,8 @@ class People extends React.Component {
     
     if(value !== '') {
       this.setState({person: value})  
-      this.setState({isValid: true})  
+      this.setState({isValid: true}) 
+      this.setState({isDisable: false}) 
     }
   };
 
@@ -46,40 +47,44 @@ class People extends React.Component {
         this.setState({ isValid: false })
       }
       this.setState({person: ''})
+      this.setState({isDisable: true})
     }
   }
 
   render () {
     return (
-      <section className="people">
-        <div className="form__container">
+      <section className="people container">
+        <section className="layout">
           <h1>People</h1>
-          <form
-          >
-            <div className="form__control">
-              <label >Search for a Person</label>
-              <input 
-                type="text"
-                id="person"
-                value={this.state.person}
-                onChange={this.handleChange}
-              />
-              <button
-                onClick={this.handleSubmit}
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      {(this.state.isValid) ? 
-        <div className="person__info">
-          <PersonInfo 
-            personSearch={this.state.personSearch}
-          />
-        </div>
-        : <p>{this.state.personSearch[0]}</p>
-      }
+          <div className="form__container">
+            <form
+            >
+              <div className="form__control">
+                <label >Search for a Person</label>
+                <input 
+                  type="text"
+                  id="person"
+                  value={this.state.person}
+                  onChange={this.handleChange}
+                />
+                <button
+                  disabled={this.state.isDisable}
+                  onClick={this.handleSubmit}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        {(this.state.isValid) ? 
+          <div className="person__info">
+            <PersonInfo 
+              personSearch={this.state.personSearch}
+            />
+          </div>
+          : <div className="not__found">{this.state.personSearch[0]}</div>
+        }
+        </section>
       </section>
     )
   }

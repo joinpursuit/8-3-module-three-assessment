@@ -57,47 +57,50 @@ class Locations extends React.Component {
 
   render () {
     return (
-      <section className="locations">
-        <h1>List of Locations</h1>
-        <form 
-          
-        >
-        <div className="form__control">
-          <button
-            onClick={this.handleShowLocations}
-          >
-            {(this.state.isVisible) ? 'Hide Locations' : 'Show Locations' }
-          </button>
-          {(this.state.isVisible) ? 
+      <section className="locations container">
+        <section className="layout">
+          <h1>List of Locations</h1>
+          <div className="form__container">
+            <form
+            >
+            <div className="form__control">
+              <button
+                onClick={this.handleShowLocations}
+              >
+                {(this.state.isVisible) ? 'Hide' : 'Show' } Locations
+              </button>
+              {(this.state.isVisible) ? 
+              <>
+              <button
+                onClick={this.handleSortByName}
+              >
+                Sort by Name
+              </button> 
+              <button
+                onClick={this.handleSortByClimate}
+              >
+                Sort by Climate
+              </button> 
+              <button
+                onClick={this.handleSortByTerrain}
+              >
+                Sort by Terrain
+              </button>
+              </>
+              : null 
+              }
+            </div>
+            </form>
+          </div>
+        {(this.state.isVisible) ? 
           <>
-          <button
-            onClick={this.handleSortByName}
-          >
-            Sort by Name
-          </button> 
-          <button
-            onClick={this.handleSortByClimate}
-          >
-            Sort by Climate
-          </button> 
-          <button
-            onClick={this.handleSortByTerrain}
-          >
-            Sort by Terrain
-          </button>
+            <LocationsView 
+              locations={this.state.locationsList} 
+            />
           </>
-          : null 
-          }
-        </div>
-      </form>
-      {(this.state.isVisible) ? 
-        <>
-          <LocationsView 
-            locations={this.state.locationsList} 
-          />
-        </>
-        : null
-      }
+          : null
+        }
+        </section>
       </section>
     )
   }

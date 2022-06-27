@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 function NotFound () {
 
   return (
-    <>
-      <section className='not__found'>
+    <section className='container'>
+      <div className='not__found'>
         <h1>Not found</h1>
         <Link to="/">
           Go to home 
         </Link>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 

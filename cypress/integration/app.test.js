@@ -162,11 +162,11 @@ describe("has a functioning Locations page", () => {
     cy.get("button").first().contains("Show Locations").click();
 
     cy.get(".locations > ul > li").should("have.length", 24);
-    cy.get(".locations ul li").contains("Irontown");
-    cy.get(".locations ul li").contains("The Marsh House");
-    cy.get(".locations ul li").contains("Pazu's Mines");
-    cy.get(".locations ul li").contains("Forest");
-    cy.get(".locations ul li").contains("Ingary");
+    cy.get(".locations ul ul li").contains("Irontown");
+    cy.get(".locations ul ul li").contains("The Marsh House");
+    cy.get(".locations ul ul li").contains("Pazu's Mines");
+    cy.get(".locations ul ul li").contains("Forest");
+    cy.get(".locations ul ul li").contains("Ingary");
   });
 
   it("changes the button to Hide Locations", () => {
@@ -217,7 +217,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
     
     cy.contains('Sort by Name').click()
     locations.forEach((location, index) => {
-      cy.get('ul li').eq(index).within(()=> {
+      cy.get('.locations ul ul').eq(index).within(()=> {
         cy.get('span').eq(1).should('have.text', locations[index].name)
       })
     })
@@ -236,7 +236,7 @@ describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain"
     
     cy.contains('Sort by Climate').click()
     locations.forEach((location, index) => {
-      cy.get('ul li').eq(index).within(()=> {
+      cy.get('.locations ul ul').eq(index).within(()=> {
         cy.get('li').eq(1).within(()=> {
           cy.get('span').eq(1).should('have.text', locations[index].climate)
         })

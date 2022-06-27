@@ -1,11 +1,43 @@
 * {
   font-family: Roboto;
 }
-/* APP */
+body, #root, .container { min-height: 100vh; }
+
+.container {
+  width: 100%;padding: 0rem;
+}
+.layout {
+  width: 80%;padding: 2rem;margin: 0 auto;
+}
+.layout > h1 {
+  margin: 0;font-size: 5rem;line-height: 5rem; font-weight: bold;letter-spacing: 4px;
+  text-shadow: 2px 2px 5px #003049;
+}
+/*
+****************
+ APP comp
+****************
+*/
 .App {
   text-align: center;
 }
-/* Navbar */
+/*
+****************
+ Home comp
+****************
+*/
+.Home {
+
+}
+.Home h1 {
+  margin: 30vh 0;font-size: 5rem;line-height: 5rem; font-weight: bold;letter-spacing: 4px;color: #FFF;
+  text-shadow: 2px 2px 5px #003049;  
+}
+/*
+****************
+ Navbar comp
+****************
+*/
 nav {
   padding: 1rem;display: flex;
   background-color: #517e94;
@@ -16,32 +48,59 @@ nav img {
 nav a.menu__item {
   margin: 0 2rem;display: inline-block;font-size: 1.2rem;line-height: 3.2rem; font-weight: bold;text-decoration: none; color: #FFF;
 }
-/* Movies */
+/*
+****************
+ Movies comp
+****************
+*/
 .movies {
-  width: 80%;margin: 1rem auto;
+  background-color: #00b4d8;
 }
 .movies h1 {
-  font-size: 2rem;line-height: 2rem; font-weight: bold;color: #517e94;
+  color: #FFF;  
 }
 .movies form {
   padding: 1rem;  
 }
 .movies form label {
-  font-size: 1rem;line-height: 2rem; font-weight: bold;color: #517e94;
+  display: block;font-size: 1rem;line-height: 2rem; font-weight: bold;color: #FFF;
+}
+.movies form select {
+  width: 30%;padding: 1rem;font-size: 1rem;font-weight: 600;color: #333;border: 3px solid #0081a7;
+  border-radius: 3px;
 }
 .movies .movie__info {
-  padding: 1rem;margin: 1rem auto;background-color: #E7EBF0;
+  width: 50%;padding: 2rem;margin: 2rem auto;background-color: #cae9ff;
 }
 .movies .movie__info ul {
-  list-style: none;
+  padding: 1rem;list-style: none;
 }
-/* People */
+.movies .movie__info ul li:nth-child(1) {
+  border-bottom: 4px solid #003049;  
+}
+.movies .movie__info ul li:nth-child(1) h1 {
+  margin: 1rem auto;font-size: 1.8rem;line-height: 2rem;font-weight: bold;color: #003049;   
+}
+.movies .movie__info ul li:nth-child(2) {
+  padding: 0.5rem 1rem;margin: 1rem 0;display: inline-block; font-size: 1rem;font-weight: 600; 
+  background-color: #669bbc;color: #003049;border-radius: 1px;
+}
+.movies .movie__info ul li:nth-child(2) span {
+  font-size: 1.2rem;font-weight: bold;
+}
+.movies .movie__info ul li:nth-child(3) {
+  padding: 1.8rem;font-style: italic; line-height: 1.8rem;color: #517e94;
+}
+/*
+****************
+ People comp
+****************
+*/
 .people {
-  width: 80%;margin: 1rem auto;
+  background-color: #fdfcdc;  
 }
 .people h1 {
-  font-size: 2rem;line-height: 2rem; font-weight: bold;color: #517e94;
-
+  color: #FFF;
 }
 .people form .form__control {
   padding: 1rem;
@@ -50,11 +109,11 @@ nav a.menu__item {
   display: block;font-size: 1rem;line-height: 2rem; font-weight: bold;color: #517e94;
 }
 .people form input {
-  padding: 1rem;font-size: 1rem;font-weight: 600;color: #333;border: 1px solid #517e94;
+  padding: 1rem;font-size: 1rem;font-weight: 600;color: #333;border: 3px solid #517e94;
   border-right: none;border-radius: 3px 0 0 3px;
 }
 .people form button {
-  padding: 1rem 2rem;margin: 1px;font-size: 1rem;font-weight: bold;border: 1px solid #517e94;
+  padding: 1rem 2rem;margin: 1px;font-size: 1rem;font-weight: bold;border: 3px solid #517e94;
   border-left: none;border-radius: 0 3px 3px 0;
   background-color: #219ebc;color: #FFF;
 }
@@ -62,17 +121,45 @@ nav a.menu__item {
   cursor: pointer;
 }
 .people .person__info {
-  padding: 1rem;margin: 1rem auto;background-color: #E7EBF0;
+  width: 40%;padding: 1rem;margin: 1rem auto;background-color: #cce3de;border-radius: 3px;
+  border: 3px solid #96bbbb;
 }
 .people .person__info ul {
-  list-style: none;
+  padding: 1rem;list-style: none;
 }
-/* Locations */
+.people .person__info ul li {
+  font-size: 1rem;line-height: 2rem; font-weight: 600;color: #6b9080;  
+}
+.people .person__info ul li span {
+  font-size: 1.4rem;font-weight: bold;color: #3c6e71;  
+}
+.people .person__info ul li:nth-child(1) {
+  margin: 1rem 0;  
+}
+.people .person__info ul li:nth-child(1) h2 {
+  margin: 0; font-size: 2.8rem;line-height: 3.0rem;font-weight: bold;color: #3c6e71;   
+}
+.people .person__info ul li:nth-child(2),
+.people .person__info ul li:nth-child(3),
+.people .person__info ul li:nth-child(4) {
+  background-color: #eaf4f4;  
+}
+.people .person__info ul li:nth-child(3) {
+  margin: 1px 0;
+}
+.people .not__found {
+  padding: 1rem;margin: 1rem auto;font-size: 2.0rem;line-height: 2.0rem;font-weight: bold;color: #1b4332;  
+}
+/*
+****************
+ Locations comp
+****************
+*/
 .locations { 
-  width: 80%;margin: 1rem auto;  
+  background-color: #b3dee2;  
 }
 .locations h1 {
-  font-size: 2rem;line-height: 2rem; font-weight: bold;color: #517e94;
+  color: #003049;
 }
 .locations form {
   padding: 1rem;
@@ -82,17 +169,26 @@ nav a.menu__item {
 }
 .locations form button {
   padding: 1rem 2rem;margin: 1px;font-size: 1rem;font-weight: bold;border: none;border-radius: 3px;
-  background-color: #219ebc;color: #FFF;
+  background-color: #669bbc;color: #003049;
 }
 .locations form button:hover {
   cursor: pointer;
 }
-.locations .grid__list {
-  display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 10px; list-style: none; 
+.locations .grid__main {
+  padding: 0;display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 10px; list-style: none; 
 }
-.locations .grid__list li {
-  padding: 1rem;background-color: #E7EBF0;
+.locations .grid__main .item {
+  padding: 1rem;list-style: none;background-color: #add7f6;
 }
-.locations .grid__list li span {
+.locations .grid__main .item li {
+  padding: 1rem;margin: 0;background-color: #FFF;border-radius: 0px;
+}
+.locations .grid__main .item li p {
+  padding: 1rem;margin: 0;background-color: #FFF;border-radius: 0px;
+}
+.locations .grid__main .item li:nth-child(2) {
+  border-top: 1px solid #add7f6;border-bottom: 1px solid #add7f6;
+}
+.locations .grid__main .item li span {
   font-weight: bold;  
 }

@@ -33,38 +33,38 @@ class Movies extends React.Component {
 
   render () {
     return (
-      <section className="movies">
-      <div className="form__container">
+      <section className="movies container">
+        <section className="layout">
         <h1>Movies</h1>
-        <form 
-          
-        >
-          <div >
-            <label >Select a Movie</label>
-            <select
-              id="select"
-              value={this.state.movieSelected}
-              onChange={this.handleChange}
-            >
-              <option key='0' value='' ></option>
-              {this.state.movieList.map(movie =>  {
-                return  <option key={movie.id} 
-                                  value={movie.id}>{movie.title}
-                        </option>  
-              })}  
-            </select>
-          </div>
-        </form>
-      </div>
-      {(this.state.isSelected) ? 
-        <div className="movie__info">
-          <MovieInfo 
-            movieList={this.state.movieList} 
-            movieSelected={this.state.movieSelected}
-          />
+        <div className="form__container">
+          <form >
+            <div className="form__control">
+              <label >Select a Movie</label>
+              <select
+                id="select"
+                value={this.state.movieSelected}
+                onChange={this.handleChange}
+              >
+                <option key='0' value='' ></option>
+                {this.state.movieList.map(movie =>  {
+                  return  <option key={movie.id} 
+                                    value={movie.id}>{movie.title}
+                          </option>  
+                })}  
+              </select>
+            </div>
+          </form>
         </div>
-        : null
-      }
+        {(this.state.isSelected) ? 
+          <div className="movie__info">
+            <MovieInfo 
+              movieList={this.state.movieList} 
+              movieSelected={this.state.movieSelected}
+            />
+          </div>
+          : null
+        }
+        </section>
       </section>
     )
   }
