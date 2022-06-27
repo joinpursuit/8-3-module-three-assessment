@@ -24,18 +24,25 @@ class Locations extends React.Component {
       return (
         <li className="single-location">
           <ul key={idx}>
-            <span>
-              <li className="text">
-                <strong>Name:</strong>{" "}
-                <span className="value">{location.name}</span>
-              </li>
-              <li>
-                <strong> Climate:</strong> <span>{location.climate}</span>
-              </li>
-              <li>
-                <strong>Terrain:</strong> <span>{location.terrain}</span>
-              </li>
-            </span>
+            <li className="text">
+              <span>
+                <strong>Name:</strong>
+              </span>
+              <span className="value">{location.name}</span>
+            </li>
+            <li>
+              <span>
+                <strong> Climate:</strong>
+              </span>
+              <span>{location.climate}</span>
+            </li>
+            <li>
+              <span>
+                {" "}
+                <strong>Terrain:</strong>
+              </span>
+              <span>{location.terrain}</span>
+            </li>
           </ul>
         </li>
       );
