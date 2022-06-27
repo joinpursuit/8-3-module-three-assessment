@@ -1,0 +1,15 @@
+/* *{
+    background-color: #D1CFE0;
+} */
+#movie-img{
+    width: 200px;
+    height: 250px;
+}
+.movies{
+    text-align: center;
+ 
+}
+#movies-section{
+    background-color: #D1CFE0;
+    font: fantasy;
+}

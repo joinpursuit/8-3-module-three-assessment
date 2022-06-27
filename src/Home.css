@@ -1,0 +1,9 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: rgb(243, 130, 237);
+    position: sticky;
+    top: 0px;
+    text-align: center;
+    z-index: 1;
+  }

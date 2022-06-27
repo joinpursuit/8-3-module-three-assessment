@@ -1,0 +1,54 @@
+/* *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    justify-content: space-between;
+    padding: 30px;
+    grid:2/3;
+    
+}
+
+.card{
+   
+    width: 100%;
+    max-width: 318px;
+    padding: 20px;
+background-color: rgb(197, 166, 226);
+border: 20px solid cornsilk;
+}
+.id{
+   padding: 15px; 
+ 
+}
+#p{
+    background-color: cornsilk;
+    border: 10px solid rgb(185, 128, 240);
+} */
+.locationsList{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    list-style: none;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(197, 166, 226);
+    /* border: 20px solid cornsilk; */
+}
+.locationlist{
+    width: 100%;
+    max-width: 318px;
+    padding: 20px;
+background-color: rgb(197, 166, 226);
+
+}
+/* #show-location-button{
+
+} */
+.locations{
+  background-color: #F2D8DC;
+}
