@@ -1,6 +1,7 @@
 .location-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-right: 3%;
 }
 li {
   border: 1px solid #93c0d7;
