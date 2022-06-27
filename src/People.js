@@ -6,9 +6,27 @@ class People extends React.Component {
     super();
     this.state = {
       searchInput: '',
+      age: '',
+      eye_color: '',
+      hair_color: '',
     };
   }
 
+  updatePersonInfo = () => {
+    fetch('https://ghibliapi.herokuapp.com/people?format=j1')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          personAge: data.age,
+          personEyeColor: data.eye_color,
+          personHairColor: data.hair_color,
+          userSearchInput: data.searchInput,
+        });
+      });
+  };
+  componentDidMount() {
+    this.updatePersonInfo();
+  }
   updateSearch = (event) => {
     this.setState({
       searchInput: event.target.value,
@@ -23,6 +41,7 @@ class People extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <section className='people'>
         <h1>Search For a Person</h1>

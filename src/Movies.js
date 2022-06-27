@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react';
+import React from 'react';
 import './Movies.css';
 
 let BASE_URL = 'https://ghibliapi.herokuapp.com';
@@ -26,8 +25,9 @@ function generateDropDown(json) {
     );
   });
 
-  /* hought of iterating the API data using a for loop like with Mod 2's Assessment and populating the dropbox that way, ran into the same 
-  problem of getting an empty dropbox because the API data was undefined. Redid it with different approaches multiple times. */
+  /* I thought of iterating the API data using a for loop like with Mod 2's Assessment and populating the dropbox that way, ran into the same 
+  problem of getting an empty dropbox because the API data was undefined or i being undefined when using a for loop.
+   Redid it with different approaches multiple times. */
 
   /*json.forEach((movie) => {                       
     for (let key in movie) {
@@ -48,10 +48,14 @@ class Movies extends React.Component {
     super();
     this.state = {
       data: [],
+      title: '',
+      release_date: '',
+      decription: '',
     };
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className='MovieDiv'>
         <h1>Select A Movie</h1>
