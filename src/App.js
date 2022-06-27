@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom'
 import NavBar from './Components/NavBar'
 import Home from './Components/Home'
 import Movies from './Components/Movies'
 import People from './Components/People'
 import Locations from './Components/Locations'
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
