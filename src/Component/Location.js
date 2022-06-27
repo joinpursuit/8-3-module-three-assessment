@@ -5,7 +5,7 @@ class Location extends Component{
         super();
         this.state= {
             location: [],
-            setlocation: ''
+            setlocation: false,
         }
     
     }
