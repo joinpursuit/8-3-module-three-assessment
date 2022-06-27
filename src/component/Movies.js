@@ -2,7 +2,7 @@ import React from 'react';
 import './movies.css';
 
 /**
- *
+ *Select a movie title from the dropdown and its relevant info will appear
  */
 class Movies extends React.Component {
   constructor() {
@@ -20,7 +20,8 @@ class Movies extends React.Component {
         this.setState({
           movies: data,
         });
-      });
+      })
+      .catch((error) => console.log(error));
   };
 
   componentDidMount = () => {
