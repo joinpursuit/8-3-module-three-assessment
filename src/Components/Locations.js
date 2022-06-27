@@ -73,7 +73,7 @@ class Locations extends React.Component {
     return (
       <div className='locations'>
         <button onClick={() => this.toggle()} className='show-location'>
-          {this.state.show ? 'Show Locations' : 'Hide Locations'}
+          {this.state.show ? 'Hide Locations' : 'Show Locations'}
         </button>
         {this.state.show && (
           <>
