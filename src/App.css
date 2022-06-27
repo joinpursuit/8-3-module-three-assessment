@@ -2,3 +2,45 @@
   text-align: center;
 }
 
+.navBar {
+  background:rgb(2, 134, 146);
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+.locationsList{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  list-style-type: none;
+}
+.locationArea {
+  width: 85%;
+  background-color: rgb(149, 176, 42);
+  margin: auto;
+  text-align: center;
+}
+
+h1{
+  padding-top: 30px;
+  font-size: 32px;
+}
+
+.button{
+   background-color: rgb(225, 142, 166);
+   margin-left: 20px;
+   height: 30px;
+   width: 90px;
+}
+
+.button:hover{
+   background-color: rgb(112, 82, 171);
+}
