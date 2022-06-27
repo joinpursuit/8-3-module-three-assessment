@@ -50,20 +50,18 @@ nav a.menu__item {
   list-style: none;
 }
 /* Locations */
-.locations { }
+.locations { 
+  width: 80%;margin: 1rem auto;  
+}
 .locations h1 {
   font-size: 2rem;line-height: 2rem; font-weight: bold;color: #517e94;
 }
-.locations .list {
-  display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 5px;  
+.locations .grid__list {
+  display: grid;grid-template-columns: 1fr 1fr 1fr;gap: 10px; list-style: none; 
 }
-.locations .list ul {
-  padding: 1rem;
-  list-style: none;background-color: #E7EBF0;
+.locations .grid__list li {
+  padding: 1rem;background-color: #E7EBF0;
 }
-.locations .list ul li {
-  
-}
-.locations .list ul li span {
-  font-weight: bold;
+.locations .grid__list li span {
+  font-weight: bold;  
 }
