@@ -1,0 +1,23 @@
+.main {
+    display: grid;
+    grid-template-areas: "header header header header ";
+    border: 1.5px solid black;
+    align-content: center;
+    background: linear-gradient(15deg, teal, white);
+top: 0;
+}
+.navigate {
+    grid-area: header;
+    display: grid;
+    color: white;
+
+    text-align: center;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: minmax(20px, auto);
+    grid-auto-flow: column;
+    box-shadow: 10px 10px 10px 10px gray;
+}
+.logo {
+    align-content:center;
+    margin-top: 7.5%;
+}
