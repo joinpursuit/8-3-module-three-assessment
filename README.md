@@ -77,15 +77,15 @@ You will need to complete features for four different pages and create a navigat
 
 - [ok] All content should be inside some element with the class `.movies`.
 
-- [ ] Has the text "Select a Movie" on the page.
+- [ok] Has the text "Select a Movie" on the page.
 
-- [ ] Has a `select` dropdown that includes an "empty" option element followed by all of the films produced by Studio Ghibli.
+- [ok] Has a `select` dropdown that includes an "empty" option element followed by all of the films produced by Studio Ghibli.
 
   ![Before Select](./assets/movieSelect1.png)
 
 #### Movies page (`/movies`) get movie details : 1 point
 
-- [ ] When a new option is selected from the dropdown, the movie's title, release date, and description should appear underneath the dropdown. At least the title of the movie should be in some kind of heading.
+- [ok] When a new option is selected from the dropdown, the movie's title, release date, and description should appear underneath the dropdown. At least the title of the movie should be in some kind of heading.
 
   ![After Select](./assets/movieSelect2.png)
 
@@ -93,7 +93,7 @@ You will need to complete features for four different pages and create a navigat
 
 #### People page : 1 point
 
-- [ ] All content should be inside of some element with the class `.people`.
+- [ok] All content should be inside of some element with the class `.people`.
 
 - [ ] Has the text "Search for a Person" on the page.
 
