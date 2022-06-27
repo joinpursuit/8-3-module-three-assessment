@@ -6,7 +6,7 @@ class People extends Component {
     super(props);
     this.state = {
       search: '',
-      match: '',
+      result: '',
     };
   }
 
@@ -18,42 +18,40 @@ class People extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    const getMatch = this.props.allPeople.find(
+    const matchFound = this.props.allPeople.find(
       (people) => people.name.toLowerCase() === this.state.search.toLowerCase()
     );
-    if (getMatch) {
+    if (matchFound) {
       this.setState({
-        match: getMatch,
+        result: matchFound,
         search: '',
       });
     } else {
       this.setState({
-        match: 'Not Found',
+        result: 'Not Found',
         search: '',
       });
     }
   };
 
   render() {
+    const { search, result } = this.state;
+
     return (
       <div className="people">
         <h1>Search for a Person</h1>
         <form>
-          <input
-            onChange={this.handleChange}
-            value={this.state.search}
-            type="text"
-          />
+          <input onChange={this.handleChange} value={search} type="text" />
           <button onClick={this.handleClick}>Submit</button>
         </form>
-        {this.state.match && this.state.match !== 'Not Found' ? (
+        {result && result !== 'Not Found' ? (
           <div>
-            <h3>Name: {this.state.match.name}</h3>
-            <p>Age: {this.state.match.age}</p>
-            <p>Gender: {this.state.match.gender}</p>
+            <h3>Name: {result.name}</h3>
+            <p>Age: {result.age}</p>
+            <p>Gender: {result.gender}</p>
           </div>
         ) : (
-          <p>{this.state.match}</p>
+          <p>{result}</p>
         )}
       </div>
     );

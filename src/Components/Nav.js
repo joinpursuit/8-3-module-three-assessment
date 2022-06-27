@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import './Nav.css'
 
-const nav = () => {
+const Nav = () => {
   return (
     <div>
       <nav className="navbar">
         <Link to="/">
-          <img className="logo" src='https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F24.media.tumblr.com%2F38ea5564a32521686354b10e16da0b2e%2Ftumblr_mfnrqiSKmU1rwgj3ko5_500.gif&f=1&nofb=1' height="50px" width="50px" />
+          <img className="logo" src='https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F24.media.tumblr.com%2F38ea5564a32521686354b10e16da0b2e%2Ftumblr_mfnrqiSKmU1rwgj3ko5_500.gif&f=1&nofb=1' height="50px" width="50px" alt='ghibli studios gif' />
         </Link>
         <h3>
           <Link to="/movies">Movies</Link>{' '}
@@ -22,4 +22,4 @@ const nav = () => {
   );
 };
 
-export default nav;
+export default Nav;

@@ -3,8 +3,8 @@ import { Component } from 'react';
 import './Movies.css';
 
 class Movies extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       selected: '',
     };
@@ -17,22 +17,27 @@ class Movies extends Component {
   };
 
   render() {
-    const movieList = this.props.allMovies.map((movie) => {
-      return <option key={movie.id} value={movie.id}>{movie.title}</option>;
+    const { allMovies } = this.props;
+    const { selected } = this.state;
+
+    const movieList = allMovies.map((movie) => {
+      return (
+        <option key={movie.id} value={movie.id}>
+          {movie.title}
+        </option>
+      );
     });
 
-    const movieData = this.props.allMovies.find(
-      (movie) => movie.id === this.state.selected
-    );
+    const movieData = allMovies.find((movie) => movie.id === selected);
 
     return (
-      <div className='movies'>
+      <div className="movies">
         <h1>Select a Movie</h1>
         <select onChange={this.getMovieId} className="titles">
           <option value=""></option>
           {movieList}
         </select>
-        {this.state.selected && (
+        {selected && (
           <div>
             <h2>Title: {movieData.title}</h2>
             <p>Release Date: {movieData.release_date}</p>

@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       movies: [],
       people: [],
-      locations: [],
     };
   }
   // https://stackoverflow.com/questions/52882903/componentdidmount-multiple-fetch-calls-best-practice
@@ -21,17 +20,14 @@ class App extends Component {
     Promise.all([
       fetch('https://ghibliapi.herokuapp.com/films'),
       fetch('https://ghibliapi.herokuapp.com/people'),
-      fetch('https://ghibliapi.herokuapp.com/locations'),
     ])
-
-      .then(([res1, res2, res3]) => {
-        return Promise.all([res1.json(), res2.json(), res3.json()]);
+      .then(([res1, res2]) => {
+        return Promise.all([res1.json(), res2.json()]);
       })
-      .then(([movies, people, locations]) => {
+      .then(([movies, people]) => {
         this.setState({
           movies: [...movies],
           people: [...people],
-          locations: [...locations],
         });
       });
   }
@@ -46,8 +42,11 @@ class App extends Component {
             path="/movies"
             element={<Movies allMovies={this.state.movies} />}
           />
-          <Route path="/people" element={<People allPeople={this.state.people}/>} />
-          <Route path="/locations" element={<Locations />}/>
+          <Route
+            path="/people"
+            element={<People allPeople={this.state.people} />}
+          />
+          <Route path="/locations" element={<Locations />} />
         </Routes>
       </div>
     );
