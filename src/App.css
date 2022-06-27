@@ -3,4 +3,21 @@
 .app {
   text-align: center;
 }
+body{
+  font-family: 'Courier New', Courier, monospace;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.405), rgba(255, 255, 255, 0.783)), url("https://c4.wallpaperflare.com/wallpaper/289/220/986/anime-studio-ghibli-spirited-away-wallpaper-preview.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  background-size: cover;
+  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  max-width: 1200px;
 
+  
+  }
+
+  /* https://stackoverflow.com/questions/17400075/lighter-background-image-css3 */
+  /* I loved this background so much and the text was not readable due to the background so I used this website to have the backgound light/transparent */
