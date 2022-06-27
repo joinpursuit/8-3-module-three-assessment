@@ -1,16 +1,14 @@
-const baseURL = 'http://localhost:3000'
+const baseURL = "http://localhost:3000";
 import intercept from "../support/intercept";
-import films from "../fixtures/films.json"
-import locations from '../fixtures/locations.json'
-
+import films from "../fixtures/films.json";
+import locations from "../fixtures/locations.json";
 
 describe("Has a Home Page", () => {
   it("can visit the home page", () => {
     cy.visit(baseURL);
-    cy.contains('Welcome to Ghibli')
+    cy.contains("Welcome to Ghibli");
   });
-})
-
+});
 
 describe("Uses React Router DOM navigation", () => {
   it("can visit the home page", () => {
@@ -25,7 +23,6 @@ describe("Uses React Router DOM navigation", () => {
     cy.visit(`${baseURL}/movies`);
   });
 
-
   it("can visit the people page", () => {
     cy.visit(`${baseURL}/people`);
   });
@@ -38,34 +35,33 @@ describe("Uses React Router DOM navigation", () => {
     cy.hasNavBar();
   });
 
-  it("has a link in the nav bar that navigates to the home page", ()=> {
-    cy.get('nav a').eq(0).click()
-    cy.url().should('eq', `${baseURL}/`)
-  })
+  it("has a link in the nav bar that navigates to the home page", () => {
+    cy.get("nav a").eq(0).click();
+    cy.url().should("eq", `${baseURL}/`);
+  });
 
-  it("has a link in the nav bar that navigates to the movies page", ()=> {
-    cy.get('nav').within(()=> {
-      cy.contains('Movies').click()
-      cy.url().should('eq', `${baseURL}/movies`)
-    })
-  })
+  it("has a link in the nav bar that navigates to the movies page", () => {
+    cy.get("nav").within(() => {
+      cy.contains("Movies").click();
+      cy.url().should("eq", `${baseURL}/movies`);
+    });
+  });
 
-  it("has a link in the nav bar that navigates to the people page", ()=> {
-    cy.get('nav').within(()=> {
-      cy.contains('People').click()
-      cy.url().should('eq', `${baseURL}/people`)
-    })
-  })
+  it("has a link in the nav bar that navigates to the people page", () => {
+    cy.get("nav").within(() => {
+      cy.contains("People").click();
+      cy.url().should("eq", `${baseURL}/people`);
+    });
+  });
 
-  it("has a link in the nav bar that navigates to the locations page", ()=> {
-    cy.get('nav').within(()=> {
-      cy.contains('Locations').click()
-      cy.url().should('eq', `${baseURL}/locations`)
-    })
-      // make less fast flashing screens
-  cy.wait(500)
-  })
-
+  it("has a link in the nav bar that navigates to the locations page", () => {
+    cy.get("nav").within(() => {
+      cy.contains("Locations").click();
+      cy.url().should("eq", `${baseURL}/locations`);
+    });
+    // make less fast flashing screens
+    cy.wait(500);
+  });
 });
 
 describe("Has a functioning Movies page that populates options menu from an API call", () => {
@@ -80,10 +76,10 @@ describe("Has a functioning Movies page that populates options menu from an API 
   });
 
   it("includes options elements that are populated with movie titles`", () => {
-    films.forEach(film => cy.get('select')
-      .within(() => cy.contains(film.title)))
+    films.forEach((film) =>
+      cy.get("select").within(() => cy.contains(film.title))
+    );
   });
-
 });
 
 describe("Has a functioning Movies page that populates a description when a movies title is chosen", () => {
@@ -144,8 +140,6 @@ describe("Has a functioning People page", () => {
   });
 });
 
-
-
 describe("has a functioning Locations page", () => {
   before(() => {
     intercept();
@@ -156,7 +150,6 @@ describe("has a functioning Locations page", () => {
   it("includes an element with a class of `.locations`", () => {
     cy.get(".locations").should("exist");
   });
-
 
   it("shows all locations and additional information when the Show Locations button is clicked", () => {
     cy.get("button").first().contains("Show Locations").click();
@@ -187,60 +180,66 @@ describe("has a functioning Locations page", () => {
   });
 });
 
-describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain", ()=> {
-
-  it("does not show the `Sort by` buttons when locations are hidden", ()=> {
+describe("Has 3 buttons that allow sorting by location Name, Climate or Terrain", () => {
+  it("does not show the `Sort by` buttons when locations are hidden", () => {
     cy.get("button").contains("Show Locations").click();
     cy.get("button").contains("Hide Locations").click();
-    cy.contains('Sort by Name').should('not.exist')
-    cy.contains('Sort by Climate').should('not.exist')
-    cy.contains('Sort by Terrain').should('not.exist')
-  })
-  it("only shows the `Sort by` buttons when locations are showing", ()=> {
+    cy.contains("Sort by Name").should("not.exist");
+    cy.contains("Sort by Climate").should("not.exist");
+    cy.contains("Sort by Terrain").should("not.exist");
+  });
+  it("only shows the `Sort by` buttons when locations are showing", () => {
     cy.get("button").contains("Show Locations").click();
-    cy.contains('Sort by Name')
-    cy.contains('Sort by Climate')
-    cy.contains('Sort by Terrain')
-  })
-
+    cy.contains("Sort by Name");
+    cy.contains("Sort by Climate");
+    cy.contains("Sort by Terrain");
+  });
 
   it("sorts by location name, when `Sort by Name` button is pressed", () => {
-    locations.sort((a, b)=> {
+    locations.sort((a, b) => {
       if (a.name > b.name) {
-        return 1
-      } else if (a.name < b.name){
-        return -1
+        return 1;
+      } else if (a.name < b.name) {
+        return -1;
       } else {
-        return 0
+        return 0;
       }
-    })
-    
-    cy.contains('Sort by Name').click()
+    });
+
+    cy.contains("Sort by Name").click();
     locations.forEach((location, index) => {
-      cy.get('.locations ul ul').eq(index).within(()=> {
-        cy.get('span').eq(1).should('have.text', locations[index].name)
-      })
-    })
-  })
+      cy.get(".locations ul ul")
+        .eq(index)
+        .within(() => {
+          cy.get("span").eq(1).should("have.text", locations[index].name);
+        });
+    });
+  });
 
   it("sorts by location climate, when `Sort by Climate` button is pressed", () => {
-    locations.sort((a, b)=> {
+    locations.sort((a, b) => {
       if (a.climate > b.climate) {
-        return 1
-      } else if (a.climate < b.climate){
-        return -1
+        return 1;
+      } else if (a.climate < b.climate) {
+        return -1;
       } else {
-        return 0
+        return 0;
       }
-    })
-    
-    cy.contains('Sort by Climate').click()
+    });
+
+    cy.contains("Sort by Climate").click();
     locations.forEach((location, index) => {
-      cy.get('.locations ul ul').eq(index).within(()=> {
-        cy.get('li').eq(1).within(()=> {
-          cy.get('span').eq(1).should('have.text', locations[index].climate)
-        })
-      })
-    })
-  })
-})
+      cy.get(".locations ul ul")
+        .eq(index)
+        .within(() => {
+          cy.get("li")
+            .eq(1)
+            .within(() => {
+              cy.get("span")
+                .eq(1)
+                .should("have.text", locations[index].climate);
+            });
+        });
+    });
+  });
+});

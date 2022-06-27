@@ -1,28 +1,58 @@
+import React from "react";
+import "./App.css";
+import Locations from "./Components/Locations";
+import Movies from "./Components/Movies";
+import Nav from "./Components/Nav";
+import People from "./Components/People";
+import Home from "./Components/Home";
+import { Routes, Route } from "react-router-dom";
 
-import logo from './logo.svg';
-import './App.css';
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = { movieArray: [], peopleArray: [], locationsArray: [] };
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  componentDidMount() {
+    Promise.all([
+      fetch("https://ghibliapi.herokuapp.com/films"),
+      fetch("https://ghibliapi.herokuapp.com/people"),
+      fetch("https://ghibliapi.herokuapp.com/locations"),
+    ])
+      .then(([res1, res2, res3]) => {
+        return Promise.all([res1.json(), res2.json(), res3.json()]);
+      })
+      .then(([data1, data2, data3]) => {
+        this.setState({
+          movieArray: data1,
+          peopleArray: data2,
+          locationsArray: data3,
+        });
+      });
+  }
 
-    </div>
-  );
+  render() {
+    return (
+      <div className="background">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/people"
+            element={<People peopleArray={this.state.peopleArray} />}
+          />
+          <Route
+            path="/movies"
+            element={<Movies movieArray={this.state.movieArray} />}
+          />
+          <Route
+            path="/locations"
+            element={<Locations locationsArray={this.state.locationsArray} />}
+          />
+        </Routes>
+      </div>
+    );
+  }
 }
-
 
 export default App;

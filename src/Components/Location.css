@@ -1,0 +1,21 @@
+
+li {
+    list-style-type: none;
+}
+
+.location-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 340px);
+    grid-gap: 20px;
+    justify-content: space-around;
+
+}
+
+.single-location {
+    border: 5px solid rgb(7, 57, 90);
+    padding: 50px;
+    color:black;
+    background-color: #d3c35d; 
+    border-radius: 30px;
+}
+
