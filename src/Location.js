@@ -25,9 +25,6 @@ class Location extends React.Component {
   render() {
     const { showMore } = this.state;
 
-    /* const locationCards = data.map((name, climate, terrain) => {
-      return <div key={name} value1={climate} value2={terrain} />;
-    }); */
     return (
       <div className='locations'>
         <h1>List of Locations</h1>
