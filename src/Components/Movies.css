@@ -3,15 +3,14 @@ div {
     font-family: fantasy;
 }
 
-section {
+.moviecard {
     font-size: x-large;
     font-family:fantasy;
     padding:1.2em 30px 1.2em 75px;
     border-radius: 10px;
     text-align: left;
     position: relative;
-    background-color: rgb(215, 208, 208);
-    width:90%;
+    width:100%;
     margin:25px auto;
 }
 

@@ -39,7 +39,7 @@ class Movies extends React.Component {
           })}
         </select>
         {this.state.chosenMovie ? (
-          <section>
+          <section className="moviecard">
             <h4>{this.state.chosenMovie.title}</h4>
             <h5>{this.state.chosenMovie.release_date}</h5>
             <p>{this.state.chosenMovie.description}</p>
