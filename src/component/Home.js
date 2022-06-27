@@ -22,7 +22,7 @@ class Home extends React.Component {
     componentDidMount = () => {
       this.FetchMovies();
     };
-  
+  //This render below will allow movies to display movies and a movie banner for the home page
     render() {
       let { movieTitles } = this.state;
       let moviePics = movieTitles.map((movie) => {

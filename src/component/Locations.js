@@ -29,7 +29,7 @@ class Locations extends React.Component {
       display: !this.state.display,
     });
   };
-// Going back to js from module 1 practice using let sortedArr
+// Going back to js from module 1 and 2 practice using let sortedArr for name, climate, and terrain
   sortName = (data) => {
     let sortedArr = data.sort((a, b) => {
       if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
