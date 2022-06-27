@@ -31,7 +31,7 @@ If you have gotten all the tests passing, you are strongly encouraged to work on
 To run the tests, you can run the following command from the command line. You will need to be in the root directory of your local directory.
 
 ```
-npm run cypress
+npm run test*
 ```
 
 This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
@@ -59,8 +59,8 @@ You will need to complete features for four different pages and create a navigat
   ```
   Welcome to GhibliApp
   ```
-
   ![Welcome Page](./assets/welcome.png)
+
 
 #### Navigation bar : 1 point
 

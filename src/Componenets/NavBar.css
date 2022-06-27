@@ -1,0 +1,21 @@
+.logo-img{
+
+    height: 50px;
+    width: 50px;
+}
+
+.nav{
+background-color: aquamarine;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+ }
+
+.nav-element{
+padding: 0;
+flex-direction: row;
+height: fit-content;
+color: black;
+font-size: medium;
+}
