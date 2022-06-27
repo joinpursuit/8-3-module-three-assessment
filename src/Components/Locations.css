@@ -1,0 +1,26 @@
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .2rem;
+}
+
+.individual-location {
+    list-style: circle;
+    list-style-position: inside;
+    text-align: center;
+    padding: 15px;
+    background-color: aquamarine;
+}
+
+.individual-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: .2rem;
+    list-style: none;
+    text-align: center;
+    padding: 0%;
+}
+
+.bold {
+    font-weight: bold;
+}

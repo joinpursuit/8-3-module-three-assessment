@@ -1,28 +1,56 @@
-
-import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import Nav from './Components/Nav';
+import Home from './Components/Home';
+import Movies from './Components/Movies';
+import People from './Components/People';
+import Locations from './Components/Locations';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: [],
+      people: [],
+    };
+  }
+  // https://stackoverflow.com/questions/52882903/componentdidmount-multiple-fetch-calls-best-practice
+  componentDidMount() {
+    Promise.all([
+      fetch('https://ghibliapi.herokuapp.com/films'),
+      fetch('https://ghibliapi.herokuapp.com/people'),
+    ])
+      .then(([res1, res2]) => {
+        return Promise.all([res1.json(), res2.json()]);
+      })
+      .then(([movies, people]) => {
+        this.setState({
+          movies: [...movies],
+          people: [...people],
+        });
+      });
+  }
 
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/movies"
+            element={<Movies allMovies={this.state.movies} />}
+          />
+          <Route
+            path="/people"
+            element={<People allPeople={this.state.people} />}
+          />
+          <Route path="/locations" element={<Locations />} />
+        </Routes>
+      </div>
+    );
+  }
 }
-
 
 export default App;
