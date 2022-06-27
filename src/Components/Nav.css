@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    flex: 0.3;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: teal;
+
+}
+
+
+.nav-logo {
+max-width: 50px;
+max-height: 50px;
+align-items: center;
+object-fit: contain;
+width: 50px;
+height: 50px;
+margin-top: 20px;
+background-color: teal;
+}
