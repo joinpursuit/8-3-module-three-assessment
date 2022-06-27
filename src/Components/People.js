@@ -52,6 +52,8 @@ class People extends React.Component {
                         <div className="people-deets">
                             <p><strong>Name:</strong> {searchResult.name}</p>
                             <p><strong>Age:</strong> {searchResult.age}</p>
+                            <p><strong>Eye Color:</strong> {searchResult.eye_color}</p>
+                            <p><strong>Hair Color:</strong> {searchResult.hair_color}</p>
                             <p><strong>Gender:</strong> {searchResult.gender}</p>
                         </div>
                     ) : (

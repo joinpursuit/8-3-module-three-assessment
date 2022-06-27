@@ -52,33 +52,57 @@ class Locations extends React.Component {
 		const { display, locations } = this.state;
 		const mappedLocations = locations.map((location) => {
 			return (
-				<li>
-					<ul>
-						<li><strong>Name:</strong>  {location.name} </li>
-						<li><strong>Climate:</strong> {location.climate}</li>
-						<li><strong>Terrain:</strong> {location.terrain}</li>
+				<li className='location-blocks'>
+					<ul className='inside-blocks'>
+						<li>
+							<strong>Name:</strong> {location.name}{' '}
+						</li>
+						<li>
+							<strong>Climate:</strong> {location.climate}
+						</li>
+						<li>
+							<strong>Terrain:</strong> {location.terrain}
+						</li>
 					</ul>
 				</li>
 			);
 		});
 		return (
 			<div className='locations'>
-				<em><h1>List of Locations</h1></em>
+				<em>
+					<h1>List of Locations</h1>
+				</em>
 				{display ? (
 					<div>
-						<button className="buttons" onClick={this.handleShowAndHide}>Hide Locations</button>
-						<button className="buttons"  onClick={() => this.sortingName(locations)}>
+						<button className='buttons' onClick={this.handleShowAndHide}>
+							Hide Locations
+						</button>
+						<button
+							className='buttons'
+							onClick={() => this.sortingName(locations)}
+						>
 							Sort by Name
 						</button>
-						<button className="buttons" onClick={() => this.sortingClimate(locations)}>
+						<button
+							className='buttons'
+							onClick={() => this.sortingClimate(locations)}
+						>
 							Sort by Climate
 						</button>
-						<button className="buttons"  onClick={() => this.sortingTerrain(locations)}>
+						<button
+							className='buttons'
+							onClick={() => this.sortingTerrain(locations)}
+						>
 							Sort by Terrain
 						</button>
 					</div>
 				) : (
-					<button className="show-location-button"onClick={this.handleShowAndHide}>Show Locations</button>
+					<button
+						className='show-location-button'
+						onClick={this.handleShowAndHide}
+					>
+						Show Locations
+					</button>
 				)}
 				<ul className='location-list'>
 					{' '}

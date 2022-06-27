@@ -3,7 +3,10 @@
 }
 
 .people-deets {
+    display: inline-block;
     font-family: Georgia;
+    background-color: aquamarine;
+    color:rgb(78, 78, 139);
 }
 
 .people-button {
