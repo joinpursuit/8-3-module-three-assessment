@@ -57,7 +57,7 @@ class Movies extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div className='MovieDiv'>
+      <div id='MovieDiv' className='movies'>
         <h1>Select A Movie</h1>
         <select name='Movies' id='Movies'>
           <option value=' '> </option>
