@@ -1,0 +1,31 @@
+.movieImg {
+  width: 250px;
+  height: 250px;
+}
+.movies,
+.container {
+  background-color: white;
+  padding: 1rem 0;
+  max-width: 70vw;
+  width: 100%;
+  height: 95vh;
+  text-align: center;
+  margin: 0 auto;
+}
+img {
+  text-align: center;
+  margin: 0 auto;
+}
+p {
+  padding: 0.2rem 0;
+}
+/* h2 {
+  padding: 1rem 0;
+} */
+.movies {
+  margin: 2rem auto;
+  max-width: 90vw;
+  width: 100%;
+  height: 120vh;
+  background-color: rgb(186, 227, 237);
+}
