@@ -1,0 +1,35 @@
+.movies {
+  margin-top: 50px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.movies__details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.movies__img {
+  margin-bottom: 20px;
+}
+
+.select__movies {
+  width: 300px;
+  height: 35px;
+  border-radius: 20px;
+  border: 0.5px solid black;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.select__movies:hover {
+  cursor: pointer;
+}
+
+.movies__header {
+  color: rgb(69, 95, 221);
+}
+

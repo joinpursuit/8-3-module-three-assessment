@@ -1,0 +1,34 @@
+.people {
+    margin-top: 50px;
+}
+
+.people__input {
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    border: 0.5px solid black;
+    margin-top: 30px;
+}
+
+.people__button {
+    background-color: lightskyblue;
+    align-items: center;
+    border: 0.5px solid lightgray;
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    margin-left: 30px;
+}
+
+.people__button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: lightskyblue;
+    border: 0.5px solid lightskyblue;
+    font-weight: bold;
+    transform: scale(1.3);
+}
+
+.people__header {
+    color: rgb(69, 95, 221);
+}
