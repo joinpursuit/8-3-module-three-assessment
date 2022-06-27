@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
+/**
+ * Navigation bar with links to the other pages of the site
+ */
+
 class Navbar extends React.Component {
   render() {
     return (

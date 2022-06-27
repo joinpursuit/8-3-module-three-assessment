@@ -17,9 +17,13 @@ class Locations extends React.Component {
         this.setState({
           locations: data,
         });
-      });
+      })
+      .catch((error) => console.log(error));
   };
 
+  /**
+   * fetches data when the page loads. location  state is already populated.
+   */
   componentDidMount = () => {
     this.getLocations();
   };
@@ -30,30 +34,15 @@ class Locations extends React.Component {
     });
   };
 
-  // TODO maybe find a way to get these 3 functions into 1 and make it dynamic
-
-  sortName = (data) => {
+  /**
+   * Sorts the location alphabetically by type chosen
+   * @param {object []} data - array of location objects pulled from API
+   * @param {string} type - either "name", "climate", "terrain"
+   */
+  sortName = (data, type) => {
     let sortedArr = data.sort((a, b) => {
-      if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-      if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-      return 0;
-    });
-    this.setState({ locations: sortedArr });
-  };
-
-  sortClimate = (data) => {
-    let sortedArr = data.sort((a, b) => {
-      if (a.climate.toLowerCase() > b.climate.toLowerCase()) return 1;
-      if (a.climate.toLowerCase() < b.climate.toLowerCase()) return -1;
-      return 0;
-    });
-    this.setState({ locations: sortedArr });
-  };
-
-  sortTerrain = (data) => {
-    let sortedArr = data.sort((a, b) => {
-      if (a.terrain.toLowerCase() > b.terrain.toLowerCase()) return 1;
-      if (a.terrain.toLowerCase() < b.terrain.toLowerCase()) return -1;
+      if (a[type].toLowerCase() > b[type].toLowerCase()) return 1;
+      if (a[type].toLowerCase() < b[type].toLowerCase()) return -1;
       return 0;
     });
     this.setState({ locations: sortedArr });
@@ -93,13 +82,13 @@ class Locations extends React.Component {
           {display ? (
             <div>
               <button onClick={this.showLocationHandler}>Hide Locations</button>
-              <button onClick={() => this.sortName(locations)}>
+              <button onClick={() => this.sortName(locations, 'name')}>
                 Sort by Name
               </button>
-              <button onClick={() => this.sortClimate(locations)}>
+              <button onClick={() => this.sortName(locations, 'climate')}>
                 Sort by Climate
               </button>
-              <button onClick={() => this.sortTerrain(locations)}>
+              <button onClick={() => this.sortName(locations, 'terrain')}>
                 Sort by Terrain
               </button>
             </div>

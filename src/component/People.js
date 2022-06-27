@@ -1,6 +1,9 @@
 import React from 'react';
 import './people.css';
 
+/**
+ * Class component that displays character bio facts.
+ */
 class People extends React.Component {
   constructor() {
     super();
@@ -18,8 +21,10 @@ class People extends React.Component {
         this.setState({
           peopleList: data,
         });
-      });
+      })
+      .catch((error) => console.log(error));
   };
+
   /**
    * fetches data when the page loads. peoplelist state is already populated.
    */

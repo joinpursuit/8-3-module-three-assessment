@@ -19,14 +19,15 @@ class Home extends React.Component {
         this.setState({
           movieTitles: data,
         });
-      });
+      })
+      .catch((error) => console.log(error));
   };
 
   render() {
     let { movieTitles } = this.state;
-    let moviePics = movieTitles.map((movie) => {
+    let moviePics = movieTitles.map((movie, idx) => {
       return (
-        <li className="movie-card">
+        <li key={idx} className="movie-card">
           <div>
             <img src={movie.image} alt="thumbnail" />
             <img src={movie.movie_banner} alt="banner" />
