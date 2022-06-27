@@ -1,13 +1,12 @@
 import React from "react";
-import "../../App.css";
+
 import { Component } from "react";
 
 class People extends Component{
     constructor(){
         super()
         this.state = {
-            people: [],
-            peopleFind: " ",
+            people: []
             searchResult: {},
         }
     }
@@ -25,9 +24,9 @@ handlePersonInput=(e)=>{
 }
 
 handleSubmit = ()=> {
-    let peopleFind =people.find(person=>{
-        return person.name;
-    })
+   this.setState({
+     peopleFind: !this.state.peopleFind
+   })
 
 }
     render(){

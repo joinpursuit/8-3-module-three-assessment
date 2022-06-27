@@ -1,10 +1,9 @@
-import { Router, Route, Link, Switch } from "react-router-dom";
-import "./App.css";
+import {BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from './Component/Home';
 import Movie from './Component/Movie';
 import Navbar from './Component/Navbar';
 import People from "./Component/People";
-import Location from "./Component/Location";
+import Locations from "./Component/Locations";
 
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
         <Route exact path='/' component={Home}/>
         <Route path='/movie' component={Movie}/>
         <Route path='/people' component={People}/>
-        <Route path='/location' component={Location}/>
+        <Route path='/locations' component={Locations}/>
       </Switch>
       </Router>
     </div>
