@@ -1,0 +1,35 @@
+.species {
+    margin-top: 50px;
+}
+
+.species__input {
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    border: 0.5px solid gray;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.species__button {
+    background-color: lightskyblue;
+    border: 0.5px solid gray;
+    align-items: center;
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    margin-left: 30px;
+}
+
+.species__button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: lightskyblue;
+    border: 0.5px solid lightskyblue;
+    font-weight: bold;
+    transform: scale(1.3);
+}
+
+.species__header {
+    color: rgb(69, 95, 221);
+}
