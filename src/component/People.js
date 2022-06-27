@@ -2,7 +2,7 @@ import React from 'react';
 import './people.css';
 
 /**
- * Class component that displays character bio facts.
+ * Class component that displays character bio-facts.
  */
 class People extends React.Component {
   constructor() {
