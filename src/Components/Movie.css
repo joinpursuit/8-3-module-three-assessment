@@ -1,3 +1,11 @@
 select {
   height: 30px;
 }
+
+.description {
+  margin-left: 25%;
+  margin-right: 25%;
+  line-height: 1.9em;
+}
+
+

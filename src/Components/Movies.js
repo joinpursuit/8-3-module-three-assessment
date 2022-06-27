@@ -48,7 +48,7 @@ class Movies extends React.Component {
         <p>
           <strong>Released Date: </strong> {this.getDate(data, movieTitle)}
         </p>
-        <p>
+        <p className='description'>
           <strong>Description: </strong>
           {this.getDetail(data, movieTitle)}
         </p>
