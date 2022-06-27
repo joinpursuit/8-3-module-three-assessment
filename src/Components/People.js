@@ -1,4 +1,5 @@
 import React from 'react';
+import "./People.css"
 
 class People extends React.Component {
     constructor() {
@@ -43,15 +44,15 @@ class People extends React.Component {
                         placeholder='get ya search on!'
                         onChange={this.handleSearch}
                     />
-                    <button type='submit'>Submit</button>
+                    <button className="people-button" type='submit'>Submit</button>
                 </form>
                 <div>
                     {/* tried to do an if else statement and I could not get the jsx syntax right */}
                     {searchResult ? (
-                        <div>
-                            <p>Name:{searchResult.name}</p>
-                            <p>Age:{searchResult.age}</p>
-                            <p>Gender:{searchResult.gender}</p>
+                        <div className="people-deets">
+                            <p><strong>Name:</strong> {searchResult.name}</p>
+                            <p><strong>Age:</strong> {searchResult.age}</p>
+                            <p><strong>Gender:</strong> {searchResult.gender}</p>
                         </div>
                     ) : (
                         <h4>Not Found</h4>

@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: teal;
+    font-family: Georgia;
 
 }
 
@@ -11,10 +12,6 @@
 .nav-logo {
 max-width: 50px;
 max-height: 50px;
-align-items: center;
-object-fit: contain;
-width: 50px;
-height: 50px;
 margin-top: 20px;
 background-color: teal;
 }

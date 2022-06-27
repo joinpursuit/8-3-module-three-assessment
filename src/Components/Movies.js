@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./Movies.css"
 class Movies extends React.Component {
     constructor() {
         super();
@@ -41,7 +41,7 @@ class Movies extends React.Component {
                 </select>
                 <div>
                     {userSelects ? (
-                        <div className='movies'>
+                        <div className='movies-deets'>
                             <h2>{userSelects.title}</h2>
                             <p>Release Date: {userSelects.release_date}</p>
                             <p>Description: {userSelects.description}</p>
