@@ -26,24 +26,27 @@ class People extends React.Component {
     
     if(value !== '') {
       this.setState({person: value})  
+      this.setState({isValid: true})  
     }
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    
-    const filtered = (this.state.peopleList).filter(person => {
-      return ((person.name).toLowerCase()).includes((this.state.person).toLowerCase());
-    });
+    //
+    if(this.state.isValid) {
+      const filtered = (this.state.peopleList).filter(person => {
+        return ((person.name).toLowerCase()).includes((this.state.person).toLowerCase());
+      });
 
-    if(filtered.length > 0) {
-      this.setState({ personSearch: filtered })
-      this.setState({ isValid: true })
-    } else { 
-      this.setState({ personSearch: ['Not Found'] }) 
-      this.setState({ isValid: false })
+      if(filtered.length > 0) {
+        this.setState({ personSearch: filtered })
+        this.setState({ isValid: true })
+      } else { 
+        this.setState({ personSearch: ['Not Found'] }) 
+        this.setState({ isValid: false })
+      }
+      this.setState({person: ''})
     }
-    this.setState({person: ''})
   }
 
   render () {
