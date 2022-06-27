@@ -1,0 +1,28 @@
+.movies {
+    background-color: skyblue;
+    min-height: 100vh;
+}
+
+.prompt-text{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 70px;
+    background-color: skyblue;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+    background-color: skyblue;
+}
+
+p {
+    font-size: 22px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.moobie {
+    justify-content: center;
+    background-color: #e6e6fc; 
+}
