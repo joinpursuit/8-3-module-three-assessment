@@ -1,0 +1,12 @@
+.card {
+    padding: 20px;
+    background-color: white;
+}
+
+li {
+    border: 1px thin black;
+    background-color: #A0CEEE;
+    margin: 5px;
+    padding: 10px;
+    color: white
+}
