@@ -1,3 +1,11 @@
+h1 {
+    background-color: aquamarine;
+}
+
+.movies {
+    text-align: center;
+}
+
 .movies-deets {
     font-family: Georgia;
 }

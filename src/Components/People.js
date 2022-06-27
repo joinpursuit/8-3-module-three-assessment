@@ -36,7 +36,7 @@ class People extends React.Component {
         const { searchResult } = this.state;
         return (
             <div className='people'>
-                <h1>Search for a Person</h1>
+                <em><h1>Search for a Person</h1></em>
                 <form onSubmit={this.handleFormSubmission}>
                     <input
                         type='text'

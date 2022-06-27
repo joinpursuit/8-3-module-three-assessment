@@ -63,7 +63,7 @@ class Locations extends React.Component {
 		});
 		return (
 			<div className='locations'>
-				<h1>List of Locations</h1>
+				<em><h1>List of Locations</h1></em>
 				{display ? (
 					<div>
 						<button className="buttons" onClick={this.handleShowAndHide}>Hide Locations</button>
