@@ -26,13 +26,14 @@ class Locations extends React.Component {
           <ul key={idx}>
             <span>
               <li className="text">
-                Name: <span className="value">{location.name}</span>
+                <strong>Name:</strong>{" "}
+                <span className="value">{location.name}</span>
               </li>
               <li>
-                Climate: <span>{location.climate}</span>
+                <strong> Climate:</strong> <span>{location.climate}</span>
               </li>
               <li>
-                Terrain: <span>{location.terrain}</span>
+                <strong>Terrain:</strong> <span>{location.terrain}</span>
               </li>
             </span>
           </ul>
@@ -46,7 +47,7 @@ class Locations extends React.Component {
     return (
       <div className="locations">
         <div className="menu">
-          <h1 className="title">List of Locations</h1>
+          <h2>List of Locations</h2>
           <button
             onClick={() => {
               this.unorderedLocations();

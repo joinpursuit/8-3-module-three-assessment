@@ -1,4 +1,5 @@
 import React from "react";
+import "./People.css";
 
 class People extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class People extends React.Component {
   render() {
     return (
       <div className="people menu">
-        <h2 className="title">Search for a Person</h2>
+        <h2>Search for a Person</h2>
         <input
           name="name"
           type="text"
@@ -34,12 +35,24 @@ class People extends React.Component {
 
         <div>
           {this.state.profile ? (
-            <div>
-              <h2>Name: {this.state.profile.name}</h2>
-              <p>Age:{this.state.profile.age}</p>
-              <p>Gender: {this.state.profile.gender}</p>
-              <p>Eye Color:{this.state.profile.eye_color} </p>
-              <p>Hair Color: {this.state.profile.hair_color}</p>
+            <div className="peopledata">
+              ><h2>Name: {this.state.profile.name}</h2>
+              <p>
+                <strong>Age:</strong>
+                {this.state.profile.age}
+              </p>
+              <p>
+                <strong>Gender:</strong>
+                {this.state.profile.gender}
+              </p>
+              <p>
+                <strong>Eye Color:</strong>
+                {this.state.profile.eye_color}
+              </p>
+              <p>
+                <strong>Hair Color:</strong>
+                {this.state.profile.hair_color}
+              </p>
             </div>
           ) : (
             "Not Found"

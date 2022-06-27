@@ -19,19 +19,28 @@ class Movies extends React.Component {
         return movie.title === this.state.value;
       });
       return (
-        <div>
-          <p>Title: {foundMovie.title}</p>
-          <p>Release Date: {foundMovie.release_date}</p>
-          <p>Description: {foundMovie.description}</p>
+        <div className="movie-data">
+          <p>
+            <h3>
+              Title:
+              <span className="title-data"> {foundMovie.title}</span>
+            </h3>
+          </p>
+          <p>
+            <strong>Release Date:</strong> {foundMovie.release_date}
+          </p>
+          <p>
+            <strong>Description: </strong> {foundMovie.description}
+          </p>
         </div>
       );
     };
 
     return (
-      <div className="movies menu dropdown">
+      <div className="movies menu ">
         <form>
           <label>
-            <div className="title">Select a Movie</div>
+            <h2>Select a Movie</h2>
             <select value={this.state.value} onChange={this.handleChange}>
               <option value={null}></option>
               {this.props.movieArray.map((movie, idx) => {
@@ -45,10 +54,11 @@ class Movies extends React.Component {
           </label>
         </form>
 
-        <div>{this.state.value ? printMovieInfo() : null}</div>
+        <div className="data-wrapper">
+          {this.state.value ? printMovieInfo() : "Please select a movie"}
+        </div>
       </div>
     );
   }
 }
-
 export default Movies;

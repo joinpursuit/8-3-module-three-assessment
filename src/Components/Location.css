@@ -5,8 +5,8 @@ li {
 
 .location-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-gap: 65px;
+    grid-template-columns: repeat(3, 340px);
+    grid-gap: 20px;
     justify-content: space-around;
 
 }
