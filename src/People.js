@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.css';
 
-class SearchBar extends React.Component {
+class People extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
             if (this.checkInput()) {
               return <p>Not Found</p>;
             } else {
-              //fetchHandler(this.state.searchInput);
+              //fetchHandler(this.state.searchInput); //causes a runtime error
               //this.clearText();
             }
           }}
@@ -51,4 +51,4 @@ class SearchBar extends React.Component {
     );
   }
 }
-export default SearchBar;
+export default People;

@@ -20,13 +20,16 @@ function generateDropDown(json) {
   return json.map((entry) => {
     return (
       <select name='movies'>
-        <option value=' '>" "</option>
+        <option value=' '></option>
         <option value={entry.title}>${entry.title}</option>
       </select>
     );
   });
 
-  /*json.forEach((movie) => {
+  /* hought of iterating the API data using a for loop like with Mod 2's Assessment and populating the dropbox that way, ran into the same 
+  problem of getting an empty dropbox because the API data was undefined. Redid it with different approaches multiple times. */
+
+  /*json.forEach((movie) => {                       
     for (let key in movie) {
       let ghibliTitles = document.createElement('option');
       ghibliTitles.textContent = key;
@@ -53,7 +56,7 @@ class Movies extends React.Component {
       <div className='MovieDiv'>
         <h1>Select A Movie</h1>
         <select name='Movies' id='Movies'>
-          <option value=' '>" " </option>
+          <option value=' '> </option>
           <option value='Placeholder'>Placeholder</option>
         </select>
       </div>

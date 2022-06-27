@@ -24,7 +24,7 @@ class Nav extends React.Component {
           <Link to='/Movies'>
             <h2 className='Movies'>Movies</h2>
           </Link>
-          <Link to='/SearchBar'>
+          <Link to='/People'>
             <h2 className='People'>People</h2>
           </Link>
           <Link to='/Location'>

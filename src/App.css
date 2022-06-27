@@ -1,4 +1,13 @@
-
+.welcome{
+  display:grid;
+  text-align:center;
+  margin:auto;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-decoration-color: navy;
+  font-weight: italic;
+  background: gray;
+}
 
 .app {
   text-align: center;
