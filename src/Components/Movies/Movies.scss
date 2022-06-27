@@ -1,0 +1,25 @@
+.movies {
+  text-align: center;
+  background-color: aquamarine;
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+
+  .formSelect {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  .movieDetails {
+    background-color: aliceblue;
+    width: 90%;
+    margin: 3% auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0rem 1.5rem rgb(0, 0, 255);
+  }
+}
