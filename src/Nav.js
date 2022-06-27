@@ -10,7 +10,7 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <main className='main'>
+      <nav className='main'>
         <div className='navigate'>
           <Link to='/'>
             <img
@@ -24,14 +24,14 @@ class Nav extends React.Component {
           <Link to='/Movies'>
             <h2 className='Movies'>Movies</h2>
           </Link>
-          <Link to='/People'>
+          <Link to='/SearchBar'>
             <h2 className='People'>People</h2>
           </Link>
-          <Link to='/Locations'>
-            <h2 className='Locations'>Locations</h2>
+          <Link to='/Location'>
+            <h2 className='Location'>Location</h2>
           </Link>
         </div>
-      </main>
+      </nav>
     );
   }
 }
