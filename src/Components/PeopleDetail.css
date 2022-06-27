@@ -1,0 +1,17 @@
+.notFound{
+    height: 40px;
+    background-color: aliceblue;
+    margin-top: 30px;
+    width: 500px;
+}
+
+.peopleInfo{
+    height: 500px;
+    width: 600px;
+    background-color: rgb(208, 214, 29);
+    margin:auto;
+}
+
+p{
+    margin-top: 10px;
+}

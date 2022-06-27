@@ -1,0 +1,19 @@
+.locationsDisplay{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.currentLocation{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 200px;
+    background-color: rgb(226, 215, 215);
+    list-style-type: none;
+}
+
+li{
+    margin-top: 10px;
+    background-color: whitesmoke;
+}

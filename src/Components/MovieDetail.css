@@ -1,0 +1,27 @@
+.movieDetail{
+    height: 400px;
+    width: 85%;
+    margin: auto;
+    background-color: rgb(36, 120, 203);
+}
+
+.movieDetail h3, .movieDetail h5{
+    padding-top: 20px;
+}
+
+h3{
+    font-size: 22px;
+}
+
+h3,h4{
+    font-weight: 400;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+p{
+    width:90%;
+    margin: auto;
+}

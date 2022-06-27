@@ -1,0 +1,16 @@
+.movies{
+    height: 800px;
+    width: 85%;
+    background-color: skyblue;
+    margin: auto;
+    text-align: center;
+}
+
+h2{
+   padding-top: 30px;
+   font-size: 32px;
+}
+
+select{
+    height: 30px;
+}
