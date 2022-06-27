@@ -1,0 +1,26 @@
+.Navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+   background-color: #7db1c3;
+}
+
+
+.logo {
+    height: 50px;
+    object-fit: contain;
+}
+/* I understand it needs to be height 50px and width 50 px but I believe it to be too small ghilbi is too beautiful to hide  */
+
+
+
+.linked {
+    font-family: 'Yatra One', cursive;
+    font-size: x-large; 
+}
+
+a:link { text-decoration: none; }
+
