@@ -1,0 +1,20 @@
+.home {
+    background-color: aquamarine;
+    text-align: center;
+    font-family: Georgia;
+    color: rgb(78, 78, 139);
+}
+
+h1 {
+    text-align: center;
+    font-family: Georgia;
+}
+
+.my-photo {
+    max-width: 175px;
+}
+
+h3 {
+    font-family: Georgia;
+    color: rgb(78, 78, 139)
+}
