@@ -1,0 +1,20 @@
+.locationCard {
+    display:block;
+    color:black;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
+    font-size: large;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+    position: relative;
+    background-color: bisque;
+}
+
+
+

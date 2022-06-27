@@ -1,0 +1,26 @@
+.attributes {
+    font-size: larger;
+}
+
+button {
+    background-color:steelblue;
+    font-family: fantasy;
+    margin-top: 2px;
+}
+
+input {
+    font-family: fantasy;
+    background-color: aliceblue;
+}
+
+p {
+    font-size: x-large;
+    font-family:fantasy;
+    padding:1.2em 15px;
+    border-radius: 6px;
+    text-align: left;
+    position:sticky;
+    background-color: rgb(239, 238, 211);
+    width:50%;
+    margin:5px auto;
+}
