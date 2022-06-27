@@ -1,6 +1,31 @@
-
-
-.app {
+.ghibliapp {
   text-align: center;
 }
 
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 10px;
+  padding: 10px;
+  display: inline;
+}
+
+ul li :link {
+  text-decoration: none;
+}
+
+.movies {
+  margin: 0 auto;
+  width: 40%;
+  height: 100%;
+}
