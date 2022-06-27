@@ -1,0 +1,21 @@
+.home {
+    flex: 0.6;
+    margin: 50px 30px;
+}
+
+.home > ul {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    object-fit: contain;
+    list-style: none;
+}
+
+.movie-banner {
+    margin-bottom: 20px;
+}
+
+.home > h1 {
+    color: rgb(69, 95, 221);
+    margin: 50px 50px;
+}
