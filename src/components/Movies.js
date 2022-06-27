@@ -1,12 +1,4 @@
 import React from "react";
-import { Container, Box } from "@mui/material";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import { TextField } from "@mui/material";
-import Select from '@mui/material/Select';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
 import MovieInfo from "./MovieInfo";
 
 import axios from "axios";
@@ -41,58 +33,39 @@ class Movies extends React.Component {
 
   render () {
     return (
-      <Container maxWidth="md" className="movies">
+      <section className="movies">
+      <div className="form__container">
         <h1>Movies</h1>
-        <Box 
-          component="form"
-          sx={{
-            '& > :not(style)': { m: 1, width: '50ch' },
-          }}
-          noValidate
-          autoComplete="off"
+        <form 
+          
         >
-        <FormControl fullWidth>
-          <label id="demo-simple-select-label">Select a Movie</label>
-          <TextField
-            id="outlined-select"
-            select
-            value={this.state.movieSelected}
-            onChange={this.handleChange}
-          >
-            <MenuItem key='0' value='' ></MenuItem>
-            {this.state.movieList.map(movie =>  {
-              return  <MenuItem key={movie.id} 
-                                value={movie.id}>{movie.title}
-                      </MenuItem>  
-            })}  
-          </TextField>
-
-          {/* <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={this.state.movieSelected}
-            name="movie-select"
-            onChange={this.handleChange}
-          >
-            <MenuItem key='0' value='' ></MenuItem>
-            {this.state.movieList.map(movie =>  {
-              return  <MenuItem key={movie.id} 
-                                value={movie.id}>{movie.title}
-                      </MenuItem>  
-            })}
-          </Select> */}
-        </FormControl>
-      </Box>
+          <div >
+            <label >Select a Movie</label>
+            <select
+              id="select"
+              value={this.state.movieSelected}
+              onChange={this.handleChange}
+            >
+              <option key='0' value='' ></option>
+              {this.state.movieList.map(movie =>  {
+                return  <option key={movie.id} 
+                                  value={movie.id}>{movie.title}
+                        </option>  
+              })}  
+            </select>
+          </div>
+        </form>
+      </div>
       {(this.state.isSelected) ? 
-        <Stack spacing={2} className="movie__info">
+        <div className="movie__info">
           <MovieInfo 
             movieList={this.state.movieList} 
             movieSelected={this.state.movieSelected}
           />
-        </Stack>
+        </div>
         : null
       }
-      </Container>
+      </section>
     )
   }
 }

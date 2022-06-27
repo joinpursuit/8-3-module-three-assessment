@@ -1,13 +1,5 @@
 import React from "react";
-import { Container, Box } from "@mui/material";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import { TextField, Button } from "@mui/material";
-import Select from '@mui/material/Select';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
-//import PersonInfo from "./PersonInfo";
+import LocationsView from "./LocationsView";
 
 import axios from "axios";
 
@@ -17,78 +9,96 @@ class Locations extends React.Component {
     this.state = {
       locationsList: [],
       location: '',
-      isValid: false,
+      isVisible: false,
+      display: 'none',
     }
   }
 
   componentDidMount() {
-    // axios.get('https://ghibliapi.herokuapp.com/people').then((result) => {
-    //   this.setState({ locationsList: result.data });
-    //   //console.log(this.state.peopleList)
-    // });
+    axios.get('https://ghibliapi.herokuapp.com/locations').then((result) => {
+      this.setState({ locationsList: result.data });
+    });
   }
   
-  handleChange = (event) => {
-    const {value} = event.target;
-    
-    if(value !== '') {
-      
-    } else {
-      
-    }
-  };
-
-  handleSubmit = (event) => {
+  handleShowLocations = (event) => {
     event.preventDefault();
-    
-    
-    
-    // const filtered = (this.state.peopleList).filter(person => {
-    //   return ((person.name).toLowerCase()).includes((this.state.person).toLowerCase());
-    // });
+    if(this.state.isVisible) {
+      this.setState({isVisible: false})
+      this.setState({display: 'none'})
+    } else {
+      this.setState({isVisible: true})
+      this.setState({display: 'inline-block'})
+    }
+  }
 
-    // if(filtered.length > 0) {
-    //   this.setState({ personSearch: filtered })
-    //   this.setState({ isValid: true })
-    // } else { 
-    //   this.setState({ personSearch: ['Not found'] }) 
-    //   this.setState({ isValid: false })
-    // }
-    // this.setState({person: ''})
+  handleSortByName = (event) => {
+    event.preventDefault();
+    const sortByName = (this.state.locationsList).sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+    this.setState({locationsList: sortByName})
+  }
+
+  handleSortByClimate = (event) => {
+    event.preventDefault();
+    const sortByClimate = (this.state.locationsList).sort((a, b) => {
+      return a.climate.localeCompare(b.climate);
+    });
+    this.setState({locationsList: sortByClimate})
+  }
+
+  handleSortByTerrain = (event) => {
+    event.preventDefault();
+    const sortByTerrain = (this.state.locationsList).sort((a, b) => {
+      return a.terrain.localeCompare(b.terrain);
+    });
+    this.setState({locationsList: sortByTerrain})
   }
 
   render () {
     return (
-      <Container maxWidth="md" className="locations">
+      <section className="locations">
         <h1>List of Locations</h1>
-        <Box 
-          component="form"
-          sx={{
-            '& > :not(style)': { m: 1, width: '50ch' },
-          }}
-          noValidate
-          autoComplete="off"
+        <form 
+          
         >
-        <FormControl >
-          <Button 
-            variant="contained"
-            size="large"
-            onClick={this.handleSubmit}
+        <div className="form__control">
+          <button
+            onClick={this.handleShowLocations}
           >
-            Show Locations
-          </Button>
-        </FormControl>
-      </Box>
-      {(this.state.isValid) ? 
-        <Stack spacing={2} className="person__info">
-          {/* <PersonInfo 
-            personSearch={this.state.personSearch} 
-            // personSearch={this.state.person}
-          /> */}
-        </Stack>
-        : <p>{this.state.personSearch[0]}</p>
+            {(this.state.isVisible) ? 'Hide Locations' : 'Show Locations' }
+          </button>
+          {(this.state.isVisible) ? 
+          <>
+          <button
+            onClick={this.handleSortByName}
+          >
+            Sort by Name
+          </button> 
+          <button
+            onClick={this.handleSortByClimate}
+          >
+            Sort by Climate
+          </button> 
+          <button
+            onClick={this.handleSortByTerrain}
+          >
+            Sort by Terrain
+          </button>
+          </>
+          : null 
+          }
+        </div>
+      </form>
+      {(this.state.isVisible) ? 
+        <>
+          <LocationsView 
+            locations={this.state.locationsList} 
+          />
+        </>
+        : null
       }
-      </Container>
+      </section>
     )
   }
 }

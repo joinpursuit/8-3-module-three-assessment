@@ -1,61 +1,34 @@
 import React, { useState } from "react";
-import { Container, Box } from "@mui/material";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-
 const PersonInfo = (props) => {
   //
   const [isValid, setIsValid] = useState(false);
+  
   const { personSearch } = props;
-
-  
-  
-
-  //((filtered.length > 0) ? setIsValid(true) : setIsValid(true))
-  
 
   return (
     <>
-      {/* {(isValid) ?  */}
-      <Card variant="outlined">
+      <div>
         {personSearch.map((person, index) => {
           return (
-            <React.Fragment key={index}>
-              {/* {console.log(person)} */}
-              <CardContent>
-                <Typography variant="h4" component="div">
-                  Name: {person.name}
-                </Typography>
-                <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
+            <div>
+              <ul>
+                <li>
+                  <h2>Name: {person.name}</h2>
+                </li>
+                <li>
                   Age: {person.age}  
-                </Typography>
-                <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
-                  Eye color: {person.eye_color}  
-                </Typography>
-                <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
+                </li>
+                <li>
+                  Gender: {person.gender}  
+                </li>
+                <li>
                   Hair color: {person.hair_color}  
-                </Typography>
-                <Typography variant="body2">
-                  
-                </Typography>
-              </CardContent>
-            </React.Fragment>
+                </li>
+              </ul>
+            </div>
           );
         })}
-      </Card>
-      {/* :
-      <Box
-        sx={{
-          // some styles
-          '& .ChildSelector': {
-            bgcolor: 'primary.main',
-          },
-        }}
-      >Not Found</Box>
-      } */}
+      </div>
     </>
   )
 }

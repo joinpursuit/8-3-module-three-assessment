@@ -8,7 +8,7 @@ function Navbar () {
     <>
       <nav>
         <Link className="logo" to="/">
-          <img src={logo} />
+          <img src={logo} alt="Ghibli Studio App"/>
         </Link>
         <Link className="menu__item" to="/movies">
           Movies 
