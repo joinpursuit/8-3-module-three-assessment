@@ -36,7 +36,7 @@ class People extends React.Component {
         <div>
           {this.state.profile ? (
             <div className="peopledata">
-              ><h2>Name: {this.state.profile.name}</h2>
+              <h2>Name: {this.state.profile.name}</h2>
               <p>
                 <strong>Age:</strong>
                 {this.state.profile.age}
