@@ -1,0 +1,29 @@
+.search {
+    justify-content: center;
+    text-align: center;
+}
+.people {
+    background-color: #f5f4dc;
+    min-height: 100vh;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.people-text{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 70px;
+}
+
+#no-results {
+    justify-content: center;
+    text-align: center;
+}
+
+#output {
+    text-align: center;
+    font-size: 22px;
+}

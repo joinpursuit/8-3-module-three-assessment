@@ -43,12 +43,15 @@ class Locations extends Component {
             )
         })
         return (
-            <div className="bg">
+            <div className="locations">
                 <div className="center">
                     <h1 className="list">List of Locations</h1>
                     <button onClick={this.hide} className="loc-btn" id="loc-btn">
                     {this.state.toggle ? "Hide Locations" : "Show Locations"}
                     </button>
+                    <button value="Name" className="loc-btn">Sort By Name</button>
+                    <button value="Climate" className="loc-btn">Sort By Climate</button>
+                    <button value="Terrain" className="loc-btn">Sort By Terrain</button>
                     <ul>{this.state.toggle ? allLoco : null}</ul>
                 </div>
             </div>
