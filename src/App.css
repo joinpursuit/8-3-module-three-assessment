@@ -1,6 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Work+Sans:wght@400;500;800&display=swap');
 
 .app {
   text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  font-family: 'Merriweather', serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
