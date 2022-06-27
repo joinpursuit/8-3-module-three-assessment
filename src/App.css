@@ -2,6 +2,26 @@
   text-align: center;
 }
 
+.homepage {
+  background-color: rgb(105, 190, 255);
+  margin: 50px;
+  margin-top: 30px;
+  padding: 50px;
+  padding-top: 5px;
+}
+
+.homeTitle {
+  background-color: rgb(145, 206, 255);
+  padding: 10px;
+}
+
+img {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1,
 h2,
 h3,
@@ -77,10 +97,12 @@ center {
   margin: 30px;
 }
 
-ul {
+li {
   background-color: lightcyan;
   border: 1px solid black;
   width: 80%;
-  margin: 20px;
+  margin: 10px;
+  padding: 10px;
   line-height: 2;
+  list-style: none;
 }
