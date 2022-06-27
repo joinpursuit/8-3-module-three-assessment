@@ -16,7 +16,7 @@ class Movies extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     axios
       .get("https://ghibliapi.herokuapp.com/films")
       .then((res) => {
@@ -25,7 +25,7 @@ class Movies extends Component {
       .catch((err) => {
         this.errors();
       });
-  }
+  };
 
   renderMovies = (movies) => {
     const movieListCopy = movies.map((movie) => {

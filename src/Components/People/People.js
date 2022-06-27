@@ -73,6 +73,11 @@ class People extends Component {
   errors = () => {
     this.setState({
       errors: "Not Found",
+      name: "",
+      age: "",
+      gender: "",
+      eyeColor: "",
+      hairColor: "",
     });
     setTimeout(() => {
       this.setState({
