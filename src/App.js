@@ -1,28 +1,46 @@
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Nav from './Components/Nav'
+import Home from './Components/Home'
+import Movies from './Components/Movies'
+import People from './Components/People'
+import Locations from './Components/Locations'
+import React from 'react'
 
-import logo from './logo.svg';
-import './App.css';
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      data: [],
+    }
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  componentDidMount() {
+    let Base_Url = 'https://ghibliapi.herokuapp.com/'
+    let film = 'films'
+    fetch(`${Base_Url}${film}`)
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({ data: json })
+      })
+      .catch((error) => console.log(error))
+  }
 
-    </div>
-  );
+  render() {
+    // console.log(this.state.title)
+    let { data } = this.state
+    return (
+      <div>
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/movies' element={<Movies data={data} />} />
+          <Route path='/people' element={<People />} />
+          <Route path='/locations' element={<Locations />} />
+        </Routes>
+      </div>
+    )
+  }
 }
 
-
-export default App;
+export default App

@@ -1,0 +1,32 @@
+.location-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 3%;
+}
+
+li {
+  border: 1px solid #93c0d7;
+  padding: 2%;
+  background-color: #c1d9f0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 7%;
+}
+
+.sort-name {
+  font-size: 90%;
+}
+
+.sort-climate {
+  font-size: 90%;
+}
+
+.sort-terrain {
+  font-size: 90%;
+}
+
+.show-location {
+  font-size: 90%;
+}
