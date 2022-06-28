@@ -11,13 +11,18 @@ class Locations extends React.Component {
       location: '',
       isVisible: false,
       display: 'none',
+      sortBy: '',
     }
   }
 
-  componentDidMount() {
+  getAPILocations = () => {
     axios.get('https://ghibliapi.herokuapp.com/locations').then((result) => {
       this.setState({ locationsList: result.data });
     });
+  }
+
+  componentDidMount() {
+    this.getAPILocations();  
   }
   
   handleShowLocations = (event) => {
@@ -31,34 +36,19 @@ class Locations extends React.Component {
     }
   }
 
-  handleSortByName = (event) => {
+  handleSort = (sortBy, event) => {
     event.preventDefault();
-    const sortByName = (this.state.locationsList).sort((a, b) => {
-      return a.name.localeCompare(b.name);
+    // >> Getting the locations data sorted by params
+    const sortedArray = (this.state.locationsList).sort((a, b) => {
+      return (a[sortBy]).localeCompare(b[sortBy]);
     });
-    this.setState({locationsList: sortByName})
-  }
-
-  handleSortByClimate = (event) => {
-    event.preventDefault();
-    const sortByClimate = (this.state.locationsList).sort((a, b) => {
-      return a.climate.localeCompare(b.climate);
-    });
-    this.setState({locationsList: sortByClimate})
-  }
-
-  handleSortByTerrain = (event) => {
-    event.preventDefault();
-    const sortByTerrain = (this.state.locationsList).sort((a, b) => {
-      return a.terrain.localeCompare(b.terrain);
-    });
-    this.setState({locationsList: sortByTerrain})
+    this.setState({locationsList: sortedArray})
   }
 
   render () {
     return (
       <section className="locations container">
-        <section className="layout">
+        <div className="layout">
           <h1>List of Locations</h1>
           <div className="form__container">
             <form
@@ -72,17 +62,17 @@ class Locations extends React.Component {
               {(this.state.isVisible) ? 
               <>
               <button
-                onClick={this.handleSortByName}
+                onClick={(e) => this.handleSort('name', e)}
               >
                 Sort by Name
               </button> 
               <button
-                onClick={this.handleSortByClimate}
+                onClick={(e) => this.handleSort('climate', e)}
               >
                 Sort by Climate
               </button> 
               <button
-                onClick={this.handleSortByTerrain}
+                onClick={(e) => this.handleSort('terrain', e)}
               >
                 Sort by Terrain
               </button>
@@ -100,7 +90,7 @@ class Locations extends React.Component {
           </>
           : null
         }
-        </section>
+        </div>
       </section>
     )
   }

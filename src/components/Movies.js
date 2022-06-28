@@ -34,7 +34,7 @@ class Movies extends React.Component {
   render () {
     return (
       <section className="movies container">
-        <section className="layout">
+        <div className="layout">
         <h1>Movies</h1>
         <div className="form__container">
           <form >
@@ -64,7 +64,7 @@ class Movies extends React.Component {
           </div>
           : null
         }
-        </section>
+        </div>
       </section>
     )
   }

@@ -23,11 +23,12 @@ class People extends React.Component {
   
   handleChange = (event) => {
     const {value} = event.target;
+    //this.setState({isVisible: false})
     
     if(value !== '') {
       this.setState({person: value})  
       this.setState({isValid: true}) 
-      this.setState({isDisable: false}) 
+      //this.setState({isDisable: false}) 
     }
   };
 
@@ -42,19 +43,21 @@ class People extends React.Component {
       if(filtered.length > 0) {
         this.setState({ personSearch: filtered })
         this.setState({ isValid: true })
+        this.setState({ isVisible: true })
       } else { 
         this.setState({ personSearch: ['Not Found'] }) 
         this.setState({ isValid: false })
+        this.setState({ isVisible: false })
       }
       this.setState({person: ''})
-      this.setState({isDisable: true})
+      
     }
   }
 
   render () {
     return (
       <section className="people container">
-        <section className="layout">
+        <div className="layout">
           <h1>People</h1>
           <div className="form__container">
             <form
@@ -76,7 +79,7 @@ class People extends React.Component {
               </div>
             </form>
           </div>
-        {(this.state.isValid) ? 
+        {(this.state.isVisible) ? 
           <div className="person__info">
             <PersonInfo 
               personSearch={this.state.personSearch}
@@ -84,7 +87,7 @@ class People extends React.Component {
           </div>
           : <div className="not__found">{this.state.personSearch[0]}</div>
         }
-        </section>
+        </div>
       </section>
     )
   }

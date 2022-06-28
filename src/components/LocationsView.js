@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
   const LocationsView = (props) => {
   //
@@ -12,7 +12,6 @@ import React, { useState } from "react";
                 <li>Terrain: <span>{location.terrain}</span> </li>
               </ul>
             </li>
-            
   })
 
   return (
