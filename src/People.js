@@ -31,7 +31,7 @@ class People extends React.Component {
     let ghibliCharacter = ghibliData.find(
       (chara) => chara.name.toUpperCase() === searchInput.toUpperCase(),
     );
-    this.setState({ result: searchInput });
+    this.setState({ result: ghibliCharacter });
   };
 
   userInputSearch = (event) => {
@@ -49,7 +49,7 @@ class People extends React.Component {
 
   render() {
     console.log(this.state);
-    let { ghibliCharacter } = this.state;
+    let { result } = this.state;
     return (
       <section className='people'>
         <h1>Search For a Person</h1>
@@ -59,7 +59,7 @@ class People extends React.Component {
             type='text'
             placeholder='Search...'
             //value={this.state.searchInput}
-            onChange={this.updateSearch}
+            onChange={this.userInputSearch}
           />
           <button
             type='submit'
@@ -76,13 +76,13 @@ class People extends React.Component {
             Search
           </button>
           <div>
-            {ghibliCharacter ? (
+            {result ? (
               <div>
-                <h1> {ghibliCharacter.name}</h1>
-                <h2>{ghibliCharacter.age}</h2>
-                <h2>{ghibliCharacter.gender}</h2>
-                <h2>{ghibliCharacter.hair_color}</h2>
-                <h2>{ghibliCharacter.eye_color}</h2>
+                <h1> {result.name}</h1>
+                <h2>{result.age}</h2>
+                <h2>{result.gender}</h2>
+                <h2>{result.hair_color}</h2>
+                <h2>{result.eye_color}</h2>
               </div>
             ) : (
               <h2>Nothing to see here.</h2>
