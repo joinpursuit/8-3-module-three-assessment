@@ -1,68 +1,55 @@
 import React from 'react';
 import './Movies.css';
-
-let BASE_URL = 'https://ghibliapi.herokuapp.com';
-let PATH = '/films';
-let API_FORMAT = '?format=j1';
-
-fetch(`${BASE_URL}${PATH}${API_FORMAT}`)
-  .then((response) => response.json())
-  .then(generateDropDown)
-  .catch(errorHandler);
-
 function errorHandler(error) {
   console.log(error);
   return error;
 }
+const MoviesMenu = (props) => (
+  <section>
+    <h1>{props.title}</h1>
+    <select name='{props.title}' onChange={props.onChange}>
+      <option defaultValue> Select {props.title}</option>
+      {props.options.map((movie, index) => (
+        <option key={index} value={movie.id}>
+          {movie.title}
+        </option>
+      ))}
+    </select>
+  </section>
+);
 
-function generateDropDown(json) {
-  return json.map((entry) => {
-    return (
-      <select name='movies'>
-        <option value=' '></option>
-        <option value={entry.title}>${entry.title}</option>
-      </select>
-    );
-  });
-
-  /* I thought of iterating the API data using a for loop like with Mod 2's Assessment and populating the dropbox that way, ran into the same 
-  problem of getting an empty dropbox because the API data was undefined or i being undefined when using a for loop.
-   Redid it with different approaches multiple times. */
-
-  /*json.forEach((movie) => {                       
-    for (let key in movie) {
-      let ghibliTitles = document.createElement('option');
-      ghibliTitles.textContent = key;
-      ghibliTitles.value = movie[key];
-      console.log(ghibliTitles);
-      if (movie.title === key) {
-        let dropdown = document.querySelector(`#Selection`);
-        dropdown.append(ghibliTitles);
-      }
-      console.log(`${key}: ${movie[key]}`);
-    }
-  }); */
-}
+let BASE_URL = 'https://ghibliapi.herokuapp.com';
+let PATH = '/films';
+let API_FORMAT = '?format=j1';
 class Movies extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [],
-      title: '',
-      release_date: '',
-      decription: '',
+      ghibliData: [],
+      values: '',
     };
   }
+
+  componentDidMount() {
+    fetch(`${BASE_URL}${PATH}${API_FORMAT}`)
+      .then((response) => response.json())
+      .then((result) => this.setState({ ghibliData: result }))
+      .catch(errorHandler);
+  }
+  onChange = (event) => {
+    this.setState({ values: event.target.value });
+  };
 
   render() {
     console.log(this.state);
     return (
       <div id='MovieDiv' className='movies'>
         <h1>Select A Movie</h1>
-        <select name='Movies' id='Movies'>
-          <option value=' '> </option>
-          <option value='Placeholder'>Placeholder</option>
-        </select>
+        <MoviesMenu
+          name={this.state.title}
+          options={this.state.ghibliData}
+          onChange={this.onChange}
+        ></MoviesMenu>
       </div>
     );
   }
