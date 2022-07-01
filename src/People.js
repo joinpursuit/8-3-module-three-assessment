@@ -29,7 +29,7 @@ class People extends React.Component {
     event.preventDefault();
     let { ghibliData, searchInput } = this.state;
     let ghibliCharacter = ghibliData.find(
-      (chara) => chara.name === searchInput,
+      (chara) => chara.name.toUpperCase() === searchInput.toUpperCase(),
     );
     this.setState({ result: searchInput });
   };
@@ -49,31 +49,34 @@ class People extends React.Component {
 
   render() {
     console.log(this.state);
-    let searchInput = this.state;
+    let { ghibliCharacter } = this.state;
     return (
       <section className='people'>
         <h1>Search For a Person</h1>
-        <input
-          className='textField'
-          type='text'
-          placeholder='Search...'
-          value={this.state.searchInput}
-          onChange={this.updateSearch}
-        />
-        <button
-          type='button'
-          className='searchButton'
-          onClick={() => {
-            if (this.checkInput()) {
-              return <p>Not Found</p>;
-            } else {
-              //fetchHandler(this.state.searchInput); //causes a runtime error
-              //this.clearText();
-            }
-          }}
-        >
-          Search
-        </button>
+        <form onSubmit={this.submitForm}>
+          <input
+            className='textField'
+            type='text'
+            placeholder='Search...'
+            //value={this.state.searchInput}
+            onChange={this.updateSearch}
+          />
+          <button
+            type='submit'
+            className='searchButton'
+            onClick={() => {
+              /* if (this.checkInput()) {
+                return <p>Not Found</p>;
+              } else {
+                fetchHandler(this.state.searchInput); //causes a runtime error
+                this.clearText();
+              } */
+            }}
+          >
+            Search
+          </button>
+          <div></div>
+        </form>
       </section>
     );
   }
