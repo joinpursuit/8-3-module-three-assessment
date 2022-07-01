@@ -4,19 +4,6 @@ function errorHandler(error) {
   console.log(error);
   return error;
 }
-const MoviesMenu = (props) => (
-  <section>
-    <h1>{props.title}</h1>
-    <select name='{props.title}' onChange={props.onChange}>
-      <option defaultValue> Select {props.title}</option>
-      {props.options.map((movie, index) => (
-        <option key={index} value={movie.id}>
-          {movie.title}
-        </option>
-      ))}
-    </select>
-  </section>
-);
 
 let BASE_URL = 'https://ghibliapi.herokuapp.com';
 let PATH = '/films';
@@ -42,14 +29,31 @@ class Movies extends React.Component {
 
   render() {
     console.log(this.state);
+    let { ghibliData, values } = this.state;
+    const ghibliMovie = ghibliData.map((movie) => {
+      return <option key={movie.id}>{movie.title}</option>;
+    });
+    let selectMovie = ghibliData.find((movie) => movie.title === values);
     return (
       <div id='MovieDiv' className='movies'>
-        <h1>Select A Movie</h1>
-        <MoviesMenu
-          name={this.state.title}
-          options={this.state.ghibliData}
-          onChange={this.onChange}
-        ></MoviesMenu>
+        <h1> Select a Movie</h1>
+        <select onChange={this.onChange} id='dropDown'>
+          <option></option>
+          {ghibliMovie}
+        </select>
+        <div>
+          {selectMovie ? (
+            <div>
+              <section>
+                <h2>{selectMovie.title}</h2>
+                <h3> Release Date: {selectMovie.release_date}</h3>
+              </section>
+              <p>
+                <h1>Description:</h1> {selectMovie.description}
+              </p>
+            </div>
+          ) : null}
+        </div>
       </div>
     );
   }

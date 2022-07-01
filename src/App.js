@@ -48,14 +48,7 @@ class App extends React.Component {
               path='/'
               element={<h1 className='welcome'>Welcome to GhibliApp!</h1>}
             />
-            <Route
-              path='/People'
-              element={
-                <>
-                  <People fetchHandler={this.fetchHandler} />
-                </>
-              }
-            />
+            <Route path='/People' element={<People />} />
             <Route path='/Movies' element={<Movies />} />
             <Route path='/Location' element={<Location />} />
           </Routes>

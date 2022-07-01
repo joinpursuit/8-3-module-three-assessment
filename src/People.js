@@ -1,33 +1,40 @@
 import React from 'react';
 import './SearchBar.css';
 
+let BASE_URL = 'https://ghibliapi.herokuapp.com';
+let PATH = '/people';
+let EXTENSION = '?format=j1';
+function errorHandler(error) {
+  console.log(error);
+  return error;
+}
+
 class People extends React.Component {
   constructor() {
     super();
     this.state = {
+      result: [],
+      ghibliData: [],
       searchInput: '',
-      age: '',
-      eye_color: '',
-      hair_color: '',
     };
   }
 
-  updatePersonInfo = () => {
-    fetch('https://ghibliapi.herokuapp.com/people?format=j1')
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          personAge: data.age,
-          personEyeColor: data.eye_color,
-          personHairColor: data.hair_color,
-          userSearchInput: data.searchInput,
-        });
-      });
-  };
   componentDidMount() {
-    this.updatePersonInfo();
+    fetch(`${BASE_URL}${PATH}${EXTENSION}`)
+      .then((response) => response.json())
+      .then((result) => this.setState({ ghibliData: result }))
+      .catch(errorHandler);
   }
-  updateSearch = (event) => {
+  submitForm = (event) => {
+    event.preventDefault();
+    let { ghibliData, searchInput } = this.state;
+    let ghibliCharacter = ghibliData.find(
+      (chara) => chara.name === searchInput,
+    );
+    this.setState({ result: searchInput });
+  };
+
+  userInputSearch = (event) => {
     this.setState({
       searchInput: event.target.value,
     });
@@ -42,6 +49,7 @@ class People extends React.Component {
 
   render() {
     console.log(this.state);
+    let searchInput = this.state;
     return (
       <section className='people'>
         <h1>Search For a Person</h1>

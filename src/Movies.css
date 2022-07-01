@@ -6,3 +6,9 @@
     border: 2px dotted black;
     background: linear-gradient(-10deg, gray, white, black);
 }
+.dropDown{
+    display: grid;
+    margin: auto;
+    max-width: 125px;
+    -webkit-appearance: none;
+}
