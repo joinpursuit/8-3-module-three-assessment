@@ -14,7 +14,7 @@ class People extends React.Component {
     super();
     this.state = {
       result: [],
-      ghibliData: [],
+      ghibliDataChara: [],
       searchInput: '',
     };
   }
@@ -22,13 +22,13 @@ class People extends React.Component {
   componentDidMount() {
     fetch(`${BASE_URL}${PATH}${EXTENSION}`)
       .then((response) => response.json())
-      .then((result) => this.setState({ ghibliData: result }))
+      .then((result) => this.setState({ ghibliDataChara: result }))
       .catch(errorHandler);
   }
   submitForm = (event) => {
     event.preventDefault();
-    let { ghibliData, searchInput } = this.state;
-    let ghibliCharacter = ghibliData.find(
+    let { ghibliDataChara, searchInput } = this.state;
+    let ghibliCharacter = ghibliDataChara.find(
       (chara) => chara.name.toUpperCase() === searchInput.toUpperCase(),
     );
     this.setState({ result: ghibliCharacter });

@@ -12,7 +12,7 @@ class Movies extends React.Component {
   constructor() {
     super();
     this.state = {
-      ghibliData: [],
+      ghibliDataMovies: [],
       values: '',
     };
   }
@@ -20,7 +20,7 @@ class Movies extends React.Component {
   componentDidMount() {
     fetch(`${BASE_URL}${PATH}${API_FORMAT}`)
       .then((response) => response.json())
-      .then((result) => this.setState({ ghibliData: result }))
+      .then((result) => this.setState({ ghibliDataMovies: result }))
       .catch(errorHandler);
   }
   onChange = (event) => {
@@ -29,11 +29,11 @@ class Movies extends React.Component {
 
   render() {
     console.log(this.state);
-    let { ghibliData, values } = this.state;
-    const ghibliMovie = ghibliData.map((movie) => {
+    let { ghibliDataMovies, values } = this.state;
+    const ghibliMovie = ghibliDataMovies.map((movie) => {
       return <option key={movie.id}>{movie.title}</option>;
     });
-    let selectMovie = ghibliData.find((movie) => movie.title === values);
+    let selectMovie = ghibliDataMovies.find((movie) => movie.title === values);
     return (
       <div id='MovieDiv' className='movies'>
         <h1> Select a Movie</h1>
@@ -45,11 +45,11 @@ class Movies extends React.Component {
           {selectMovie ? (
             <div className='MovieCardInnerDiv'>
               <section>
-                <h2>{selectMovie.title}</h2>
+                <h1>{selectMovie.title}</h1>
                 <h3> Release Date: {selectMovie.release_date}</h3>
               </section>
               <p>
-                <h1>Description:</h1> {selectMovie.description}
+                <h2>Description:</h2> {selectMovie.description}
               </p>
             </div>
           ) : null}
