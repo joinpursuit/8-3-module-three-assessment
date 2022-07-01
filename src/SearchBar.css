@@ -3,6 +3,17 @@
     text-align: center;
     justify-content: center;
     margin: auto;
-    border: 2px dotted black;
     background: linear-gradient(-20deg, gray, blue, orange);
+}
+.charaID {
+    color:purple;
+}
+#CharacterDiv{
+  
+    border: 10px solid gray;
+    background: linear-gradient(20deg, gray, pink, blue, yellow);
+}
+.CharacterCardInnerDiv {
+    margin-right: 10px;
+    margin-left: 10px;
 }

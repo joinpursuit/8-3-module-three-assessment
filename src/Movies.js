@@ -41,9 +41,9 @@ class Movies extends React.Component {
           <option></option>
           {ghibliMovie}
         </select>
-        <div>
+        <div id='MovieCard'>
           {selectMovie ? (
-            <div>
+            <div className='MovieCardInnerDiv'>
               <section>
                 <h2>{selectMovie.title}</h2>
                 <h3> Release Date: {selectMovie.release_date}</h3>

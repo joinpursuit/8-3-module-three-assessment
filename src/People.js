@@ -40,11 +40,10 @@ class People extends React.Component {
     });
   };
 
-  clearText = () => {
-    this.setState = { searchInput: ' ' };
-  };
   checkInput = () => {
-    return this.state.searchInput.length === 0;
+    if (this.state.searchInput.length === 0) {
+      return <p>Invalid Input Length</p>;
+    }
   };
 
   render() {
@@ -58,34 +57,32 @@ class People extends React.Component {
             className='textField'
             type='text'
             placeholder='Search...'
-            //value={this.state.searchInput}
             onChange={this.userInputSearch}
           />
           <button
             type='submit'
             className='searchButton'
-            onClick={() => {
-              /* if (this.checkInput()) {
-                return <p>Not Found</p>;
-              } else {
-                fetchHandler(this.state.searchInput); //causes a runtime error
-                this.clearText();
-              } */
-            }}
+            onClick={this.checkInput}
           >
             Search
           </button>
-          <div>
+          <div id='CharacterDiv'>
             {result ? (
-              <div>
-                <h1> {result.name}</h1>
-                <h2>{result.age}</h2>
-                <h2>{result.gender}</h2>
-                <h2>{result.hair_color}</h2>
-                <h2>{result.eye_color}</h2>
+              <div className='CharacterCardInnerDiv'>
+                <h1>Name: {result.name}</h1>
+                <h2>Gender: {result.gender}</h2>
+                <h2>Age: {result.age}</h2>
+                <h2>Eye Color: {result.eye_color}</h2>
+                <h2>Hair Color: {result.hair_color}</h2>
+
+                <h2>
+                  Character ID: <p className='charaID'>{result.id}</p>
+                </h2>
               </div>
             ) : (
-              <h2>Nothing to see here.</h2>
+              <h2>
+                Not Found! <span>Nothing to see here.</span>
+              </h2>
             )}
           </div>
         </form>
