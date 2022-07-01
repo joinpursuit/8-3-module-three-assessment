@@ -75,7 +75,19 @@ class People extends React.Component {
           >
             Search
           </button>
-          <div></div>
+          <div>
+            {ghibliCharacter ? (
+              <div>
+                <h1> {ghibliCharacter.name}</h1>
+                <h2>{ghibliCharacter.age}</h2>
+                <h2>{ghibliCharacter.gender}</h2>
+                <h2>{ghibliCharacter.hair_color}</h2>
+                <h2>{ghibliCharacter.eye_color}</h2>
+              </div>
+            ) : (
+              <h2>Nothing to see here.</h2>
+            )}
+          </div>
         </form>
       </section>
     );
