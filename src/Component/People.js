@@ -1,15 +1,25 @@
-import React from "react";
-
-import { Component } from "react";
+import React, { Component } from "react";
 
 class People extends Component{
     constructor(){
         super()
         this.state = {
-            people: []
-            searchResult: {},
+            people: [],
+            peopleInput: "",
+            persons: [],
+            search: null,
         }
     }
+componentDidMount(){
+    this.fetchPeople();
+}
+
+    handleChange = (e)=> {
+        this.state({
+            peopleInput: e.target.value
+        })
+    }
+
 fetchPeople = () => {
     fetch("https://ghibliapi.herokuapp.com/people")
         .then((res)=> res.json())
@@ -19,35 +29,45 @@ fetchPeople = () => {
             })
         })
 }
-handlePersonInput=(e)=>{
-    personInput(e.target.value);
-}
 
-handleSubmit = ()=> {
+
+
+handleSubmit =(e)=>{
+    e.preventDefault();
+    let peopleObj = this.state.people.find((person)=>{
+        return person.name === this.state.peopleInput;
+    })
    this.setState({
-     peopleFind: !this.state.peopleFind
+        persons: peopleObj,
+        peopleInput: "",
+     search: !this.state.search
    })
 
-}
+};
+
     render(){
+        let {peopleInput, search, handleChange, handleSubmit} = this.state;
     return(
         <div>
             <div> Search for a Person </div>
+        <form onSubmit={handleSubmit}>
             <input
-            placeholder=""
+            placeholder="Find Your Person"
             type="text"
-            value={personInput}
-            onChange={handlePersonInput}
+            value={peopleInput}
+            onChange={handleChange}
             />
-        <button onClick={handleSubmit}>Submit</button>
-        {searchResult &&
+        <button >Submit</button>
+        </form>
+        {search &&
         <div>
-            <h3>Name {}</h3>
-            <h3>Age{}</h3>
-            <h3>Gender{}</h3>    
+            <h3>Name {search.name}</h3>
+            <h3>Age{search.age}</h3>
+            <h3>Gender{search.genger}</h3>    
         </div>
         }
-        {searchResult === undefined &&
+        {search === null  &&
+
         <h3> Not Found</h3>
 
         }

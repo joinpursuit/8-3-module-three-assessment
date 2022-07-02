@@ -1,11 +1,11 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 class Locations extends Component{
     constructor(){
         super();
         this.state= {
             location: [],
-            setlocation: false,
+            place: false,
         }
     
     }
@@ -22,7 +22,7 @@ class Locations extends Component{
     };
  handlelocation=()=>{
     this.setState({
-        setlocation:!this.state.setlocation
+        place:!this.state.place
     })
  }       
 
@@ -39,8 +39,8 @@ class Locations extends Component{
         <div className="locations">
             <h1>List of Locations</h1>
             <button onClick={this.handlelocation}>
-                 {this.state.setlocation ? "Hide" : "Show"}Locations</button>
-                 {this.state.setlocation &&
+                 {this.state.place ? "Hide" : "Show"}Locations</button>
+                 {this.state.place &&
                   <ul>
                     {myLocation}
                     </ul>
