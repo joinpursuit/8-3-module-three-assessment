@@ -1,28 +1,34 @@
-
-import logo from './logo.svg';
+import Nav from './Nav.js';
+import Movies from './Movies.js';
+import People from './People.js';
+import Location from './Location.js';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
 
-    </div>
-  );
+  render() {
+    return (
+      <main>
+        <div className='App'>
+          <Nav />
+          <Routes>
+            <Route
+              path='/'
+              element={<h1 className='welcome'>Welcome to GhibliApp!</h1>}
+            />
+            <Route path='/People' element={<People />} />
+            <Route path='/Movies' element={<Movies />} />
+            <Route path='/Location' element={<Location />} />
+          </Routes>
+        </div>
+      </main>
+    );
+  }
 }
-
-
 export default App;

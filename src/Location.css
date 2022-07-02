@@ -1,0 +1,41 @@
+.locations{
+display: grid;
+text-align: center;
+justify-content: center;
+margin: auto;
+border: 2px dotted black;
+background: linear-gradient(-10deg, red,yellow,orange,blue);
+}
+#LocationList{
+    display: grid;
+    border: 10px solid black;
+    grid-template-columns: repeat(3, 1fr);
+}
+#LocationCard {
+    background: linear-gradient(15deg, white, gray);
+    border: 2px dotted black;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 400px;
+}
+#name {
+    padding: 70px;
+}
+#location{
+    padding: 70px;
+}
+#terrain{ 
+    padding: 70px;
+}
+#LocationCardContents{ 
+    display: grid;
+    margin: auto;
+}
+#buttonHolder {
+display: flex;
+justify-content: center;
+align-items: baseline;
+}
