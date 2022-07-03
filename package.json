@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
-    "cypress": "^9.5.4"
+    "cypress": "^9.5.4",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }

@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import { Component } from "react";
+import React from "react";
 
 class People extends Component{
     constructor(){
@@ -10,46 +11,46 @@ class People extends Component{
             search: null,
         }
     }
-componentDidMount(){
-    this.fetchPeople();
-}
+// componentDidMount(){
+//     this.fetchPeople();
+// }
 
-    handleChange = (e)=> {
-        this.state({
-            peopleInput: e.target.value
-        })
-    }
+//     handleChange = (e)=> {
+//         this.state({
+//             peopleInput: e.target.value
+//         })
+//     }
 
-fetchPeople = () => {
-    fetch("https://ghibliapi.herokuapp.com/people")
-        .then((res)=> res.json())
-        .then((data)=>{
-            this.setState({
-                people: data,
-            })
-        })
-}
+// fetchPeople = () => {
+//     fetch("https://ghibliapi.herokuapp.com/people")
+//         .then((res)=> res.json())
+//         .then((data)=>{
+//             this.setState({
+//                 people: data,
+//             })
+//         })
+// }
 
 
 
-handleSubmit =(e)=>{
-    e.preventDefault();
-    let peopleObj = this.state.people.find((person)=>{
-        return person.name === this.state.peopleInput;
-    })
-   this.setState({
-        persons: peopleObj,
-        peopleInput: "",
-     search: !this.state.search
-   })
+// handleSubmit =(e)=>{
+//     e.preventDefault();
+//     let peopleObj = this.state.people.find((person)=>{
+//         return person.name === this.state.peopleInput;
+//     })
+//    this.setState({
+//         persons: peopleObj,
+//         peopleInput: "",
+//      search: !this.state.search
+//    })
 
-};
+// };
 
     render(){
-        let {peopleInput, search, handleChange, handleSubmit} = this.state;
+        // let {peopleInput, search, handleChange, handleSubmit} = this.state;
     return(
         <div>
-            <div> Search for a Person </div>
+            {/* <div> Search for a Person </div>
         <form onSubmit={handleSubmit}>
             <input
             placeholder="Find Your Person"
@@ -70,7 +71,8 @@ handleSubmit =(e)=>{
 
         <h3> Not Found</h3>
 
-        }
+        } */}
+        People
         </div>
     )
            
