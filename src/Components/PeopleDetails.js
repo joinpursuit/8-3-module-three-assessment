@@ -33,7 +33,7 @@ class PeopleDetails extends Component {
 
   render() {
     const { people } = this.props;
-    const { found } = this.state;
+    // const { found } = this.state;
     console.log('inpeopledetails', people);
     if (!people) {
       return <div>Select a film</div>;
