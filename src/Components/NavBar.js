@@ -10,9 +10,7 @@ class NavBar extends Component {
         <ul className='navbar'>
           <li className='nav-links'>
             <Link to='/'>
-
-
-               <img
+              <img
                 style={{
                   backgroundImage: `url(${image})`,
                   backgroundRepeat: 'no-repeat',
@@ -21,7 +19,7 @@ class NavBar extends Component {
                   border: 'none',
                 }}
                 alt=''
-              /> 
+              />
             </Link>
           </li>
           <li className='nav-links'>
@@ -32,6 +30,12 @@ class NavBar extends Component {
           </li>
           <li className='nav-links'>
             <Link to='/locations'>Locations</Link>
+          </li>
+          <li className='nav-links'>
+            <Link to='/species'>Species</Link>
+          </li>
+          <li className='nav-links'>
+            <Link to='/vehicles'>Vehicles</Link>
           </li>
         </ul>
       </nav>

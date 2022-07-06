@@ -1,0 +1,28 @@
+.characters-list {
+  display: grid;
+  /* grid-template-columns: repeat(5,1fr); */
+  padding-left: 0;
+  max-width: 50vw;
+  /* 
+  display: grid; */
+  margin: 0rem auto;
+  gap: 0rem 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.character {
+  list-style: none;
+  padding: 1rem;
+}
+.character-btn {
+  width: 6rem;
+}
+@media (max-width: 800px) {
+  .people-page {
+    flex-direction: column;
+  }
+  .characters-list {
+    max-width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}

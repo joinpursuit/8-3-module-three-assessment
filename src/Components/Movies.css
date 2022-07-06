@@ -3,12 +3,12 @@
   height: 250px;
 }
 .movies,
-.container {
-  background-color: white;
-  padding: 1rem 0;
-  max-width: 70vw;
+.movies-container {
+  background-color: rgb(180, 206, 187);
+  padding: 2rem 0;
+  max-width: 80vw;
   width: 100%;
-  height: 95vh;
+  min-height:100vh;
   text-align: center;
   margin: 0 auto;
 }
@@ -19,13 +19,16 @@ img {
 p {
   padding: 0.2rem 0;
 }
-/* h2 {
-  padding: 1rem 0;
-} */
+
 .movies {
   margin: 2rem auto;
-  max-width: 90vw;
+  text-align: center;
+  background: url('https://studioghiblimovies.com/wp-content/uploads/2020/03/barcode-scanners-qr-code-2d-code-creative-barcode.jpg')
+    no-repeat;
+  background-size: cover;
+  max-width: 100vw;
   width: 100%;
-  height: 120vh;
-  background-color: rgb(186, 227, 237);
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
 }

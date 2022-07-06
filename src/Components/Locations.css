@@ -15,16 +15,32 @@
   margin: 0 auto;
   padding: 4rem 0;
 } */
+
+.locations {
+  margin: 0 auto;
+  text-align: center;
+  background-image: url('https://studioghiblimovies.com/wp-content/uploads/2020/03/D7K2JWwWkAAnpa82.jpg')
+    no-repeat;
+  background-size: cover;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+
+  min-width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .results {
+  max-width: 1200px;
+  margin: 2rem auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: (6, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  list-style-type: none;
-  margin-top:50px; /*Reduce Margin-top*/
-  margin-left: 80px;
-  margin-right: 80px;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .card {
@@ -36,10 +52,12 @@
   padding: 1rem 0;
   text-align: center;
   list-style-type: none;
+  margin: 0 auto;
 }
 
 .card-list {
   width: 250px;
+  height: auto;
   margin: 1rem;
   padding: 0.5rem 0;
   background-color: white;
@@ -52,9 +70,4 @@
 button {
   padding: 1rem;
   border-radius: 10px;
-}
-
-.locations {
-  margin: 0 auto;
-  text-align: center;
 }

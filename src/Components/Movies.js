@@ -49,7 +49,7 @@ class Movies extends Component {
         </select>
         <div>
           {selected ? (
-            <div className='container'>
+            <div className='movies-container'>
               <h2> {selected.title}</h2>
               <img
                 className='movieImg'

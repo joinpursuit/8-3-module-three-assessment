@@ -1,0 +1,26 @@
+html {
+  font-size: 1.2rem;
+}
+
+.card-info {
+  background-color: rgb(47, 165, 144);
+  color: black;
+  padding: 1rem;
+  height: 10rem;
+}
+.card-info h3 {
+  text-align: center;
+}
+.vehicle-cards {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.species-container {
+  background: url('./image/p08191s0.jpeg') repeat;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+}

@@ -1,0 +1,12 @@
+.FilmsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .HomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

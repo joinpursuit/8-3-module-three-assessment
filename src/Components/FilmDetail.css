@@ -1,0 +1,36 @@
+.film-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 0 5rem 0;
+}
+
+.film-image {
+  width: 50vw;
+}
+
+.image {
+  width: 650px;
+  height: 400px;
+  transition: 0.7s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12), box-shadow 0.7s;
+  margin-bottom: 1.3rem;
+}
+
+.image:hover {
+  transition-timing-function: ease-in-out;
+  transform: scale(1.03);
+}
+
+.film-details p {
+  padding: 0.5rem 1rem;
+  background: rgba(224, 239, 192, 0.8);
+  font-weight: bold;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details:hover {
+  background: rgb(233, 234, 181);
+}

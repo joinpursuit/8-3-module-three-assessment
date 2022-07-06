@@ -12,10 +12,11 @@ h1 {
 }
 
 .people {
-  margin: 0 auto;
+  width: 70vw;
+  margin: 2rem auto;
   text-align: center;
   padding: 2rem 0;
-  background-color: #fbf7c3;
+  background-color: #b2d8d8;
   height: 100vh;
 }
 
@@ -32,4 +33,30 @@ input {
   height: 300px;
   margin: 2rem auto;
   padding: 1rem 0;
+}
+.people-page {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  flex-direction: row;
+  background: url('./image/laputa.jpeg') no-repeat;
+  background-size: cover;
+}
+.people-click {
+  order: 1;
+}
+.people-display {
+  order: 2;
+}
+@media (max-width: 800px) {
+  .people-page {
+    flex-direction: column;
+  }
+  .people-click {
+    order: 2;
+  }
+  .people-display {
+    order: 1;
+  }
 }
