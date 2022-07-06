@@ -16,6 +16,7 @@
 }
 .character-btn {
   width: 6rem;
+  background-color: rgba(125, 212, 206, 0.633);
 }
 @media (max-width: 800px) {
   .people-page {

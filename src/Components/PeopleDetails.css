@@ -1,10 +1,14 @@
 .peopleInfo {
   padding: 2rem;
+  background-color: rgba(125, 212, 206, 0.633);
 }
 .wrapper {
   margin: 2rem 0 -1rem 0;
 }
-
+.wrapper > input {
+  background-color: rgba(161, 239, 232, 0.937);
+  color: black;
+}
 .name-container {
   margin-right: auto;
   margin-left: auto;

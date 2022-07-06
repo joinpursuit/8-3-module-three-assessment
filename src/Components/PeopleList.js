@@ -33,7 +33,7 @@ class PeopleList extends Component {
       return (
         <li className='character'
           key={person.id}>
-         <button className='character-btn'onClick={() => this.props.customClickHandler(person)}
+         <button className='character-btn' onClick={() => this.props.customClickHandler(person)}
         >
           {person.name}
           </button>

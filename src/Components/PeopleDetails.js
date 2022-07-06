@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
- import './PeopleDetails.css';
+import './PeopleDetails.css';
 
 class PeopleDetails extends Component {
   constructor() {
@@ -39,7 +39,7 @@ class PeopleDetails extends Component {
       return <div>Select a film</div>;
     }
 
-    const results = 
+    const results = (
       <div className='peopleInfo'>
         <h2>
           Name: <span>{people.name}</span>
@@ -60,7 +60,7 @@ class PeopleDetails extends Component {
           {people.eye_color}
         </p>
       </div>
-    
+    );
 
     return (
       <div className='name-container'>
