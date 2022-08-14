@@ -1,27 +1,27 @@
 # GHIBLI REACT APP (Module Three Assessment)
 
 ---
-<img src="ghiblihome.png"/>
+<img src='ghibli home.png' alt="info of ghibli"/>
 
 ---
 
-<img src="ghiblimovies.png""/>
+<img src="ghiblimovies.png" alt="info of ghibli movies"/>
 
 ---
 
-<img src="ghiblipeople.png""/>
+<img src="ghiblipeople.png" alt="info of ghibli characters"/>
 
 ---
 
-<img src="ghibliloc.png""/>
+<img src="ghibliloc.png" alt="info of ghibli locations"/>
 
 ---
 
-<img src="ghiblivehicles.png""/>
+<img src="ghiblivehicles.png" alt="info of ghibli vehicles"/>
 
 ---
 
-<img src="ghiblispecies.png""/>
+<img src="ghiblispecies.png" alt="info of ghibli species"/>
 
 ---
 
