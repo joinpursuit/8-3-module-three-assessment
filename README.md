@@ -1,4 +1,29 @@
-# Module Three Assessment
+# GHIBLI REACT APP (Module Three Assessment)
+
+---
+<img src="ghiblihome"/>
+
+---
+
+<img src="ghiblimovies"/>
+
+---
+
+<img src="ghiblipeople"/>
+
+---
+
+<img src="ghibliloc"/>
+
+---
+
+<img src="ghiblivehicles"/>
+
+---
+
+<img src="ghiblispecies"/>
+
+---
 
 This challenge is designed to assess the React skills you have developed so far.
 
