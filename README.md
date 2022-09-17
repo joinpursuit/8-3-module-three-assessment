@@ -1,5 +1,6 @@
 # GHIBLI REACT APP (Module Three Assessment)
 
+---
 
 [https://user-images.githubusercontent.com/46873861/190864640-d1b8702f-9e1d-4ea5-a160-77cc60406fbf.gif](https://user-images.githubusercontent.com/46873861/190864640-d1b8702f-9e1d-4ea5-a160-77cc60406fbf.gif)
 
