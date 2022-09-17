@@ -2,7 +2,10 @@
 
 ---
 
-[https://user-images.githubusercontent.com/46873861/190864640-d1b8702f-9e1d-4ea5-a160-77cc60406fbf.gif](https://user-images.githubusercontent.com/46873861/190864640-d1b8702f-9e1d-4ea5-a160-77cc60406fbf.gif)
+[https://user-images.githubusercontent.com/46873861/190864717-66665543-e814-4ada-a31b-2657e625dfd9.mp4](https://user-images.githubusercontent.com/46873861/190864717-66665543-e814-4ada-a31b-2657e625dfd9.mp4)
+
+
+
 
 ---
 <img src='ghibli home.png' alt="info of ghibli"/>
