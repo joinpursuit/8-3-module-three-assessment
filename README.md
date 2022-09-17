@@ -1,5 +1,54 @@
 # GHIBLI REACT APP (Module Three Assessment)
 
+<h2 align="center">Highlighted Projects </h2>
+<div align="center">
+<table>
+<tr>
+<td width="50%">
+<h3 align="center" color="white">React Ghibli API</h2>
+<div align="center" >
+<a href='[https://reactghibliapi.netlify.app/](https://reactghibliapi.netlify.app/)'>
+</a>
+
+[https://user-images.githubusercontent.com/97814431/168460272-1a8301a8-6c28-48ef-84ac-cb8a8f080ca2.mp4](https://user-images.githubusercontent.com/97814431/168460272-1a8301a8-6c28-48ef-84ac-cb8a8f080ca2.mp4)
+
+<br>
+<br>
+<p>
+<a href="[](https://github.com/meera-ramesh19/react-ghibli-app-8-3-module-three-assessment)" target="_blank">
+
+<img src="[https://img.shields.io/badge/Code-black?style=for-the-badge&logo=github](https://img.shields.io/badge/Code-black?style=for-the-badge&logo=github)"/>
+
+<a href="[https://reactghibliapi.netlify.app/](https://reactghibliapi.netlify.app/)" target="_blank">
+<img src="[https://img.shields.io/badge/-website-green?style=for-the-badge&color=cb7e67](https://img.shields.io/badge/-website-green?style=for-the-badge&color=cb7e67)"/>
+</a>
+</p>
+   <p><strong>A React App using React Ghbili API</p>
+</div>
+
+<h3 align="center" color="white">Stock Watch</h2>
+<div align="center" >
+<a href='[](https://stockwatchinvesting.netlify.app)'>
+</a>
+
+
+
+<br>
+<br>
+<p>
+<a href="[https://github.com/meera-ramesh19/PersonalProject](https://github.com/meera-ramesh19/PersonalProject)" target="_blank">
+
+<img src="[https://img.shields.io/badge/Code-black?style=for-the-badge&logo=github](https://img.shields.io/badge/Code-black?style=for-the-badge&logo=github)"/>
+
+<a href="[https://github.com/meera-ramesh19/PersonalProject](https://github.com/meera-ramesh19/PersonalProject)" target="_blank">
+<img src="[https://img.shields.io/badge/-website-green?style=for-the-badge&color=cb7e67](https://img.shields.io/badge/-website-green?style=for-the-badge&color=cb7e67)"/>
+</a>
+</p>
+<p><strong>Python and PERN stack app. This app will enable the user ot dq</p>
+</div>
+</td>
+
+
 ---
 <img src='ghibli home.png' alt="info of ghibli"/>
 
@@ -124,6 +173,7 @@ You will need to complete features for four different pages and create a navigat
 - [ ] Has a form that includes a text input and a submit button. Use a `button` element for the submit button, not an `input` element.
 
   ![Pre Search](./assets/search1.png)
+
 
 - [ ] After typing a name into the text field and pressing submit, the relevant character's name, age, and gender should be shown on the page. Submitting the form should also clear the text field.
 
